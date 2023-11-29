@@ -1,9 +1,11 @@
 # coding: utf-8
 # In[1]:
 
+import os
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
+os.chdir("/home/omkarc/omkar/pulearning")
 import numpy as np
 import pandas as pd 
-import os
 from sklearn import metrics
 from sklearn.metrics import roc_auc_score
 import argparse
@@ -16,9 +18,10 @@ from sklearn.metrics.pairwise import pairwise_distances
 from sklearn.cluster import KMeans
 import seaborn as sns
 from sklearn.cluster import DBSCAN
+from sklearn.metrics import silhouette_score
+from concurrent.futures import ProcessPoolExecutor
+import multiprocessing
 
-
-os.chdir("/home/omkarc/omkar/pulearning")
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--starti", type = int)
@@ -397,29 +400,33 @@ def build_x_y_data_base_pos_selection_validation_set(pos_genes, i, feature_type,
 
 
 #In[0]
-
-def analyze_dbscan_result(gene_cluster, adj_matrix):
+def analyze_dbscan_result(gene_cluster, new_adj_mat):
     cluster_id_list = gene_cluster.cluster_id.value_counts().index.tolist()
-    adj_mat_ppi_1 = adjacency_matrix_ppi[adjacency_matrix_ppi.index.isin(adj_matrix.index)]
-    adj_mat_ppi_2 = adj_mat_ppi_1.loc[:, adj_mat_ppi_1.columns.isin(adj_matrix.index)]
-    new_adj_mat = adj_mat_ppi_2 + adj_matrix
-    new_adj_mat = new_adj_mat.fillna(0)
+    cluster_purity_list = []
     likely_neg_genes = []
     for i in range(len(cluster_id_list)):
         group_i = gene_cluster[gene_cluster.cluster_id.isin([cluster_id_list[i]])]
-        rg_genes = group_i[group_i.relaible_negative == 1]
+        rg_genes = group_i[group_i.label == -1]
         if rg_genes.shape[0] == 0:
             continue 
-        uk_genes = group_i[group_i.relaible_negative == 0]
+        uk_genes = group_i[group_i.label == 0]
+        p_genes = group_i[group_i.label == 1]
+        neg_purity = rg_genes.shape[0]/group_i.shape[0] * 100
+        pos_purity = p_genes.shape[0]/group_i.shape[0] * 100
+        total_members = group_i.shape[0]
+        cluster_purity_list.append([neg_purity, pos_purity, total_members]) 
+
         for j in range(uk_genes.shape[0]):
             point_index = uk_genes.gene.iloc[j]
             distances = new_adj_mat[point_index]
             nearest_neighbors_top = np.argsort(distances)[:5]
             nearest_neighbors = nearest_neighbors_top[nearest_neighbors_top.index.isin(rg_genes.gene)]
             likely_neg_genes.append([point_index, nearest_neighbors.shape[0]])
+    cluster_purity_df = pd.DataFrame(cluster_purity_list) 
     likely_neg_genes = pd.DataFrame(likely_neg_genes)
     likely_neg_genes_final = likely_neg_genes[likely_neg_genes.iloc[:,1] >= likely_neg_genes.iloc[:,1].median()]
-    return likely_neg_genes_final.iloc[:, 0].tolist()
+    #return likely_neg_genes_final.iloc[:, 0].tolist()
+    return sum(100 - cluster_purity_df.iloc[:,0]), cluster_purity_df.shape[0]
 
 # In[0]:
 def identify_likely_negative(pos_genes, likely_pos_gene_score, reliable_neg_genes_score):
@@ -432,22 +439,114 @@ def identify_likely_negative(pos_genes, likely_pos_gene_score, reliable_neg_gene
     # binary_gene_feature_onto3 = binary_gene_feature_onto2[~binary_gene_feature_onto2.index.isin(reliable_to_remove)]
     D = pairwise_distances(X=binary_gene_feature_onto, metric='euclidean', n_jobs=15)
 
-    adj_matrix = pd.DataFrame(D)
-    adj_matrix.index = binary_gene_feature_onto2.index
-    adj_matrix.columns = binary_gene_feature_onto2.index
+    adj_matrix = 10 - pd.DataFrame(D)
+    adj_matrix.index = binary_gene_feature_onto.index
+    adj_matrix.columns = binary_gene_feature_onto.index
+
+    adj_mat_ppi_1 = adjacency_matrix_ppi[adjacency_matrix_ppi.index.isin(adj_matrix.index)]
+    adj_mat_ppi_2 = adj_mat_ppi_1.loc[:, adj_mat_ppi_1.columns.isin(adj_matrix.index)]
+    new_adj_mat = (adj_mat_ppi_2 * 10)  + (adj_matrix * 0.5)
+    new_adj_mat = new_adj_mat.fillna(0)
     features = adj_matrix.values    
     features = pd.DataFrame(features)
-    features[features.isna().any(axis=1)].index.tolist()
 
-    dbscan = DBSCAN(eps=2, min_samples=2, metric='precomputed')
-    clusters = dbscan.fit_predict(adj_matrix)
-    gene_cluster = pd.concat([pd.DataFrame(adj_matrix.columns), pd.DataFrame(clusters)], axis = 1)
-    gene_cluster.columns = ["gene", "cluster_id"]
-    gene_cluster['cluster_id'].value_counts()
-    gene_cluster["relaible_negative"] = 0
-    gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "relaible_negative" ] = 1
-    likely_neg_genes = analyze_dbscan_result(gene_cluster, adj_matrix)
-    return likely_neg_genes
+    #dbscan = DBSCAN(eps=2, min_samples=2, metric='precomputed', n_jobs = 15)
+    #clusters = dbscan.fit_predict(adj_matrix)
+    # gene_cluster = pd.concat([pd.DataFrame(adj_matrix.columns), pd.DataFrame(clusters)], axis = 1)
+    # gene_cluster.columns = ["gene", "cluster_id"]
+    # gene_cluster['cluster_id'].value_counts()
+    # gene_cluster["label"] = 0
+    # gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "label" ] = -1
+
+    # likely_neg_genes = analyze_dbscan_result(gene_cluster, adj_matrix)
+    # return likely_neg_genes
+
+    def dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes):
+        eps_values=np.arange(0.5, 3, 0.5)
+        min_samples_values=range(2, 5)
+        best_score = -1
+        best_eps = None
+        best_min_samples = None
+        cluster_info = []
+        # Grid search
+        for eps in eps_values:
+            for min_samples in min_samples_values:
+                print(eps, min_samples)
+                # Run DBSCAN
+                clusters = DBSCAN(eps=eps, min_samples=min_samples, n_jobs= 15).fit(new_adj_mat)
+                gene_cluster = pd.concat([pd.DataFrame(new_adj_mat.columns), pd.DataFrame(clusters.labels_)], axis = 1)
+                gene_cluster.columns = ["gene", "cluster_id"]
+                # gene_cluster['cluster_id'].value_counts()
+                gene_cluster["label"] = 0
+                gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "label" ] = -1
+                gene_cluster.loc[gene_cluster.iloc[:,0].isin(pos_genes), "label" ] = 1
+
+                cluster_purity, total_number_of_clusters = analyze_dbscan_result(gene_cluster, new_adj_mat)
+                cluster_info.append([cluster_purity, total_number_of_clusters])
+                # Only score clusters with more than 1 cluster present (excluding noise)
+                # if len(set(db.labels_)) > 1:
+                #     # score = silhouette_score(X, db.labels_)
+                #     if score > best_score:
+                #         best_score = score
+                #         best_eps = eps
+                #         best_min_samples = min_samples
+        cluster_info_df = pd.DataFrame(cluster_info)
+        return cluster_info_df
+
+    cluster_purity, total_number = dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes)
+
+
+
+#In[0]
+from sklearn.cluster import DBSCAN
+import pandas as pd
+
+def run_dbscan(eps, min_samples, new_adj_mat, reliable_neg_sample_nodes, pos_genes):
+    try:
+        print(f"Running DBSCAN with eps={eps}, min_samples={min_samples}")
+        clusters = DBSCAN(eps=eps, min_samples=min_samples, n_jobs=20).fit(new_adj_mat)
+        gene_cluster = pd.concat([pd.DataFrame(new_adj_mat.columns), pd.DataFrame(clusters.labels_)], axis=1)
+        gene_cluster.columns = ["gene", "cluster_id"]
+        gene_cluster["label"] = 0
+        gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "label"] = -1
+        gene_cluster.loc[gene_cluster.iloc[:,0].isin(pos_genes), "label"] = 1
+
+        # Assuming analyze_dbscan_result is a function you've defined elsewhere
+        cluster_purity, total_number_of_clusters = analyze_dbscan_result(gene_cluster, new_adj_mat)
+        return [eps, min_samples, cluster_purity, total_number_of_clusters]
+    except Exception as e:
+        print(f"Error in DBSCAN with eps={eps}, min_samples={min_samples}: {e}")
+        return [eps, min_samples, None, None]
+
+import multiprocessing
+
+def dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes):
+    eps_values = np.arange(0.5, 3, 0.5)
+    min_samples_values = range(2, 5)
+    
+    # Create a list of all parameter combinations
+    param_combinations = [(eps, min_samples, new_adj_mat, reliable_neg_sample_nodes, pos_genes) 
+                          for eps in eps_values 
+                          for min_samples in min_samples_values]
+
+    # Create a pool of workers and run DBSCAN in parallel
+    pool = multiprocessing.Pool()
+    results = pool.starmap(run_dbscan, param_combinations)
+
+    # Close the pool and wait for the work to finish
+    pool.close()
+    pool.join()
+
+    # Create a DataFrame from the results
+    cluster_info_df = pd.DataFrame(results, columns=['eps', 'min_samples', 'cluster_purity', 'total_number_of_clusters'])
+    return cluster_info_df
+
+if __name__ == "__main__":
+    cluster_info_df = dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes)
+    print(cluster_info_df)
+
+
+
 # In[1]
 
 def mutually_exclusive_lists1(pos_genes, likely_pos_gene_score, reliable_neg_genes_score, likely_neg_genes_list):
