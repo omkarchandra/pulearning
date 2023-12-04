@@ -70,7 +70,7 @@ adjacency_matrix_ppi = pd.read_csv("adjacency_matrix_ppi.csv", low_memory=False,
 # In[1]:
 
 
-def cross_val_score_defined(estimator, x, y, x_data_test, y_data_test, x_all):
+def cross_val_score_defined(estimator, x, y, x_data_test, y_data_test, x_all, i):
     # scores = []
     #kf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
     #kf = StratifiedGroupKFold(n_splits=5, shuffle=False)
@@ -184,7 +184,7 @@ def cross_val_score_defined(estimator, x, y, x_data_test, y_data_test, x_all):
 
 # In[0]:
 
-def plot_save_f1_scores_and_thresholds(y_labels, y_predicted_probs, plot_filename='f1_scores.png', csv_filename='f1_scores.csv'):
+def plot_save_f1_scores_and_thresholds(y_labels, y_predicted_probs, plot_filename, csv_filename):
     thresholds = np.arange(0, 1.05, 0.05)
     f1_scores = []
 
@@ -782,7 +782,7 @@ def call_ml_model(start_i, end_i, algo_type, feature_type, likely_pos_quantile):
                 disease_name = disease_df_selected.index[i]
 
             estimator = RandomForestRegressor(n_estimators=200, random_state=42, n_jobs=50)
-            score_dict, pred_prbs_all = cross_val_score_defined(estimator, x_data_train_valid, y_data_train_valid, x_data_test, y_data_test, x_all)
+            score_dict, pred_prbs_all = cross_val_score_defined(estimator, x_data_train_valid, y_data_train_valid, x_data_test, y_data_test, x_all, i)
             #final_pred = predict_genes(pred_prbs_all, pos_genes); final_pred.columns = [disease_name]
             pred_prbs_all.columns = [disease_name]
             predicted_genes = pd.concat([predicted_genes, pred_prbs_all], axis = 1)
