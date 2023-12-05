@@ -463,48 +463,6 @@ def analyze_dbscan_result(gene_cluster, new_adj_mat):
     cluster_purity_df = pd.DataFrame(cluster_purity_list) 
     return sum(100 - cluster_purity_df.iloc[:,0]), cluster_purity_df.shape[0]
 
-#In[0]:
-
-import numpy as np
-
-# Define the labels
-labels = ['A', 'B', 'C']
-
-# Create an adjacency matrix initialized with zeros
-adj_matrix_binary = np.zeros((len(labels), len(labels)))
-
-# Set the specific connections
-adj_matrix_binary[labels.index('A'), labels.index('B')] = 1
-adj_matrix_binary[labels.index('B'), labels.index('A')] = 1  # Assuming undirected graph
-adj_matrix_binary[labels.index('C'), labels.index('A')] = 1
-adj_matrix_binary[labels.index('A'), labels.index('C')] = 1  # Assuming undirected graph
-
-print(adj_matrix_binary)
-adj_matrix_binary = pd.DataFrame(adj_matrix_binary)
-adj_matrix_binary.index = labels
-adj_matrix_binary.columns = labels
-
-adj_b = adj_matrix_binary 
-# Create an adjacency matrix initialized with zeros
-adj_matrix_values_df = pd.DataFrame(0, index=labels, columns=labels)
-
-# Set the specific connections
-adj_matrix_values_df.at['A', 'B'] = 2.5
-adj_matrix_values_df.at['B', 'A'] = 2.5  # Assuming undirected graph
-adj_matrix_values_df.at['C', 'A'] = 1.5
-adj_matrix_values_df.at['A', 'C'] = 1.5  # Assuming undirected graph
-adj_matrix_values_df.at['C', 'B'] = 4
-adj_matrix_values_df.at['B', 'C'] = 4  # Assuming undirected graph
-
-print(adj_matrix_values_df)
-adj_v = adj_matrix_values_df
-
-max_val = adj_v.max().max()
-adj_v_normal = adj_v / max_val 
-
-adj_b + adj_v_normal
-
-
 
 # In[0]:
 def identify_likely_negative(pos_genes, reliable_neg_genes_score):
@@ -524,82 +482,43 @@ def identify_likely_negative(pos_genes, reliable_neg_genes_score):
     new_adj_mat = new_adj_mat.fillna(0)
     features = adj_matrix.values    
     features = pd.DataFrame(features)
+    clusters = DBSCAN(eps=0.5, min_samples=2, n_jobs= 200).fit(new_adj_mat)
+    gene_cluster = pd.concat([pd.DataFrame(new_adj_mat.columns), pd.DataFrame(clusters.labels_)], axis = 1)
+    gene_cluster.columns = ["gene", "cluster_id"]
+    gene_cluster["label"] = 0
+    gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "label" ] = -1
+    gene_cluster.loc[gene_cluster.iloc[:,0].isin(pos_genes), "label" ] = 1
 
-    def dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes):
-        eps_values=np.arange(0.5, 3, 0.5)
-        min_samples_values=range(2, 5)
-        cluster_info = []
-        # Grid search
-        for eps in eps_values:
-            for min_samples in min_samples_values:
-                print(eps, min_samples)
-                # Run DBSCAN
-                clusters = DBSCAN(eps=eps, min_samples=min_samples, n_jobs= 200).fit(new_adj_mat)
-                gene_cluster = pd.concat([pd.DataFrame(new_adj_mat.columns), pd.DataFrame(clusters.labels_)], axis = 1)
-                gene_cluster.columns = ["gene", "cluster_id"]
-                # gene_cluster['cluster_id'].value_counts()
-                gene_cluster["label"] = 0
-                gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "label" ] = -1
-                gene_cluster.loc[gene_cluster.iloc[:,0].isin(pos_genes), "label" ] = 1
+    cluster_id_list = gene_cluster.cluster_id.value_counts().index.tolist()
+    likely_neg_genes = []
+    cluster_purity_list = []
+    for i in range(len(cluster_id_list)):
+        group_i = gene_cluster[gene_cluster.cluster_id.isin([cluster_id_list[i]])]
+        rg_genes = group_i[group_i.label == -1]
+        uk_genes = group_i[group_i.label == 0]
+        p_genes = group_i[group_i.label == 1]
+        neg_purity = rg_genes.shape[0]/group_i.shape[0] 
+        pos_purity = p_genes.shape[0]/group_i.shape[0] 
+        total_members = group_i.shape[0]
+        cluster_purity_list.append([neg_purity, pos_purity, total_members, cluster_id_list[i]]) 
+    cluster_purity_df = pd.DataFrame(cluster_purity_list) 
 
-                cluster_purity, total_number_of_clusters = analyze_dbscan_result(gene_cluster, new_adj_mat)
-                cluster_info.append([cluster_purity, total_number_of_clusters, eps, min_samples])
-                # Only score clusters with more than 1 cluster present (excluding noise)
-                # if len(set(db.labels_)) > 1:
-                #     # score = silhouette_score(X, db.labels_)
-                #     if score > best_score:
-                #         best_score = score
-                #         best_eps = eps
-                #         best_min_samples = min_samples
-        cluster_info_df = pd.DataFrame(cluster_info)
-        cluster_info_df.columns = ["impurity", "no_of_clusters", "eps", "min_samples"]
-        return cluster_info_df
+    not_one_clust_df = cluster_purity_df[cluster_purity_df.iloc[:,0] != 1]
+    cluster_ids_to_select = not_one_clust_df[not_one_clust_df.iloc[:,0] > 0.9].iloc[:,3]
 
-    cluster_info_df = dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes)
-
-    def parameter_selection_likely_neg_selection(cluster_info_df):
-        min_impurity = cluster_info_df.impurity / cluster_info_df.no_of_clusters 
-        eps_final = cluster_info_df.loc[min_impurity.idxmin(), "eps"]
-        min_samples = cluster_info_df.loc[min_impurity.idxmin(), "min_samples"]
-        clusters = DBSCAN(eps=eps_final, min_samples=min_samples, n_jobs= 200).fit(new_adj_mat)
-        gene_cluster = pd.concat([pd.DataFrame(new_adj_mat.columns), pd.DataFrame(clusters.labels_)], axis = 1)
-        gene_cluster.columns = ["gene", "cluster_id"]
-        gene_cluster["label"] = 0
-        gene_cluster.loc[gene_cluster.iloc[:,0].isin(reliable_neg_sample_nodes), "label" ] = -1
-        gene_cluster.loc[gene_cluster.iloc[:,0].isin(pos_genes), "label" ] = 1
-
-        cluster_id_list = gene_cluster.cluster_id.value_counts().index.tolist()
-        likely_neg_genes = []
-        cluster_purity_list = []
-        for i in range(len(cluster_id_list)):
-            group_i = gene_cluster[gene_cluster.cluster_id.isin([cluster_id_list[i]])]
-            rg_genes = group_i[group_i.label == -1]
-            uk_genes = group_i[group_i.label == 0]
-            p_genes = group_i[group_i.label == 1]
-            neg_purity = rg_genes.shape[0]/group_i.shape[0] 
-            pos_purity = p_genes.shape[0]/group_i.shape[0] 
-            total_members = group_i.shape[0]
-            cluster_purity_list.append([neg_purity, pos_purity, total_members, cluster_id_list[i]]) 
-        cluster_purity_df = pd.DataFrame(cluster_purity_list) 
-
-        not_one_clust_df = cluster_purity_df[cluster_purity_df.iloc[:,0] != 1]
-        cluster_ids_to_select = not_one_clust_df[not_one_clust_df.iloc[:,0] > 0.9].iloc[:,3]
-
-        for id in cluster_ids_to_select:
-            group_i = gene_cluster[gene_cluster.cluster_id.isin([id])]
-            rg_genes = group_i[group_i.label == -1]
-            uk_genes = group_i[group_i.label == 0]
-            p_genes = group_i[group_i.label == 1]
-            for j in range(uk_genes.shape[0]):
-                point_index = uk_genes.gene.iloc[j]
-                distances = new_adj_mat[point_index]
-                nearest_neighbors_top = np.argsort(distances)[:5]
-                nearest_neighbors = nearest_neighbors_top[nearest_neighbors_top.index.isin(rg_genes.gene)]
-                likely_neg_genes.append([point_index, nearest_neighbors.shape[0]])
-        likely_neg_genes = pd.DataFrame(likely_neg_genes)
-        return likely_neg_genes.iloc[:, 0].tolist()
-    likely_neg_genes = parameter_selection_likely_neg_selection(cluster_info_df)
-    return likely_neg_genes
+    for id in cluster_ids_to_select:
+        group_i = gene_cluster[gene_cluster.cluster_id.isin([id])]
+        rg_genes = group_i[group_i.label == -1]
+        uk_genes = group_i[group_i.label == 0]
+        p_genes = group_i[group_i.label == 1]
+        for j in range(uk_genes.shape[0]):
+            point_index = uk_genes.gene.iloc[j]
+            distances = new_adj_mat[point_index]
+            nearest_neighbors_top = np.argsort(distances)[:5]
+            nearest_neighbors = nearest_neighbors_top[nearest_neighbors_top.index.isin(rg_genes.gene)]
+            likely_neg_genes.append([point_index, nearest_neighbors.shape[0]])
+    likely_neg_genes = pd.DataFrame(likely_neg_genes)
+    return likely_neg_genes.iloc[:, 0].tolist()
 
 
 # In[1]
@@ -612,7 +531,7 @@ def mutually_exclusive_lists1(pos_genes, likely_pos_gene_score, reliable_neg_gen
     likely_neg_genes = list(set(likely_neg_genes_list) - set(pos_genes + likely_pos_genes ))
 
     random_generator = random.Random(1)
-    reliable_neg_genes = random_generator.sample(reliable_neg_genes, len(pos_genes) * 20)
+    reliable_neg_genes = random_generator.sample(reliable_neg_genes, len(pos_genes) * 25)
     if len(likely_neg_genes) > len(pos_genes) * 5:
         likely_neg_genes = random_generator.sample(likely_neg_genes, len(pos_genes) * 5)
     else:
@@ -629,7 +548,7 @@ def divide_train_test1(pos_genes, pos_genes_test, likely_pos_genes, reliable_neg
 
 def build_x_y_data_base_pos_selection_validation_set1(pos_genes, i, likely_pos_quantile):
     pos_genes_test = disease_df_test[disease_df_test.index.isin([disease_df.index[i]])].dropna(axis = 1)
-    quntile_threshold = 0.01
+    quntile_threshold = 0.02
     scores_unipath_pre = unipath_results[disease_df.index[i]]
     scores_unipath = scores_unipath_pre[scores_unipath_pre > 0]
     scores_unipath_quant = scores_unipath[scores_unipath > scores_unipath.quantile(quntile_threshold)]
