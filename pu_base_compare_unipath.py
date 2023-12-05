@@ -565,7 +565,7 @@ def mutually_exclusive_lists1(pos_genes, likely_pos_gene_score, reliable_neg_gen
     likely_neg_genes = list(set(likely_neg_genes_list) - set(pos_genes + likely_pos_genes ))
 
     random_generator = random.Random(1)
-    reliable_neg_genes = random_generator.sample(reliable_neg_genes, len(pos_genes) * 10)
+    reliable_neg_genes = random_generator.sample(reliable_neg_genes, len(pos_genes) * 20)
     if len(likely_neg_genes) > len(pos_genes) * 5:
         likely_neg_genes = random_generator.sample(likely_neg_genes, len(pos_genes) * 5)
     else:
@@ -582,7 +582,7 @@ def divide_train_test1(pos_genes, pos_genes_test, likely_pos_genes, reliable_neg
 
 def build_x_y_data_base_pos_selection_validation_set1(pos_genes, i, likely_pos_quantile):
     pos_genes_test = disease_df_test[disease_df_test.index.isin([disease_df.index[i]])].dropna(axis = 1)
-    quntile_threshold = 0.001
+    quntile_threshold = 0.01
     scores_unipath_pre = unipath_results[disease_df.index[i]]
     scores_unipath = scores_unipath_pre[scores_unipath_pre > 0]
     scores_unipath_quant = scores_unipath[scores_unipath > scores_unipath.quantile(quntile_threshold)]
