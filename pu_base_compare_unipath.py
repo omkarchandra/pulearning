@@ -310,12 +310,16 @@ def make_genes_ranking_likely_pos(i, enriched_gene_sets, pos_genes, likely_pos_q
 def make_genes_ranking_likely_pos1(i, enriched_gene_sets, pos_genes, likely_pos_quantile):
     gene_set_scores = unipath_results.loc[unipath_results.index.isin(enriched_gene_sets.index.tolist()),disease_df.index[i]] 
     binary_gene_feature_onto_pos = binary_gene_feature_onto[enriched_gene_sets.index.tolist()]
-    gene_score_pre = binary_gene_feature_onto_pos.dot(gene_set_scores).sort_values(ascending=False)
-    gene_score = gene_score_pre[gene_score_pre > 0 ]
+    gene_score_pre = pd.DataFrame(binary_gene_feature_onto_pos.dot(gene_set_scores).sort_values(ascending=False))
+    gene_pairs_pos = gene_pairs[gene_pairs.iloc[:,0].isin(pos_genes)]
+    gene_pairs_pos_first_genes = gene_pairs_pos[~gene_pairs_pos.iloc[:,1].isin(pos_genes)]
+    mask = gene_score_pre.index.isin(gene_pairs_pos_first_genes.iloc[:, 1])
+    gene_score_pre.iloc[mask, gene_score_pre.columns[0]] = +10
+    gene_score = gene_score_pre[gene_score_pre.iloc[:,0] > 0 ]
     gene_score = gene_score[~gene_score.index.isin(pos_genes)]
-    likely_pos_gene_score = gene_score[gene_score >= gene_score.quantile(likely_pos_quantile)]
+    likely_pos_gene_score = gene_score[gene_score.iloc[:,0] >= gene_score.iloc[:,0].quantile(likely_pos_quantile)]
 
-    reliable_neg_genes_score = gene_score_pre[gene_score_pre <= 0]
+    reliable_neg_genes_score = gene_score_pre[gene_score_pre.iloc[:,0] <= 0]
     binary_features_train_test = pd.concat([binary_gene_feature_onto_pos, binary_gene_feature_onto_pos.dot(gene_set_scores)], axis = 1)
     binary_features_train_test.columns = binary_gene_feature_onto_pos.columns.tolist() + ["score"]
     
@@ -459,6 +463,48 @@ def analyze_dbscan_result(gene_cluster, new_adj_mat):
     cluster_purity_df = pd.DataFrame(cluster_purity_list) 
     return sum(100 - cluster_purity_df.iloc[:,0]), cluster_purity_df.shape[0]
 
+#In[0]:
+
+import numpy as np
+
+# Define the labels
+labels = ['A', 'B', 'C']
+
+# Create an adjacency matrix initialized with zeros
+adj_matrix_binary = np.zeros((len(labels), len(labels)))
+
+# Set the specific connections
+adj_matrix_binary[labels.index('A'), labels.index('B')] = 1
+adj_matrix_binary[labels.index('B'), labels.index('A')] = 1  # Assuming undirected graph
+adj_matrix_binary[labels.index('C'), labels.index('A')] = 1
+adj_matrix_binary[labels.index('A'), labels.index('C')] = 1  # Assuming undirected graph
+
+print(adj_matrix_binary)
+adj_matrix_binary = pd.DataFrame(adj_matrix_binary)
+adj_matrix_binary.index = labels
+adj_matrix_binary.columns = labels
+
+adj_b = adj_matrix_binary 
+# Create an adjacency matrix initialized with zeros
+adj_matrix_values_df = pd.DataFrame(0, index=labels, columns=labels)
+
+# Set the specific connections
+adj_matrix_values_df.at['A', 'B'] = 2.5
+adj_matrix_values_df.at['B', 'A'] = 2.5  # Assuming undirected graph
+adj_matrix_values_df.at['C', 'A'] = 1.5
+adj_matrix_values_df.at['A', 'C'] = 1.5  # Assuming undirected graph
+adj_matrix_values_df.at['C', 'B'] = 4
+adj_matrix_values_df.at['B', 'C'] = 4  # Assuming undirected graph
+
+print(adj_matrix_values_df)
+adj_v = adj_matrix_values_df
+
+max_val = adj_v.max().max()
+adj_v_normal = adj_v / max_val 
+
+adj_b + adj_v_normal
+
+
 
 # In[0]:
 def identify_likely_negative(pos_genes, reliable_neg_genes_score):
@@ -469,14 +515,15 @@ def identify_likely_negative(pos_genes, reliable_neg_genes_score):
     adj_matrix = 10 - pd.DataFrame(D)
     adj_matrix.index = binary_gene_feature_onto.index
     adj_matrix.columns = binary_gene_feature_onto.index
+    max_val = adj_matrix.max().max()
+    adj_matrix_normal = adj_matrix / max_val
+    adj_mat_ppi_1 = adjacency_matrix_ppi[adjacency_matrix_ppi.index.isin(adj_matrix_normal.index)]
+    adj_mat_ppi_2 = adj_mat_ppi_1.loc[:, adj_mat_ppi_1.columns.isin(adj_matrix_normal.index)]
 
-    adj_mat_ppi_1 = adjacency_matrix_ppi[adjacency_matrix_ppi.index.isin(adj_matrix.index)]
-    adj_mat_ppi_2 = adj_mat_ppi_1.loc[:, adj_mat_ppi_1.columns.isin(adj_matrix.index)]
-    new_adj_mat = (adj_mat_ppi_2 * 10)  + (adj_matrix * 0.8)
+    new_adj_mat = adj_mat_ppi_2 + adj_matrix_normal 
     new_adj_mat = new_adj_mat.fillna(0)
     features = adj_matrix.values    
     features = pd.DataFrame(features)
-
 
     def dbscan_grid_search(new_adj_mat, reliable_neg_sample_nodes, pos_genes):
         eps_values=np.arange(0.5, 3, 0.5)
