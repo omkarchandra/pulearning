@@ -1,0 +1,234 @@
+{
+  "array_job_id": 9463331,
+  "conclusion": "The test-process hook lifetime interference cannot carry between the v2 array tasks or from the separate native-test job.",
+  "distinct_completed_batch_jobs": 20,
+  "distinct_worker_cli_invocations": 20,
+  "evidence_basis": "20 distinct completed Slurm job IDs; retained per-task /usr/bin/time reports each record one standalone Python worker invocation; worker dispatch launches Python once per array task",
+  "job_records": [
+    {
+      "array_job_id": "9463331_0",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463332",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_1",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463333",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_2",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463334",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_3",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463335",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_4",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463593",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_5",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463594",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_6",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463597",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_7",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463598",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_8",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463599",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_9",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463600",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_10",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463601",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_11",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463603",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_12",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463605",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_13",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463606",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_14",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9464000",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_15",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9464083",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_16",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9464084",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_17",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9464242",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_18",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9464243",
+      "state": "COMPLETED"
+    },
+    {
+      "array_job_id": "9463331_19",
+      "exit_code": "0:0",
+      "slurm_job_id_raw": "9463331",
+      "state": "COMPLETED"
+    }
+  ],
+  "recorded_individual_python_pids": false,
+  "separate_python_process_per_array_task_verified": true,
+  "v2_has_one_ledger_hook_per_worker": true,
+  "worker_command_records": [
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 0 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_0\"",
+      "task_index": 0,
+      "time_artifact_sha256": "34809cae1456977c06624d484b7db8dcb35e5812cd0a80975fac9615f4803d11"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 1 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_1\"",
+      "task_index": 1,
+      "time_artifact_sha256": "e5ab2729f38baf16138bdf38d9c6fdbdff13c3bf80e776d6748fafb8261912fd"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 2 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_2\"",
+      "task_index": 2,
+      "time_artifact_sha256": "68109c6461c695ddab2fa3c029edf6032b9d1e3bc182d328fdb5d41180929651"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 3 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_3\"",
+      "task_index": 3,
+      "time_artifact_sha256": "69d914349fb2eec8845b1dcf47bf41696159f53dd9b6e2c293f3d70b7d16d4fa"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 4 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_4\"",
+      "task_index": 4,
+      "time_artifact_sha256": "56b68e4f6ed5bc7d74531045ca9f970d792602853572be442a70e589c89d775f"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 5 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_5\"",
+      "task_index": 5,
+      "time_artifact_sha256": "7d546e44714f0e6a18769aac8d7c8c36dfba38840fbd2a0974e9d5919edb2c99"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 6 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_6\"",
+      "task_index": 6,
+      "time_artifact_sha256": "55a77515d4213dc59244fd1a9b8b945342f7630864c417dfda22ee29c83513ba"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 7 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_7\"",
+      "task_index": 7,
+      "time_artifact_sha256": "cb6ec16e3e73bdb7234784ecc780b122653e39210d6d01b6e4d53d7e4098297e"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 8 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_8\"",
+      "task_index": 8,
+      "time_artifact_sha256": "03f6990a8514ec453da580142f1a430c102e7dce6e664e7fa92b9fe44c507a76"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 9 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_9\"",
+      "task_index": 9,
+      "time_artifact_sha256": "879a7ef73ea53060b3b95bbb8a61858e2b87c402ee91f67d9ecefe735b5f823f"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 10 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_10\"",
+      "task_index": 10,
+      "time_artifact_sha256": "0825f1bffd65929aea5a10079d085f7dfd62a9bea2641eaf001ff0d519cd512d"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 11 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_11\"",
+      "task_index": 11,
+      "time_artifact_sha256": "145c26bee4b6a3da804d04e98d18607a6810ef2c671c2be024a7dd542fd4bcf5"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 12 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_12\"",
+      "task_index": 12,
+      "time_artifact_sha256": "d7eb8ef46fdac10863815d1ee917e7546b64bd2a53a8b27d65206f308299dfdb"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 13 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_13\"",
+      "task_index": 13,
+      "time_artifact_sha256": "4af1063b4580042ca0d309ea1b7b68d2c224dd19f81113aa8ba57817a974a2a5"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 14 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_14\"",
+      "task_index": 14,
+      "time_artifact_sha256": "a808f3f055c3525ef0d83e48bc1f4351f90c37498256d30f896f52a4505f538e"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 15 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_15\"",
+      "task_index": 15,
+      "time_artifact_sha256": "279eeebe1ab9f4e314491867f69aabb5e37f97dfbc39d438ebb575a8c5dce025"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 16 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_16\"",
+      "task_index": 16,
+      "time_artifact_sha256": "ef2bb6ee33f2ec375e32a05fa1e2ea9039ff1bd724b1f93f68493a256bccda82"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 17 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_17\"",
+      "task_index": 17,
+      "time_artifact_sha256": "44c450258d0ce1b77c2a4a226de5af80c23a0b4da56b0ab31f3ad03fa1d82f04"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 18 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_18\"",
+      "task_index": 18,
+      "time_artifact_sha256": "077c3f5ecc81541989d304d22f93dff6a373a223c773b5c20aea4ead280cd4c7"
+    },
+    {
+      "command": "Command being timed: \"/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/prepared/plan.json --task-index 19 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_19\"",
+      "task_index": 19,
+      "time_artifact_sha256": "a58c2d9ed7121682aad028724da7b364478c94c77fd08573e91d88b6ce7b07dc"
+    }
+  ]
+}

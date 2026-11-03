@@ -1,0 +1,382 @@
+{
+  "elapsed_seconds_total": 41.5,
+  "fingerprint_scheme": "cre-sorted-content-v1",
+  "fingerprints": {
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/aggregation_qc.parquet": {
+      "artifact_sha256": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+      "elapsed_seconds": 0.8,
+      "key_columns": [
+        "gene_id",
+        "feature_id"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "original_manifest_sha256": "fe3afc2f115396f6e9ee55bb1ee1cdbe05e42ac97859d7b9effb22a707965eea",
+      "rows": 100000,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "weighted_sum",
+          "double",
+          true
+        ],
+        [
+          "observed_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "observed_weight_fraction",
+          "double",
+          true
+        ],
+        [
+          "candidate_link_count",
+          "int64",
+          false
+        ],
+        [
+          "candidate_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_link_count",
+          "int64",
+          false
+        ],
+        [
+          "observed_link_count",
+          "int64",
+          false
+        ],
+        [
+          "aggregation_reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "unique_full_key_verified": true
+    },
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/dependencies.parquet": {
+      "artifact_sha256": "06271a0a17dc6876b8021101630705b80d8ca41ba679f8c9b8ada0fabaf1b3c6",
+      "elapsed_seconds": 19.3,
+      "key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "selection_role",
+        "source_element_id",
+        "dependency_type"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "8a9ed113a9182d6c0ec8d3350252955cbe9787ff2f4e3fc039a320e69dca53fa",
+      "original_manifest_sha256": "fe3afc2f115396f6e9ee55bb1ee1cdbe05e42ac97859d7b9effb22a707965eea",
+      "rows": 2000000,
+      "schema": [
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "entity_type",
+          "string",
+          false
+        ],
+        [
+          "entity_id",
+          "string",
+          false
+        ],
+        [
+          "source_element_id",
+          "string",
+          false
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "start",
+          "int64",
+          true
+        ],
+        [
+          "end",
+          "int64",
+          true
+        ],
+        [
+          "source_record_id",
+          "string",
+          true
+        ],
+        [
+          "dependency_type",
+          "string",
+          false
+        ],
+        [
+          "selection_role",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "b2c921fc09bd8ed676e88204cbd40dc055fcbfa23b7c3fe3daaa8e7127d5bd24",
+      "unique_full_key_verified": true
+    },
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/view.parquet": {
+      "artifact_sha256": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de",
+      "elapsed_seconds": 0.7,
+      "key_columns": [
+        "gene_id",
+        "feature_id"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "original_manifest_sha256": "fe3afc2f115396f6e9ee55bb1ee1cdbe05e42ac97859d7b9effb22a707965eea",
+      "rows": 100000,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "value",
+          "double",
+          true
+        ],
+        [
+          "observed",
+          "bool",
+          false
+        ],
+        [
+          "reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "unique_full_key_verified": true
+    },
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/aggregation_qc.parquet": {
+      "artifact_sha256": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+      "elapsed_seconds": 0.8,
+      "key_columns": [
+        "gene_id",
+        "feature_id"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "original_manifest_sha256": "c54101b9f4d2aa9e7b440cd27522b3ba485aec90000c120e7202962b43afa634",
+      "rows": 100000,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "weighted_sum",
+          "double",
+          true
+        ],
+        [
+          "observed_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "observed_weight_fraction",
+          "double",
+          true
+        ],
+        [
+          "candidate_link_count",
+          "int64",
+          false
+        ],
+        [
+          "candidate_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_link_count",
+          "int64",
+          false
+        ],
+        [
+          "observed_link_count",
+          "int64",
+          false
+        ],
+        [
+          "aggregation_reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "unique_full_key_verified": true
+    },
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/dependencies.parquet": {
+      "artifact_sha256": "89446ade1424d114f9fb515034b93c7f95a5c78b4b1e5e2fab4dcb2ce1e15b76",
+      "elapsed_seconds": 19.3,
+      "key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "selection_role",
+        "source_element_id",
+        "dependency_type"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "0e8c8b049a06bbf83180d80782993703ccb6b7f5186470cebb6b47adc405e393",
+      "original_manifest_sha256": "c54101b9f4d2aa9e7b440cd27522b3ba485aec90000c120e7202962b43afa634",
+      "rows": 2000000,
+      "schema": [
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "entity_type",
+          "string",
+          false
+        ],
+        [
+          "entity_id",
+          "string",
+          false
+        ],
+        [
+          "source_element_id",
+          "string",
+          false
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "start",
+          "int64",
+          true
+        ],
+        [
+          "end",
+          "int64",
+          true
+        ],
+        [
+          "source_record_id",
+          "string",
+          true
+        ],
+        [
+          "dependency_type",
+          "string",
+          false
+        ],
+        [
+          "selection_role",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "b2c921fc09bd8ed676e88204cbd40dc055fcbfa23b7c3fe3daaa8e7127d5bd24",
+      "unique_full_key_verified": true
+    },
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/view.parquet": {
+      "artifact_sha256": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de",
+      "elapsed_seconds": 0.5,
+      "key_columns": [
+        "gene_id",
+        "feature_id"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "original_manifest_sha256": "c54101b9f4d2aa9e7b440cd27522b3ba485aec90000c120e7202962b43afa634",
+      "rows": 100000,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "value",
+          "double",
+          true
+        ],
+        [
+          "observed",
+          "bool",
+          false
+        ],
+        [
+          "reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "unique_full_key_verified": true
+    }
+  },
+  "hash_format": "store logical hash: schema header + canonical JSON rows, sorted on unique full key",
+  "peak_rss_kib": 458100,
+  "phase": "section 30 sorted-content fingerprints",
+  "settings": {
+    "batch_size": 10000,
+    "duckdb_version": "1.5.5",
+    "memory_limit": "12GB",
+    "preserve_insertion_order": true,
+    "pyarrow_version": "25.0.0",
+    "threads": 4
+  },
+  "snapshot_checksum": "d314ab74fbf465042b7afe798e6549ac38860a8fb64e1108296aa030678a9aac"
+}

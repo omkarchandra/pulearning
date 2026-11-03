@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="10" skipped="1" tests="68" time="18.865" timestamp="2026-10-11T00:52:25.561686-05:00" hostname="qnode3117"><testcase classname="tests.test_sealed_predictions" name="test_predictions_seal_before_labels" time="0.028" /><testcase classname="tests.test_sealed_predictions" name="test_label_load_before_seal_raises" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_double_seal_raises_but_other_keys_do_not_collide" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_seal_key_rejects_bad_components" time="0.000" /><testcase classname="tests.test_sealed_predictions" name="test_planted_leak_canary_fails_verification" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_real_fit_reading_only_train_labels_passes" time="0.002" /><testcase classname="tests.test_sealed_predictions" name="test_seal_rejects_duplicate_genes_and_mismatched_lengths" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_prepare_label_files_writes_train_test_split" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_full_key_binding_blocks_cross_configuration_test_read" time="0.001"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_full_key_binding_blocks_c0')
+
+    def test_full_key_binding_blocks_cross_configuration_test_read(tmp_path: Path) -&gt; None:
+        path = tmp_path / "test_labels.json"
+        path.write_text('{"g1": 1}')
+        ledger = SealLedger(tmp_path / "ledger")
+        other = seal_key("disease_a", "confounder", "matched", "rf", "shuffled", 1, 0)
+&gt;       ledger.bind_label_file(other, path, hashlib.sha256(path.read_bytes()).hexdigest(), kind="test")
+                                                           ^^^^^^^^^^^^^^^^^
+
+tests/test_sealed_predictions.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_full_key_binding_blocks_c0/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_predictions" name="test_unbound_other_configuration_test_file_cannot_inherit_own_seal" time="0.002"><failure message="Failed: DID NOT RAISE SealOrderError">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_unbound_other_configurati0')
+
+    def test_unbound_other_configuration_test_file_cannot_inherit_own_seal(tmp_path: Path) -&gt; None:
+        other = tmp_path / "another_configuration"
+        other.mkdir()
+        path = other / "test_labels.json"
+        path.write_text('{"g1": 1}')
+        ledger = SealLedger(tmp_path / "ledger")
+        install_open_audit(ledger)
+        ledger.seal_predictions(_key(), ["g1"], [0.5])
+        try:
+            with pytest.raises(SealOrderError, match="unbound test-label"):
+                ledger.load_test_labels(_key(), lambda key: json.loads(path.read_text()))
+&gt;           with pytest.raises(SealOrderError, match="preceded their seal"):
+E           Failed: DID NOT RAISE SealOrderError
+
+tests/test_sealed_predictions.py:125: Failed</failure></testcase><testcase classname="tests.test_sealed_predictions" name="test_prediction_and_label_mutation_are_rejected" time="0.001"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_prediction_and_label_muta0')
+
+    def test_prediction_and_label_mutation_are_rejected(tmp_path: Path) -&gt; None:
+        ledger = SealLedger(tmp_path / "ledger")
+        record = ledger.seal_predictions(_key(), ["g1"], [0.5])
+        path = ledger.directory / record["path"]
+        path.write_text('{"seal_key": "changed"}')
+        with pytest.raises(SealOrderError, match="prediction hash changed"):
+            ledger.load_test_labels(_key(), lambda key: {"g1": 1})
+    
+        ledger2 = SealLedger(tmp_path / "ledger2")
+        labels = tmp_path / "test_labels.json"
+        labels.write_text('{"g1": 1}')
+&gt;       ledger2.bind_label_file(_key(), labels, hashlib.sha256(labels.read_bytes()).hexdigest(), kind="test")
+                                                               ^^^^^^^^^^^^^^^^^^^
+
+tests/test_sealed_predictions.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_prediction_and_label_muta0/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_predictions" name="test_real_run_gate_authorizes_matching_provenance" time="0.002" /><testcase classname="tests.test_sealed_predictions" name="test_real_run_gate_refuses_panel_mismatch" time="0.002" /><testcase classname="tests.test_sealed_predictions" name="test_real_run_gate_refuses_release_mismatch" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_real_run_gate_refuses_missing_field" time="0.001" /><testcase classname="tests.test_sealed_predictions" name="test_real_gate_rederives_loaded_positives_and_recomputes_panel_content" time="0.003" /><testcase classname="tests.test_stratified_rn" name="test_confounder_matched_returns_near_neighbors" time="0.013" /><testcase classname="tests.test_stratified_rn" name="test_confounder_matched_rejects_bad_k" time="0.002" /><testcase classname="tests.test_stratified_rn" name="test_confounder_matched_empty_inputs" time="0.002" /><testcase classname="tests.test_stratified_rn" name="test_stratified_centroid_covers_both_biotypes" time="0.006" /><testcase classname="tests.test_stratified_rn" name="test_stratified_centroid_ignores_empty_stratum" time="0.003" /><testcase classname="tests.test_stratified_rn" name="test_stratified_centroid_empty_inputs" time="0.002" /><testcase classname="tests.test_stratified_rn" name="test_matcher_ignores_held_out_rows_when_fitting_scaling" time="0.006" /><testcase classname="tests.test_stratified_rn" name="test_exact_sampling_fails_on_shortage_or_contamination" time="0.001" /><testcase classname="tests.test_sealed_selector_protocol" name="test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry[centroid]" time="0.306"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s0')
+selector = 'centroid'
+
+    @pytest.mark.parametrize("selector", ["centroid", "uniform_random", "confounder_matched", "biotype_stratified"])
+    def test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry(tmp_path, selector):
+        features, universe, split, true = fixture_data()
+        seen = []
+    
+        def spy(frame, positives, pool, seed, fold):
+            eligible = sorted(fold_view(split, fold)["inner_train"] &amp; set(universe.index))
+            rng = np.random.default_rng(seed * 1_000_003 + fold)
+            expected = {eligible[int(i)] for i in rng.choice(len(eligible), size=len(set(eligible) &amp; true), replace=False)}
+            assert set(positives) == expected
+            assert set(pool) == set(eligible) - expected
+            assert set(frame.index) == set(eligible)
+            assert set(pool) &amp; true  # True disease genes were NOT excluded.
+            seen.append(fold)
+            return selector_candidates(selector, frame, positives, pool, universe["biotype"])
+    
+        audit, ledger, kwargs = run_fixture(tmp_path, selector=selector, selector_fn=spy)
+        try:
+&gt;           records = runner.run_sealed_diseases(**kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sealed_selector_protocol.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s0/labels/4ae7f625fcd3715d324ab19bf9aa5352c4fbabc79e908a24b7efbd6468f92948/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_selector_protocol" name="test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry[uniform_random]" time="0.087"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s1')
+selector = 'uniform_random'
+
+    @pytest.mark.parametrize("selector", ["centroid", "uniform_random", "confounder_matched", "biotype_stratified"])
+    def test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry(tmp_path, selector):
+        features, universe, split, true = fixture_data()
+        seen = []
+    
+        def spy(frame, positives, pool, seed, fold):
+            eligible = sorted(fold_view(split, fold)["inner_train"] &amp; set(universe.index))
+            rng = np.random.default_rng(seed * 1_000_003 + fold)
+            expected = {eligible[int(i)] for i in rng.choice(len(eligible), size=len(set(eligible) &amp; true), replace=False)}
+            assert set(positives) == expected
+            assert set(pool) == set(eligible) - expected
+            assert set(frame.index) == set(eligible)
+            assert set(pool) &amp; true  # True disease genes were NOT excluded.
+            seen.append(fold)
+            return selector_candidates(selector, frame, positives, pool, universe["biotype"])
+    
+        audit, ledger, kwargs = run_fixture(tmp_path, selector=selector, selector_fn=spy)
+        try:
+&gt;           records = runner.run_sealed_diseases(**kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sealed_selector_protocol.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s1/labels/aa2889b51f968902e039b08ba3e6b9d270cd10ffb357991b976c0dc6ff8e72c1/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_selector_protocol" name="test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry[confounder_matched]" time="0.104"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s2')
+selector = 'confounder_matched'
+
+    @pytest.mark.parametrize("selector", ["centroid", "uniform_random", "confounder_matched", "biotype_stratified"])
+    def test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry(tmp_path, selector):
+        features, universe, split, true = fixture_data()
+        seen = []
+    
+        def spy(frame, positives, pool, seed, fold):
+            eligible = sorted(fold_view(split, fold)["inner_train"] &amp; set(universe.index))
+            rng = np.random.default_rng(seed * 1_000_003 + fold)
+            expected = {eligible[int(i)] for i in rng.choice(len(eligible), size=len(set(eligible) &amp; true), replace=False)}
+            assert set(positives) == expected
+            assert set(pool) == set(eligible) - expected
+            assert set(frame.index) == set(eligible)
+            assert set(pool) &amp; true  # True disease genes were NOT excluded.
+            seen.append(fold)
+            return selector_candidates(selector, frame, positives, pool, universe["biotype"])
+    
+        audit, ledger, kwargs = run_fixture(tmp_path, selector=selector, selector_fn=spy)
+        try:
+&gt;           records = runner.run_sealed_diseases(**kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sealed_selector_protocol.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s2/labels/5cf4637aee588ca1a822ba8e83892cc103054612c56aac2e0cfe108c0f8156c4/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_selector_protocol" name="test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry[biotype_stratified]" time="0.103"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s3')
+selector = 'biotype_stratified'
+
+    @pytest.mark.parametrize("selector", ["centroid", "uniform_random", "confounder_matched", "biotype_stratified"])
+    def test_selector_receives_exact_shuffled_anchors_and_pool_through_sealed_entry(tmp_path, selector):
+        features, universe, split, true = fixture_data()
+        seen = []
+    
+        def spy(frame, positives, pool, seed, fold):
+            eligible = sorted(fold_view(split, fold)["inner_train"] &amp; set(universe.index))
+            rng = np.random.default_rng(seed * 1_000_003 + fold)
+            expected = {eligible[int(i)] for i in rng.choice(len(eligible), size=len(set(eligible) &amp; true), replace=False)}
+            assert set(positives) == expected
+            assert set(pool) == set(eligible) - expected
+            assert set(frame.index) == set(eligible)
+            assert set(pool) &amp; true  # True disease genes were NOT excluded.
+            seen.append(fold)
+            return selector_candidates(selector, frame, positives, pool, universe["biotype"])
+    
+        audit, ledger, kwargs = run_fixture(tmp_path, selector=selector, selector_fn=spy)
+        try:
+&gt;           records = runner.run_sealed_diseases(**kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sealed_selector_protocol.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_selector_receives_exact_s3/labels/63150af336d75257d4b85599541027ba27599e34a0c1c57eb14b36cfce1def6c/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_selector_protocol" name="test_live_memory_audit_detects_planted_read_inside_real_fit" time="0.076"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_live_memory_audit_detects0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1541e544ffe0&gt;
+
+    def test_live_memory_audit_detects_planted_read_inside_real_fit(tmp_path, monkeypatch):
+        """Paired clean fit/canary fit share the very same true-label proxy."""
+        audit, ledger, kwargs = run_fixture(tmp_path)
+        try:
+&gt;           runner.run_sealed_diseases(**kwargs)
+
+tests/test_sealed_selector_protocol.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_live_memory_audit_detects0/labels/aa2889b51f968902e039b08ba3e6b9d270cd10ffb357991b976c0dc6ff8e72c1/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sealed_selector_protocol" name="test_live_file_audit_detects_consolidated_label_read_inside_real_fit" time="0.020" /><testcase classname="tests.test_sealed_selector_protocol" name="test_sealed_worker_refuses_true_label_map" time="0.014" /><testcase classname="tests.test_sealed_selector_protocol" name="test_candidate_shortfall_is_recorded_without_fallback" time="0.018" /><testcase classname="tests.test_sealed_selector_protocol" name="test_gated_prepared_real_run_reaches_fit_through_same_worker" time="0.169"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_gated_prepared_real_run_r0')
+
+    def test_gated_prepared_real_run_reaches_fit_through_same_worker(tmp_path):
+        from test_sealed_predictions import _write_gate_fixture
+        from src.evaluation.sealed_predictions import check_real_run_gate
+        features, universe, split, true = fixture_data()
+        manifest_path, panels, release = _write_gate_fixture(tmp_path, positives={"disease": sorted(true)})
+        authorization = check_real_run_gate(manifest_path, panels, release)
+        prepared = prepare_sealed_label_manifest(
+            tmp_path / "real_labels", universe=universe, split=split, positives_map={"disease": true},
+            diseases=["disease"], selector="uniform_random", classifier="random_forest",
+            run_index=1, seed=5, run_kind="real", authorization=authorization)
+        seen = []
+    
+        def spy(frame, positives, pool, seed, fold):
+            eligible = fold_view(split, fold)["inner_train"] &amp; set(universe.index)
+            assert set(positives) == eligible &amp; true
+            assert set(pool) == eligible - true
+            seen.append(fold)
+            return pool
+    
+        ledger = SealLedger(tmp_path / "real_ledger")
+        install_open_audit(ledger)
+        try:
+&gt;           records = runner.run_sealed_diseases(
+                feature_matrix=features, universe=universe, split=split, diseases=["disease"], ledger=ledger,
+                classifier_config={"project": {"seed": 42}, "classifier": {
+                    "name": "random_forest", "random_forest_trees": 4, "random_forest_jobs": 1}},
+                classifier_name="random_forest", negative_mode="uniform_random", arm="label_permutation",
+                run_kind="real", run_index=1, seed=5, prepared_label_manifest=prepared, selector_fn=spy)
+
+tests/test_sealed_selector_protocol.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_gated_prepared_real_run_r0/real_labels/65b945c1ee1cf294e20f3963744652a64c8436f5ac4bf23481f406136cc0a4f4/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_sorted_fingerprint" name="test_sorted_fingerprint_matches_store_encoding_and_ignores_row_layout" time="0.036" /><testcase classname="tests.test_sorted_fingerprint" name="test_sorted_fingerprint_rejects_schema_drift_and_nonunique_keys" time="0.014" /><testcase classname="tests.test_sorted_fingerprint" name="test_sorted_fingerprint_preserves_exact_scalar_encoding" time="0.015" /><testcase classname="tests.test_sealed_comparison_review" name="test_postrun_review_replays_predictions_and_rejects_false_scalar" time="0.229"><failure message="src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal">tmp_path = PosixPath('/tmp/pytest-of-mes7956/pytest-0/test_postrun_review_replays_pr0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x1541e544dac0&gt;
+
+    def test_postrun_review_replays_predictions_and_rejects_false_scalar(tmp_path, monkeypatch):
+        features, universe, split, positives = fixture_data()
+        source = tmp_path / "true_labels.json"
+        source.write_text(json.dumps({"disease": sorted(positives)}))
+        snapshot = tmp_path / "SOURCE_SHA256SUMS"
+        snapshot.write_text("toy-source-manifest\n")
+        manifest = prepare_sealed_label_manifest(
+            tmp_path / "labels", universe=universe, split=split,
+            positives_map={"disease": positives}, diseases=["disease"], selector="uniform_random",
+            classifier="random_forest", run_index=1, seed=5)
+        files = {}
+        for name, frame in (("features", features), ("universe", universe), ("split", split)):
+            path = tmp_path / f"{name}.parquet"
+            frame.to_parquet(path, index=name != "split")
+            files[name] = {"path": str(path), "sha256": file_sha256(path)}
+        task = {"task_index": 0, "selector": "uniform_random", "run_index": 1, "seed": 5,
+                "label_manifest": str(manifest), "label_manifest_sha256": file_sha256(manifest)}
+        plan = {"disease": "disease", "tasks": [task], "files": files,
+                "snapshot_checksum": file_sha256(snapshot), "feature_columns": list(features.columns),
+                "classifier_config": {"project": {"seed": 42}, "classifier": {
+                    "name": "random_forest", "random_forest_trees": 4, "random_forest_jobs": 1}},
+                "protected_true_label_source": str(source),
+                "inputs": {"positives": {"sha256": file_sha256(source)}, "publication_counts": {}},
+                "publication_provenance": {}}
+        plan_path = tmp_path / "plan.json"
+        plan_path.write_text(json.dumps(plan))
+        monkeypatch.setattr(comparison, "ROOT", tmp_path)
+        monkeypatch.setattr(comparison, "SELECTORS", ("uniform_random",))
+        results = tmp_path / "results"
+&gt;       comparison.worker(argparse.Namespace(plan=plan_path, task_index=0, output_dir=results / "task_0"))
+
+tests/test_sealed_comparison_review.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/run_sealed_selector_comparison.py:138: in worker
+    records = run_sealed_diseases(
+scripts/run_phase5e_ap_null.py:410: in run_sealed_diseases
+    test_labels = ledger.load_test_labels(record["seal_key"], load_labels)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:170: in load_test_labels
+    if _sha256_bytes(Path(path).read_bytes()) != binding["sha256"]:
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+/home/mes7956/anaconda/lib/python3.12/pathlib.py:1013: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/evaluation/sealed_predictions.py:405: in hook
+    ledger.record_file_open(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;src.evaluation.sealed_predictions.SealLedger object at 0x1541e6da7bc0&gt;
+path = '/tmp/pytest-of-mes7956/pytest-0/test_postrun_review_replays_pr0/labels/aa2889b51f968902e039b08ba3e6b9d270cd10ffb357991b976c0dc6ff8e72c1/test_labels.json'
+
+    def record_file_open(self, path: str) -&gt; None:
+        if not self.audit_enabled:
+            return
+        resolved = str(Path(path).resolve())
+        binding = self.label_bindings.get(resolved)
+        protected = resolved in self.protected_label_paths
+        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
+        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+            return
+        self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                 "seal_key": self.active_test_key})
+        if protected:
+            raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
+        if unbound_test:
+&gt;           raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+E           src.evaluation.sealed_predictions.SealOrderError: unbound test-label file cannot inherit another configuration's full-key seal
+
+src/evaluation/sealed_predictions.py:195: SealOrderError</failure></testcase><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_matches_pandas_oracle" time="0.350" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_does_not_use_pandas_reads" time="0.195" /><testcase classname="tests.test_cre_views_duckdb" name="test_batched_aggregation_matches_oracle_across_gene_boundaries" time="1.849" /><testcase classname="tests.test_cre_views_duckdb" name="test_separate_scratch_preserves_atomic_publication_and_cleanup" time="0.288" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_contract_violations[_change_score-scores must exactly match]" time="0.066" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_contract_violations[_enable_fallback-fallback is disabled]" time="0.057" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_contract_violations[_drop_measurement-explicitly encode every retained]" time="0.068" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_contract_violations[_cross_partition-within one partition]" time="0.070" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_contract_violations[_duplicate_partition-unique entity-type/entity-ID assignments]" time="0.054" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_contract_violations[_unknown_partition-unknown partition]" time="0.052" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_refuses_replacement" time="0.009" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_validates_before_publication" time="0.096" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_cli" time="1.048" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_publishes_candidate_only_and_no_link_qc" time="0.206" /><testcase classname="tests.test_cre_views_duckdb" name="test_sampled_replay_handles_chrom_column_on_link_tables" time="0.303" /><testcase classname="tests.test_cre_views_duckdb" name="test_sampled_replay_certifies_bundle_and_reports_coverage" time="0.398" /><testcase classname="tests.test_cre_views_duckdb" name="test_sampled_replay_rejects_corruption_in_covered_gene" time="0.484" /><testcase classname="tests.test_cre_views_duckdb" name="test_sampled_replay_is_deterministic_and_mode_is_validated" time="0.408" /><testcase classname="tests.test_cre_views_duckdb" name="test_cre_view_validator_rejects_rehashed_qc_corruption" time="0.231" /><testcase classname="tests.test_cre_views_duckdb" name="test_cre_view_validator_rejects_rehashed_dependency_corruption" time="0.268" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_preflight_rejects_low_disk" time="0.010" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_rejects_concurrent_writer" time="0.010" /><testcase classname="tests.test_cre_views_duckdb" name="test_cli_kill_mid_write_leaves_no_output_and_rerun_cleans_staging" time="1.605" /><testcase classname="tests.test_cre_views_duckdb" name="test_out_of_core_cre_view_bounded_scale" time="0.000"><skipped type="pytest.skip" message="opt-in bounded synthetic scale acceptance">/gpfs/projects/p32724/pulearning/releases/20261011_eval_hardened_v4/tests/test_cre_views_duckdb.py:617: opt-in bounded synthetic scale acceptance</skipped></testcase><testcase classname="tests.test_cre_aggregation_duckdb" name="test_duckdb_backend_matches_pandas_oracle[True-max]" time="0.499" /><testcase classname="tests.test_cre_aggregation_duckdb" name="test_duckdb_backend_matches_pandas_oracle[True-mean]" time="0.488" /><testcase classname="tests.test_cre_aggregation_duckdb" name="test_duckdb_backend_matches_pandas_oracle[False-max]" time="0.442" /><testcase classname="tests.test_cre_aggregation_duckdb" name="test_duckdb_backend_matches_pandas_oracle[False-mean]" time="0.444" /><testcase classname="tests.test_cre_aggregation_duckdb" name="test_large_artifact_dispatch_does_not_load_links_with_pandas" time="0.181" /><testcase classname="tests.test_cre_aggregation_duckdb" name="test_failed_out_of_core_coverage_check_preserves_existing_artifact" time="0.067" /><testcase classname="tests.test_cre_aggregation_duckdb" name="test_duckdb_backend_filters_a_chromosome_before_aggregation" time="0.132" /></testsuite></testsuites>

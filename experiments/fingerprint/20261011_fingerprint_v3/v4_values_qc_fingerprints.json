@@ -1,0 +1,130 @@
+{
+  "elapsed_seconds_total": 10.9,
+  "fingerprint_scheme": "cre-sorted-content-v1",
+  "fingerprints": {
+    "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data/aggregation_qc.parquet": {
+      "artifact_sha256": "c0e9ffed4e76794523cec06714be6109b63ddb925ac8454a19f0108cfa9d8392",
+      "elapsed_seconds": 5.0,
+      "key_columns": [
+        "gene_id",
+        "feature_id"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "9c83d25cddf807fd469a449fecc8aa761f5c1181b431f5843fafe2a6f7d3ddb1",
+      "original_manifest_sha256": "21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f",
+      "rows": 549600,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "weighted_sum",
+          "double",
+          true
+        ],
+        [
+          "observed_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "observed_weight_fraction",
+          "double",
+          true
+        ],
+        [
+          "candidate_link_count",
+          "int64",
+          false
+        ],
+        [
+          "candidate_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_link_count",
+          "int64",
+          false
+        ],
+        [
+          "observed_link_count",
+          "int64",
+          false
+        ],
+        [
+          "aggregation_reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "5b9f4f7fdd88dc7d9fa81fb1151059c08b9d4fc589013290d6c13f0df098786c",
+      "unique_full_key_verified": true
+    },
+    "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data/view.parquet": {
+      "artifact_sha256": "5120bca04eff7998180377050e51c7c09ba2b0062a526f82cae976061c36a0fb",
+      "elapsed_seconds": 5.8,
+      "key_columns": [
+        "gene_id",
+        "feature_id"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "b5bd715b401a904c0259297bff06eba7fe31a5e0e7a85a15a5eb91befc41b0eb",
+      "original_manifest_sha256": "21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f",
+      "rows": 549600,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "value",
+          "double",
+          true
+        ],
+        [
+          "observed",
+          "bool",
+          false
+        ],
+        [
+          "reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "564fd5badf321c8f64e55f9b0efe3ad0ab2ed1543e3e86618b06b303c22d56d6",
+      "unique_full_key_verified": true
+    }
+  },
+  "hash_format": "store logical hash: schema header + canonical JSON rows, sorted on unique full key",
+  "peak_rss_kib": 291412,
+  "phase": "section 30 sorted-content fingerprints",
+  "settings": {
+    "batch_size": 10000,
+    "duckdb_version": "1.5.5",
+    "memory_limit": "12GB",
+    "preserve_insertion_order": true,
+    "pyarrow_version": "25.0.0",
+    "threads": 4
+  },
+  "snapshot_checksum": "d314ab74fbf465042b7afe798e6549ac38860a8fb64e1108296aa030678a9aac"
+}

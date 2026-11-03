@@ -1,0 +1,69 @@
+{
+  "comparison_snapshot_checksum": "0aac9e946ba831a2c4b91de7c307b7b06c4618ae7120ff419d59e4a7de69394b",
+  "environment": {
+    "packages": {
+      "duckdb": "1.5.5",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
+      "pyarrow": "25.0.0",
+      "scikit_learn": "1.9.0"
+    },
+    "platform": "Linux-4.18.0-553.136.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python_executable": "/home/mes7956/projects/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python",
+    "python_version": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0]"
+  },
+  "final_snapshot_checksum": "ecfe0944c44a5b2c70c450c1f8a56eb677ea7a3a6266316531125c191b69c615",
+  "scored_results_are_bound_to_comparison_snapshot": true,
+  "source_changes_since_comparison": [
+    {
+      "file": "scripts/check_28_selector_audits.py",
+      "v2_sha256": "fc3110d344adc5961f70df4e823c6663c2874f11688ec05157ed6598f42483d0",
+      "v5_sha256": "eba8a83b129fa6a7e4918ce1a621d20131993a960dd816dae17dc74afa7e118a"
+    },
+    {
+      "file": "scripts/recompute_sorted_fingerprint.py",
+      "v2_sha256": "236d4b539a518ad11723656bacf0ad0e5cc01f7ad46e441ab763dabbd68a8c38",
+      "v5_sha256": "e5de6094cf051ff999057c1e184352343a2d3259ea36a380fc214b5da003e376"
+    },
+    {
+      "file": "scripts/run_16_4_selectors.py",
+      "v2_sha256": "a9edeff7dbbc387c35122e535136da570da459fcca741045d1c66512aae87163",
+      "v5_sha256": "0a0eb6e6ac62290bcf14a6edd09cc738e681b792d81cc404e6415a80f1292bd4"
+    },
+    {
+      "file": "scripts/slurm/evaluation_repair.slurm",
+      "v2_sha256": "834599db7ea7cb2209a2aac1cde9afe3d353e02b92843f09a1e49c63bfd0fd43",
+      "v5_sha256": "910c2b67dbe2ed3408b17c78fe45a69bafe2324dbde17ce46cce5e6a5d577273"
+    },
+    {
+      "file": "scripts/verify_cre_fingerprint_artifacts.py",
+      "v2_sha256": null,
+      "v5_sha256": "cca41888f957c5956f9004a84ee7d8ba0e49d87a183afa01cd32b8f1154770b2"
+    },
+    {
+      "file": "scripts/verify_sealed_comparison_artifacts.py",
+      "v2_sha256": null,
+      "v5_sha256": "7f4f1f9e9eeadbc04995fe2441524450ab3a820f5103911af4229cb4a12a9041"
+    },
+    {
+      "file": "src/evaluation/sealed_predictions.py",
+      "v2_sha256": "0f2bbda930f1b726576424218644c2fe43b3338b58defbcd9fcb73e13b017e0e",
+      "v5_sha256": "33db6e8de399b0e55e038ccbe4c2c975e56b604a16695563b85e11f256834f87"
+    },
+    {
+      "file": "src/features/sorted_fingerprint.py",
+      "v2_sha256": "2b24ff010ce31ea6bfddced97de4c636ffc37d32d0caac544bfe7b37631a3453",
+      "v5_sha256": "a45a8b93969a2673c15438a488a376b42d0cc85396a8fd7cb394227129924298"
+    },
+    {
+      "file": "tests/test_sealed_predictions.py",
+      "v2_sha256": "dde5410f12eb837fa4ab98c1ece4a77df01bd9a83e280852e25c1b73b92b0508",
+      "v5_sha256": "cf447860246f4b35248106c1ae806f11875916c2f3a6880c6942c4a692e4f38a"
+    },
+    {
+      "file": "tests/test_sorted_fingerprint.py",
+      "v2_sha256": "532febbaf60dfd7ee603d151e8f6810755d517cef217c7c7f41c390941f38f78",
+      "v5_sha256": "769f4f1cfcbd61ff3bf846e0962170f56f4c32e3ab705e237677f462adc22ee5"
+    }
+  ]
+}

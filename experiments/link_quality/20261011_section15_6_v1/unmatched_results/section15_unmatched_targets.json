@@ -1,0 +1,168 @@
+{
+  "by_source_biotype": [
+    {
+      "matched_gencode_v50": 0,
+      "source_biotype": "NA",
+      "target_ids": 874,
+      "unmatched_fraction": 1.0,
+      "unmatched_gencode_v50": 874
+    },
+    {
+      "matched_gencode_v50": 9,
+      "source_biotype": "TEC",
+      "target_ids": 9,
+      "unmatched_fraction": 0.0,
+      "unmatched_gencode_v50": 0
+    },
+    {
+      "matched_gencode_v50": 1418,
+      "source_biotype": "lncRNA",
+      "target_ids": 1466,
+      "unmatched_fraction": 0.03274216,
+      "unmatched_gencode_v50": 48
+    },
+    {
+      "matched_gencode_v50": 2,
+      "source_biotype": "polymorphic_pseudogene",
+      "target_ids": 2,
+      "unmatched_fraction": 0.0,
+      "unmatched_gencode_v50": 0
+    },
+    {
+      "matched_gencode_v50": 17815,
+      "source_biotype": "protein_coding",
+      "target_ids": 17827,
+      "unmatched_fraction": 0.00067314,
+      "unmatched_gencode_v50": 12
+    },
+    {
+      "matched_gencode_v50": 2,
+      "source_biotype": "transcribed_processed_pseudogene",
+      "target_ids": 2,
+      "unmatched_fraction": 0.0,
+      "unmatched_gencode_v50": 0
+    },
+    {
+      "matched_gencode_v50": 11,
+      "source_biotype": "transcribed_unitary_pseudogene",
+      "target_ids": 12,
+      "unmatched_fraction": 0.08333333,
+      "unmatched_gencode_v50": 1
+    },
+    {
+      "matched_gencode_v50": 15,
+      "source_biotype": "transcribed_unprocessed_pseudogene",
+      "target_ids": 15,
+      "unmatched_fraction": 0.0,
+      "unmatched_gencode_v50": 0
+    }
+  ],
+  "contract": {
+    "gene_id_column": "column1",
+    "source_biotype_column": "column3",
+    "unit": "distinct rE2G gene_id"
+  },
+  "elapsed_seconds_total": 142.7,
+  "inputs": {
+    "re2g": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/raw/cre/encode_re2g/V4-hg38.Gene-Links.Computational-Methods.rE2G.txt.gz",
+      "sha256": "074820992b59f46273e650aabe6d8c96156e43b12ee5213f56a56f5815298d12"
+    },
+    "tss": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/gencode_v50_gene_tss.parquet",
+      "sha256": "24c2a0180f6ab7feb2e6d9e6008a8555694cd9574d16abaa30f70f06c7cc328b"
+    }
+  },
+  "integrity": {
+    "distinct_target_ids": 20207,
+    "re2g_rows": 290317828,
+    "target_ids_with_multiple_source_biotypes": 0
+  },
+  "matched_biotype_crosswalk": [
+    {
+      "gencode_biotype": "TEC",
+      "source_biotype": "TEC",
+      "target_ids": 8
+    },
+    {
+      "gencode_biotype": "lncRNA",
+      "source_biotype": "TEC",
+      "target_ids": 1
+    },
+    {
+      "gencode_biotype": "lncRNA",
+      "source_biotype": "lncRNA",
+      "target_ids": 1415
+    },
+    {
+      "gencode_biotype": "protein_coding",
+      "source_biotype": "lncRNA",
+      "target_ids": 3
+    },
+    {
+      "gencode_biotype": "lncRNA",
+      "source_biotype": "polymorphic_pseudogene",
+      "target_ids": 1
+    },
+    {
+      "gencode_biotype": "protein_coding",
+      "source_biotype": "polymorphic_pseudogene",
+      "target_ids": 1
+    },
+    {
+      "gencode_biotype": "lncRNA",
+      "source_biotype": "protein_coding",
+      "target_ids": 6
+    },
+    {
+      "gencode_biotype": "protein_coding",
+      "source_biotype": "protein_coding",
+      "target_ids": 17805
+    },
+    {
+      "gencode_biotype": "transcribed_unitary_pseudogene",
+      "source_biotype": "protein_coding",
+      "target_ids": 2
+    },
+    {
+      "gencode_biotype": "transcribed_unprocessed_pseudogene",
+      "source_biotype": "protein_coding",
+      "target_ids": 1
+    },
+    {
+      "gencode_biotype": "unprocessed_pseudogene",
+      "source_biotype": "protein_coding",
+      "target_ids": 1
+    },
+    {
+      "gencode_biotype": "transcribed_processed_pseudogene",
+      "source_biotype": "transcribed_processed_pseudogene",
+      "target_ids": 2
+    },
+    {
+      "gencode_biotype": "transcribed_unitary_pseudogene",
+      "source_biotype": "transcribed_unitary_pseudogene",
+      "target_ids": 11
+    },
+    {
+      "gencode_biotype": "transcribed_unprocessed_pseudogene",
+      "source_biotype": "transcribed_unprocessed_pseudogene",
+      "target_ids": 15
+    }
+  ],
+  "peak_rss_kib": 445632,
+  "phase": "section 15 unmatched rE2G target audit",
+  "settings": {
+    "duckdb_version": "1.5.5",
+    "memory_limit": "8GB",
+    "preserve_insertion_order": false,
+    "threads": 4
+  },
+  "status": "complete",
+  "summary": {
+    "distinct_target_ids": 20207,
+    "matched_gencode_v50": 19272,
+    "unmatched_fraction": 0.04627109,
+    "unmatched_gencode_v50": 935
+  }
+}

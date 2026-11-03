@@ -1,0 +1,98 @@
+{
+  "acquisition_manifest_sha256": "e8e7649063c78d50facc07952474900e990a2d222e35ad96934b4a492519ebba",
+  "files_verified": 18,
+  "inputs": [
+    {
+      "input": "HUMAN-uniprot.gaf.gz",
+      "retained_failed_transfer_cache": ".HUMAN-uniprot.gaf.gz.IHLuRX",
+      "sha256": "a0afba19dfb1f8fa996bc1bdcd61fd0c9bd4cf0d2bf2509d09ac86993c0e70a2"
+    },
+    {
+      "input": "HUMAN-uniprot.gpi.gz",
+      "retained_failed_transfer_cache": ".HUMAN-uniprot.gpi.gz.ARzvpW",
+      "sha256": "2aad49b7eddfec0c3b41622f0a52d3f93d71c68325bd55c35103e7bf232f498e"
+    },
+    {
+      "input": "PROTOCOL.json",
+      "retained_failed_transfer_cache": ".PROTOCOL.json.lST4ga",
+      "sha256": "25f52c579aac9855e971b2f5ae1cd6831558b27826a7de6915025341a7d31c2d"
+    },
+    {
+      "input": "go-basic.obo",
+      "retained_failed_transfer_cache": ".go-basic.obo.IE4cIJ",
+      "sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc"
+    },
+    {
+      "input": "goa_HUMAN_README",
+      "retained_failed_transfer_cache": ".goa_HUMAN_README.WVvnb0",
+      "sha256": "efb16af3f0195dbb6e4795ab37940b553f158ee79c6608f7f3a682ed53a0c5ca"
+    },
+    {
+      "input": "goa_human_rna.gaf.gz",
+      "retained_failed_transfer_cache": ".goa_human_rna.gaf.gz.qrWjfh",
+      "sha256": "7572bb3b79bf9474ab665256466e56064668f4f69b151ca60eeb8e602ae5fbce"
+    },
+    {
+      "input": "goa_human_rna.gpi.gz",
+      "retained_failed_transfer_cache": ".goa_human_rna.gpi.gz.6WzHx7",
+      "sha256": "eef38b8d1e91659ff18ced64b3c1edee333929e1ae54ef96461ee7f34b0d5bb4"
+    },
+    {
+      "input": "hgnc.http_headers",
+      "retained_failed_transfer_cache": ".hgnc.http_headers.m3H62l",
+      "sha256": "63a469b4f43f5ba201003a18b4f8d37ce9a6701390cbf09f4751e27cfac66546"
+    },
+    {
+      "input": "hgnc_complete_set.txt",
+      "retained_failed_transfer_cache": ".hgnc_complete_set.txt.Yo8S65",
+      "sha256": "2b4224ea847df2fc6982f5b2a52804c5d92fbb8810b134afb636f6029452dc03"
+    },
+    {
+      "input": "lncrna_strata.parquet",
+      "retained_failed_transfer_cache": ".lncrna_strata.parquet.jIbAmC",
+      "sha256": "53bbf82ed00fcb95d5de2bd57bf364c03040e570f09f41db5d0b022ddda464e1"
+    },
+    {
+      "input": "release-date.json",
+      "retained_failed_transfer_cache": ".release-date.json.8PuCC0",
+      "sha256": "858f641a1e2999ed521cb7ee1a167305ae669e148172720041210235b6ebc2b8"
+    },
+    {
+      "input": "rnacentral_ensembl_gencode.tsv",
+      "retained_failed_transfer_cache": ".rnacentral_ensembl_gencode.tsv.2SdoW8",
+      "sha256": "de31e4d40d980ebfcbb3285610f136b6dec6291531c6d987b9b0407299ee6cee"
+    },
+    {
+      "input": "rnacentral_hgnc.tsv",
+      "retained_failed_transfer_cache": ".rnacentral_hgnc.tsv.LqETJp",
+      "sha256": "ca675b369422757a34946fbd013e7ef6f28d554c84f39f60768bc4307058328f"
+    },
+    {
+      "input": "rnacentral_mapping_readme.txt",
+      "retained_failed_transfer_cache": ".rnacentral_mapping_readme.txt.Baq8Ca",
+      "sha256": "c2a39e36fb2578988acba20c9d9ab5bf5a415b211d12402297ed3436d95a1bdd"
+    },
+    {
+      "input": "rnacentral_release_notes.txt",
+      "retained_failed_transfer_cache": ".rnacentral_release_notes.txt.V0NDqH",
+      "sha256": "ea6934cc70f1242167739ce65f4a586704eea6874f80f1851a19e5c00d681f61"
+    },
+    {
+      "input": "split.parquet",
+      "retained_failed_transfer_cache": ".split.parquet.YNbDOW",
+      "sha256": "2b2b44e074078997a0223edc703d4094f10ade2cece5e36ca53fcfbe3d30bbd1"
+    },
+    {
+      "input": "universe.parquet",
+      "retained_failed_transfer_cache": ".universe.parquet.GxSvgh",
+      "sha256": "6e2a8c661e265deeb00c3b53ea33594e1f256989690528c00d49ae2a1b26b245"
+    },
+    {
+      "input": "acquisition_manifest.json",
+      "retained_failed_transfer_cache": ".acquisition_manifest.json.FHgM0c",
+      "sha256": "e8e7649063c78d50facc07952474900e990a2d222e35ad96934b4a492519ebba"
+    }
+  ],
+  "method": "exclusive stream copy from intact failed-rename rsync caches; all caches retained",
+  "status": "copied_and_verified"
+}

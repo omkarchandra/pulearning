@@ -1,0 +1,15 @@
+{
+  "bundle_manifest_sha256": "21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f",
+  "dependencies": {
+    "artifact_sha256": "8a35ff2aef4645934deb3ae6ddacbc01093570348aa341f566958f3168315c1f",
+    "original_file_order_logical_sha256": "ecaccf7aa2b98bf5da66996bae7f0ed93d9d717ff9dc7a83e6e10123159c2e48",
+    "rows": 225784420,
+    "sorted_content_sha256": "9cff3122dd69ce86eb75e5e790c39ed50d12526a89ddcf359d93090dce2447a4"
+  },
+  "fixture_report_sha256": "67c92f3a70cb51e46931c5064f92529e4379c590d073d348e8468388482956c6",
+  "parallel_fixture_pairs_equal": 3,
+  "report": "/gpfs/projects/p32724/pulearning/experiments/fingerprint/20261011_eval_repair_v1/v4_fingerprint.json",
+  "report_sha256": "94ce49c658788e38b3cc02a956b97a7a1a2ccc03c9b2a126d49ba9369ede837e",
+  "status": "verified",
+  "verifier_sha256": "6a8838b79e764ecb03f6b7d565f7eaaaf761f7ff93528447f2de5c3810093d81"
+}

@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "3ba33d5c71532589b865f4850eb15ceaf9e16876b699eb85404a5c44f2d7a9cb",
+  "native_canary_sha256": "8e4516dbbc490ff37564a50796ed530dc8ad04f305d2e074d5978e6727b72662",
+  "native_gate_sha256": "8a8e28fe0c650509a3a21e678661352957003e5eb3cb8b5e15b526027128e9ae",
+  "native_job_id": "9479662",
+  "native_label_manifest_sha256": "24b83fb3746e143dd277629997487b2c5eaafd8ddb0167738af628f34361aa3d",
+  "native_local_output_sets_byte_identical": true,
+  "native_replay_sha256": "6dbd8066ea45c4e73b6941629f8e2e0dc19df50edf4882e2ef29af13a53e26d2",
+  "native_tests_passed": 6,
+  "regular_payloads_verified": 24,
+  "remote_symlink_records_retained_as_metadata": 24,
+  "status": "verified"
+}

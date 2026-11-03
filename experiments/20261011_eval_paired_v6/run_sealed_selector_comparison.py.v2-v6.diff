@@ -1,0 +1,40 @@
+--- v2/scripts/run_sealed_selector_comparison.py
++++ v6/scripts/run_sealed_selector_comparison.py
+@@ -10,6 +10,7 @@
+ import argparse
+ import hashlib
+ import json
++import os
+ import sys
+ from pathlib import Path
+ 
+@@ -37,6 +38,13 @@
+     with path.open("x", encoding="utf-8") as handle:
+         json.dump(value, handle, sort_keys=True, indent=2, allow_nan=False)
+         handle.write("\n")
++
++
++def execution_provenance() -> dict:
++    return {"script_sha256": file_sha256(Path(__file__)),
++            "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
++            "slurm_array_job_id": os.environ.get("SLURM_ARRAY_JOB_ID"),
++            "slurm_array_task_id": os.environ.get("SLURM_ARRAY_TASK_ID")}
+ 
+ 
+ def parse_args(argv=None):
+@@ -147,6 +155,7 @@
+     write_json(args.output_dir / "run.json", {
+         "task": task, "plan_sha256": file_sha256(args.plan),
+         "snapshot_checksum": plan["snapshot_checksum"],
++        "execution_provenance": execution_provenance(),
+         "feature_columns": plan["feature_columns"], "classifier_config": plan["classifier_config"],
+         "publication_counts": plan["inputs"]["publication_counts"],
+         "publication_provenance": plan["publication_provenance"],
+@@ -236,6 +245,7 @@
+     reference = _random_score_draws(n, k, draws=10_000, seed=20261004 + 7_919 * n + 31 * k)
+     report = {"disease": plan["disease"], "evaluation_n": n, "evaluation_positives": k,
+               "snapshot_checksum": plan["snapshot_checksum"], "feature_columns": plan["feature_columns"],
++              "execution_provenance": execution_provenance(),
+               "selectors": {name: {"run_auprcs": values, "mean_auprc": float(np.mean(values)),
+                                     "descriptive_offset": float(np.mean(values) - reference.mean())}
+                             for name, values in by_selector.items()},

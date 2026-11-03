@@ -1,0 +1,54 @@
+{
+  "by_source_biotype": [
+    {
+      "matched_gencode_v50": 1,
+      "source_biotype": "protein_coding",
+      "target_ids": 1,
+      "unmatched_fraction": 0.0,
+      "unmatched_gencode_v50": 0
+    }
+  ],
+  "contract": {
+    "gene_id_column": "column1",
+    "source_biotype_column": "column3",
+    "unit": "distinct rE2G gene_id"
+  },
+  "elapsed_seconds_total": 6.3,
+  "inputs": {
+    "re2g": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/re2g.tsv.gz",
+      "sha256": "1e83051dc7d897bdfbacc27dca5631191cbbac7e311f315242b695bf6c9bb0fa"
+    },
+    "tss": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/tss.parquet",
+      "sha256": "3d1dab1dca31700ea0bbd45c998eaed5c23374ac239dea437de59e94ffca682a"
+    }
+  },
+  "integrity": {
+    "distinct_target_ids": 1,
+    "re2g_rows": 26,
+    "target_ids_with_multiple_source_biotypes": 0
+  },
+  "matched_biotype_crosswalk": [
+    {
+      "gencode_biotype": "protein_coding",
+      "source_biotype": "protein_coding",
+      "target_ids": 1
+    }
+  ],
+  "peak_rss_kib": 155756,
+  "phase": "section 15 unmatched rE2G target audit",
+  "settings": {
+    "duckdb_version": "1.5.5",
+    "memory_limit": "1GB",
+    "preserve_insertion_order": false,
+    "threads": 2
+  },
+  "status": "complete",
+  "summary": {
+    "distinct_target_ids": 1,
+    "matched_gencode_v50": 1,
+    "unmatched_fraction": 0.0,
+    "unmatched_gencode_v50": 0
+  }
+}

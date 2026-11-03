@@ -1,0 +1,60 @@
+{
+  "config": {
+    "block_size_bp": 2000000,
+    "min_positives": 50,
+    "outer_folds": 5,
+    "purge_distance_bp": 200350,
+    "reward_block_fraction": 0.2,
+    "seed": 20261004
+  },
+  "diseases_with_unmapped_symbols": 0,
+  "elapsed_seconds": 32.18,
+  "eligible_diseases": 2120,
+  "fold_summary": [
+    {
+      "fold": 0,
+      "inner_train_genes": 33163,
+      "purged_fraction_of_training": 0.0487,
+      "purged_from_fitting_genes": 2127,
+      "reward_validation_genes": 8404,
+      "test_genes": 11016
+    },
+    {
+      "fold": 1,
+      "inner_train_genes": 33218,
+      "purged_fraction_of_training": 0.0482,
+      "purged_from_fitting_genes": 2111,
+      "reward_validation_genes": 8450,
+      "test_genes": 10931
+    },
+    {
+      "fold": 2,
+      "inner_train_genes": 32665,
+      "purged_fraction_of_training": 0.0474,
+      "purged_from_fitting_genes": 2060,
+      "reward_validation_genes": 8731,
+      "test_genes": 11254
+    },
+    {
+      "fold": 3,
+      "inner_train_genes": 33279,
+      "purged_fraction_of_training": 0.0442,
+      "purged_from_fitting_genes": 1933,
+      "reward_validation_genes": 8556,
+      "test_genes": 10942
+    },
+    {
+      "fold": 4,
+      "inner_train_genes": 33681,
+      "purged_fraction_of_training": 0.048,
+      "purged_from_fitting_genes": 2117,
+      "reward_validation_genes": 8345,
+      "test_genes": 10567
+    }
+  ],
+  "lncrna_genes": 34677,
+  "split_hash": "0dfef23274047a5547e63765208953e47323b582630c512441f74ab1fb98fe00",
+  "split_path": "experiments/20261005_locus_split_v1_balancer_v4/splits/0dfef23274047a5547e63765208953e47323b582630c512441f74ab1fb98fe00.parquet",
+  "split_version": "locus_blocks_v1",
+  "universe_genes": 54710
+}

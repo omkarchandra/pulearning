@@ -1,0 +1,66 @@
+{
+  "recorded_on": "2026-10-11",
+  "status": "accepted",
+  "phase": "evaluation harness hardening and original v4 CRE reproducibility",
+  "review_url": "https://claude.ai/chat/9216c204-4aba-4266-8b4f-c5cedb3913dd?artifact=72c78c03-275e-4714-b76c-19d7869ab9f9",
+  "evaluation_acceptance_section": "38.6",
+  "cre_fingerprint_acceptance_section": "39",
+  "completed_claude_response_read": true,
+  "claude_acceptance_quote": "Harness verdict recorded as §38.6, and the tracker now shows the evaluation harness as complete and certified.",
+  "standing_evidence_version": "20261011_eval_paired_v7",
+  "source_manifest_sha256": "4d9e0e4c1b5663080d8183ad97024785861eaaf62e74ba538c2993f6301fc47d",
+  "source_files": 175,
+  "native_tests": {
+    "job_id": "9468835",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "passed": 68,
+    "skipped": 1,
+    "failed": 0,
+    "xml_sha256": "1db46c309223b3ed03502d1226d37c32314dd0c85dccca0d82613ddeba6018d7"
+  },
+  "comparison": {
+    "array_job_id": "9469050",
+    "completed_tasks": 20,
+    "folds": 100,
+    "all_task_exit_codes": "0:0",
+    "summary_job_id": "9469060",
+    "summary_sha256": "7966e58e75479db9c9cd98c7e5cb5bf836f30cadd4584311f8ef7e60b02a3d19",
+    "read_only_verifier_job_id": "9469506",
+    "read_only_verifier_sha256": "691a677bd91db983ed36b2fa558e7f1f958449e679b92191be9c89154037178c",
+    "evaluation_genes": 54710,
+    "provisional_positives": 4686,
+    "five_run_mean_aps": {
+      "centroid": 0.0487916,
+      "uniform_random": 0.1423246,
+      "confounder_matched": 0.1507546,
+      "biotype_stratified": 0.0653504
+    },
+    "interpretation": "one-disease shuffled-label references",
+    "v2_report_disposition": "retained and rejected as written; standing reports cite v7"
+  },
+  "cre_reproducibility": {
+    "dependency_fingerprint_job_id": "9462630",
+    "dependency_rows": 225784420,
+    "dependency_sorted_sha256": "9cff3122dd69ce86eb75e5e790c39ed50d12526a89ddcf359d93090dce2447a4",
+    "sidecar_job_id": "9464781",
+    "sidecar_sha256": "5409c19204fbe1c41a74a4fd7d353c118a070548de3be35bc7d02b261e4bf21d",
+    "role": "supplementary sorted-content evidence bound to original bytes and full replay certificate"
+  },
+  "local_retention": {
+    "path": "experiments/20261011_paired_phase_evidence/files/",
+    "payloads_verified": 1906,
+    "archive_sha256": "4db51f282551a2e00c5cfe01a3e75c6d0e388d1b957b7abe1bcf4cdb2464da90",
+    "import_manifest_sha256": "0b208ba78b2a112614c3c3683e91eb374b0f445845dd11e10c073ecd9cb8ad72",
+    "closeout_check": "experiments/20261011_eval_paired_v7/phase_closeout_recheck.json",
+    "failed_attempts_retained": ["9464657", "9468582"]
+  },
+  "verification_scope": "declared Python worker and label-IO path",
+  "scientific_scoring": "held",
+  "required_scientific_inputs": [
+    "official complete versioned curated disease-only DisGeNET export and rebuilt supported panels",
+    "primary task: disease genes or GO",
+    "exact referenced 2025 BMC Medical Genomics paper"
+  ],
+  "continuing_scientific_gates": ["certified feature admission", "at least 25 frozen-test positives"]
+}

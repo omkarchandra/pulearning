@@ -1,0 +1,23 @@
+	Command being timed: "/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/recompute_sorted_fingerprint.py --artifact /gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/20261005_quest_cre_phase3_v4/dependencies.parquet --scratch-dir /scratch/mes7956/pulearning/fingerprint_9462630 --output /home/mes7956/projects/pulearning/experiments/fingerprint/20261011_eval_repair_v1/v4_fingerprint.json --memory-limit 12GB --threads 4"
+	User time (seconds): 3891.78
+	System time (seconds): 35.73
+	Percent of CPU this job got: 101%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:04:29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 16263884
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8527390
+	Voluntary context switches: 126369
+	Involuntary context switches: 5927
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

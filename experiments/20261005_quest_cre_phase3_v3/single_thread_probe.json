@@ -1,0 +1,9 @@
+{
+  "job_id": "8681873",
+  "threads": 1,
+  "memory_limit": "8GB",
+  "feature": "cre_intrinsic::class_CA",
+  "status": "failed",
+  "error": "Out of Memory Error: failed to allocate data of size 32.0 KiB (7.4 GiB/7.4 GiB used)\n\nPossible solutions:\n* Reducing the number of threads (SET threads=X)\n* Disabling insertion-order preservation (SET preserve_insertion_order=false)\n* Increasing the memory limit (SET memory_limit='...GB')\n\nSee also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads",
+  "elapsed_seconds": 15.53199452161789
+}

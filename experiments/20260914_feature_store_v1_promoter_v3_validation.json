@@ -1,0 +1,109 @@
+{
+  "artifacts": {
+    "coverage": {
+      "columns": 7,
+      "rows": 10614
+    },
+    "cres": {
+      "columns": 9,
+      "rows": 2348854
+    },
+    "dependencies": {
+      "columns": 10,
+      "rows": 8681942
+    },
+    "feature_definitions": {
+      "columns": 9,
+      "rows": 146
+    },
+    "genes": {
+      "columns": 17,
+      "rows": 78696
+    },
+    "partitions": {
+      "columns": 5,
+      "rows": 2403814
+    },
+    "promoter_transcripts": {
+      "columns": 3,
+      "rows": 644255
+    },
+    "promoters": {
+      "columns": 8,
+      "rows": 388601
+    },
+    "sources": {
+      "columns": 16,
+      "rows": 13
+    },
+    "transcripts": {
+      "columns": 13,
+      "rows": 644255
+    },
+    "view:expression": {
+      "columns": 5,
+      "rows": 7474560
+    },
+    "view:promoter": {
+      "columns": 5,
+      "rows": 786960
+    }
+  },
+  "geometry_audit": {
+    "contract": "feature_store_v1_cre_candidate_windows",
+    "geometry_hash": "4408253759aea61e58d3b9316106288b8e4eaecd576d5d64869df120867d1b42",
+    "pair_checks": [
+      {
+        "both_nonempty": true,
+        "overlap_witnesses": 0,
+        "pair": [
+          "train",
+          "reward"
+        ]
+      },
+      {
+        "both_nonempty": true,
+        "overlap_witnesses": 0,
+        "pair": [
+          "train",
+          "test"
+        ]
+      },
+      {
+        "both_nonempty": true,
+        "overlap_witnesses": 0,
+        "pair": [
+          "reward",
+          "test"
+        ]
+      }
+    ],
+    "radius_bp": 100000,
+    "regions_by_partition": {
+      "reward": 300771,
+      "test": 353771,
+      "train": 1749272
+    },
+    "required_partitions": [
+      "train",
+      "reward",
+      "test"
+    ]
+  },
+  "promoter_geometry_audit": {
+    "consumed_promoter_count": 364956,
+    "contract": "feature_store_v1_consumed_promoter_windows",
+    "eligible_gene_count": 54960,
+    "eligible_promoter_relation_count": 365481,
+    "geometry_hash": "7fcab9c9da149d118779776a9b7514b424888a2768d8462478c60e65db67416a",
+    "overlap_witnesses": 0,
+    "promoters_by_partition": {
+      "reward": 46393,
+      "test": 48619,
+      "train": 269944
+    },
+    "radius_bp": 100000
+  },
+  "schema_version": "feature-store-v1",
+  "status": "valid"
+}

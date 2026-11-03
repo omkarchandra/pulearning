@@ -1,0 +1,11 @@
+{
+  "modes_complete": {
+    "pooled_support": true,
+    "strict_25_each_fold": true
+  },
+  "next_gate": "selected supported panel, certified-feature admission and sealed GO worker configuration",
+  "panel_content_sha256": "0cda37bef9fc033fedffa13c66b8d4c4425be4d8f1a020028b995bad6dd5f076",
+  "panel_manifest_sha256": "c456e5e7dd326d1cf42948c2db415fc654a9c44ac1f88b7a720e8bbd7896107c",
+  "real_scoring_authorized": false,
+  "status": "go_panel_derivation_verified"
+}

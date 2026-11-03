@@ -1,0 +1,86 @@
+{
+  "association_limits": "mes7956|b1042||buyin||\n",
+  "builder_script_sha256": "dad97ce71165e4747ca5b5208b00ed2597e59b00ba2cb20972f6ff27e633eea7",
+  "failure_scope": "builder complete artifacts unpublished;full canonical dependency geometry replay interrupted;no build_report/postseal/publication;remote stage/locks/scratch retained",
+  "models_fitted": 0,
+  "new_build_job": 9544048,
+  "new_verifier_job": 9544049,
+  "old_pending_verifier": "9484541 remains retained;afterok dependency cannot run aftertimeout",
+  "partition_limits": "PartitionName=genomics\n   AllowGroups=b1042 AllowAccounts=b1042 DenyQos=expired\n   AllocNodes=ALL Default=NO QoS=N/A\n   DefaultTime=NONE DisableRootJobs=NO ExclusiveUser=NO ExclusiveTopo=NO GraceTime=0 Hidden=NO\n   MaxNodes=5 MaxTime=2-00:00:00 MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED MaxCPUsPerSocket=UNLIMITED\n   Nodes=qnode[0108-0110,0112-0132,0135-0139,0141-0170,0292,0310-0312,0379-0381,0669-0670,0703-0704,1018-1027,1029-1041,1061,1107-1124,1201-1205,2159-2178,3109-3126]\n   PriorityJobFactor=1 PriorityTier=6 RootOnly=NO ReqResv=NO OverSubscribe=NO\n   OverTimeLimit=NONE PreemptMode=OFF\n   State=UP TotalCPUs=10232 TotalNodes=155 SelectTypeParameters=NONE\n   JobDefaults=(null)\n   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED\n   TRES=cpu=10232,mem=39031G,node=155,billing=46044\n   TRESBillingWeights=CPU=4.5,Mem=1.0G,gres/gpu=4.5\n\n",
+  "qos_limits": "buyin|\n",
+  "real_scoring_authorized": false,
+  "recorded_at_utc": "2026-10-12T06:33:38.469152+00:00",
+  "retained_text_evidence": {
+    "build_time.txt": "",
+    "evidence/cre_9484540.err": "2026-10-11 05:30:20,360 Checking CRE input contracts\n2026-10-11 05:30:35,596 Aggregating feature 1/10 in 108 gene batches: cre_intrinsic::class_CA\n2026-10-11 05:30:45,461 Aggregating feature 2/10 in 108 gene batches: cre_intrinsic::class_CA_CTCF\n2026-10-11 05:30:55,544 Aggregating feature 3/10 in 108 gene batches: cre_intrinsic::class_CA_H3K4me3\n2026-10-11 05:31:05,780 Aggregating feature 4/10 in 108 gene batches: cre_intrinsic::class_CA_TF\n2026-10-11 05:31:15,953 Aggregating feature 5/10 in 108 gene batches: cre_intrinsic::class_PLS\n2026-10-11 05:31:26,127 Aggregating feature 6/10 in 108 gene batches: cre_intrinsic::class_TF\n2026-10-11 05:31:36,268 Aggregating feature 7/10 in 108 gene batches: cre_intrinsic::class_dELS\n2026-10-11 05:31:46,455 Aggregating feature 8/10 in 108 gene batches: cre_intrinsic::class_pELS\n2026-10-11 05:31:56,451 Aggregating feature 9/10 in 108 gene batches: cre_intrinsic::cre_length_bp\n2026-10-11 05:32:05,855 Aggregating feature 10/10 in 108 gene batches: cre_intrinsic::silencer_evidence\n2026-10-11 05:32:15,991 Writing complete candidate/retained dependencies\n2026-10-11 05:47:03,108 Canonicalizing output schemas\n2026-10-11 05:50:21,100 Hashing complete output artifacts\n2026-10-11 06:46:52,525 Full independent replay before publication\n2026-10-11 06:46:53,245 Checking complete hashes/schema: view\n2026-10-11 06:46:58,083 Checking complete hashes/schema: aggregation_qc\n2026-10-11 06:47:04,704 Checking complete hashes/schema: dependencies\n2026-10-11 07:43:20,792 Checking whole-table relations\n2026-10-11 07:51:58,473 Replaying dependency geometry (full)\n[2026-10-11T11:35:05.017] error: *** JOB 9484540 ON qnode0118 CANCELLED AT 2026-10-11T11:35:05 DUE TO TIME LIMIT ***\n",
+    "evidence/cre_9484540.out": "",
+    "results/filter_preparation.json": "{\n  \"builder_sha256\": \"0e6e4e723487b4d147dd8df916e95b824da8ab066c2beb5728a925e58e39fc27\",\n  \"excluded_rows\": 128392,\n  \"filtered_links_sha256\": \"0366d9e853a5e42103c005546973f0d8b4f8b96dbd5fde5f4f826569b0601d56\",\n  \"models_fitted\": 0,\n  \"protocol_sha256\": \"216dcab971fe664463d526a15aa64ea73bed96c7e6b1d2c48f3a3cedbea5ed2f\",\n  \"retained_rows\": 11160829,\n  \"source_bundle_manifest_sha256\": \"21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f\",\n  \"source_rows\": 11289221\n}\n",
+    "source_before.log": "experiments/go_admission/20261011_go_admission_v1/CAGE_PROTOCOL_v2.json: OK\nexperiments/go_admission/20261011_go_admission_v1/CRE_PROTOCOL.json: OK\nexperiments/go_admission/20261011_go_admission_v1/build_gene_tss_cage.py: OK\nexperiments/go_admission/20261011_go_admission_v1/build_lncrna_excluded_cre.py: OK\nexperiments/go_admission/20261011_go_admission_v1/check_cage_gate.py: OK\nexperiments/go_admission/20261011_go_admission_v1/reverify_gene_tss_cage.py: OK\nexperiments/go_admission/20261011_go_admission_v1/reverify_lncrna_excluded_cre.py: OK\nexperiments/go_admission/20261011_go_admission_v1/run_cage_native.slurm: OK\nexperiments/go_admission/20261011_go_admission_v1/run_cre_native.slurm: OK\nexperiments/go_admission/20261011_go_admission_v1/run_cre_verify.slurm: OK\nexperiments/paper_review/20261011_gfpredict_published_v1/LNCRNA_PROTOCOL_v1.json: OK\nexperiments/paper_review/20261011_gfpredict_published_v1/REVIEW_43_8.json: OK\nexperiments/paper_review/20261011_gfpredict_published_v1/prepare_lncrna_screen_mapping.py: OK\nsrc/__init__.py: OK\nsrc/evaluation/go_labels.py: OK\nsrc/evaluation/lncrna_prediction.py: OK\nsrc/evaluation/locus_split_v1.py: OK\nsrc/features/__init__.py: OK\nsrc/features/contracts.py: OK\nsrc/features/go_cage_gate.py: OK\nsrc/features/go_gene_tss_cage.py: OK\nsrc/features/store.py: OK\nsrc/utils/__init__.py: OK\nsrc/utils/atomic_publish.py: OK\ntests/test_go_cre_fold_audit.py: OK\ntests/test_go_gene_tss_cage.py: OK\ntests/test_lncrna_cre_exclusion.py: OK\ntests/test_lncrna_prediction.py: OK\n",
+    "tests.log": "...\n=============================== warnings summary ===============================\ntests/test_lncrna_cre_exclusion.py::test_closed_window_boundaries_remove_only_lncrna_links_and_keep_pc_scores_exact\n  /gpfs/projects/p32724/pulearning/releases/20261011_go_admission_v2/tests/test_lncrna_cre_exclusion.py:29: DeprecationWarning: fetch_arrow_table() is deprecated, use to_arrow_table() instead.\n    output = connection.execute(module.exclusion_query()).fetch_arrow_table().to_pylist()\n\ntests/test_go_cre_fold_audit.py: 11 warnings\n  /gpfs/projects/p32724/pulearning/releases/20261011_go_admission_v2/experiments/go_admission/20261011_go_admission_v1/reverify_lncrna_excluded_cre.py:39: DeprecationWarning: fetch_record_batch() is deprecated, use to_arrow_reader() instead.\n    \"\"\").fetch_record_batch(100000)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n3 passed, 12 warnings in 6.09s\n",
+    "tests.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"3\" time=\"6.092\" timestamp=\"2026-10-11T05:30:05.309225-05:00\" hostname=\"qnode0118\"><testcase classname=\"tests.test_lncrna_cre_exclusion\" name=\"test_closed_window_boundaries_remove_only_lncrna_links_and_keep_pc_scores_exact\" time=\"4.393\" /><testcase classname=\"tests.test_go_cre_fold_audit\" name=\"test_distinct_ccre_ids_with_overlapping_physical_windows_are_blocked\" time=\"0.041\" /><testcase classname=\"tests.test_go_cre_fold_audit\" name=\"test_touching_half_open_windows_and_removed_purged_roles_are_allowed\" time=\"0.164\" /></testsuite></testsuites>",
+    "tests_time.txt": "\tCommand being timed: \"/home/mes7956/projects/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -m pytest -q -s -p no:cacheprovider --junitxml=/home/mes7956/projects/pulearning/experiments/go_admission/20261011_go_admission_v1/runs/cre_9484540/tests.xml tests/test_lncrna_cre_exclusion.py tests/test_go_cre_fold_audit.py\"\n\tUser time (seconds): 1.54\n\tSystem time (seconds): 0.45\n\tPercent of CPU this job got: 19%\n\tElapsed (wall clock) time (h:mm:ss or m:ss): 0:10.15\n\tAverage shared text size (kbytes): 0\n\tAverage unshared data size (kbytes): 0\n\tAverage stack size (kbytes): 0\n\tAverage total size (kbytes): 0\n\tMaximum resident set size (kbytes): 175620\n\tAverage resident set size (kbytes): 0\n\tMajor (requiring I/O) page faults: 0\n\tMinor (reclaiming a frame) page faults: 44033\n\tVoluntary context switches: 6031\n\tInvoluntary context switches: 25\n\tSwaps: 0\n\tFile system inputs: 0\n\tFile system outputs: 0\n\tSocket messages sent: 0\n\tSocket messages received: 0\n\tSignals delivered: 0\n\tPage size (bytes): 4096\n\tExit status: 0\n"
+  },
+  "retained_timeout_inventory": {
+    "evidence/cre_9484540.err": {
+      "bytes": 1718,
+      "sha256": "e62115b8c390d46fc656bf7c2a43fc0592908c01da6b890ecf737b37e42f2b9a"
+    },
+    "evidence/cre_9484540.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runs/cre_9484540/build_time.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runs/cre_9484540/results/.bundle.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runs/cre_9484540/results/.bundle.stage-p7t7vvvd/bundle/aggregation_qc.parquet": {
+      "bytes": 1636117,
+      "sha256": "0514470d0f11f886215d8e74e522a7f3f1885f3e8cfbdace96eb450f24cd2708"
+    },
+    "runs/cre_9484540/results/.bundle.stage-p7t7vvvd/bundle/dependencies.parquet": {
+      "bytes": 1657769816,
+      "sha256": "d08ca7d9ef0547f7636af5fa2539c76ee05318d1bd8a3f157925965c39d1eb4d"
+    },
+    "runs/cre_9484540/results/.bundle.stage-p7t7vvvd/bundle/manifest.json": {
+      "bytes": 7547,
+      "sha256": "8fbdb364b17d36977fa312ed3b81801a56527024eb779a5942249e2bc623f742"
+    },
+    "runs/cre_9484540/results/.bundle.stage-p7t7vvvd/bundle/view.parquet": {
+      "bytes": 2182394,
+      "sha256": "a9d6b5e04e0c7ab4ff15276fc099fc391b29ce14af55faa0a55e2c0521235ad9"
+    },
+    "runs/cre_9484540/results/filter_preparation.json": {
+      "bytes": 483,
+      "sha256": "8f9a3f544f3ec450f8410cc3846ecc11ffb2f0cc69f9f95155bdc595eea83e42"
+    },
+    "runs/cre_9484540/results/lncrna_own_tss_excluded_links.parquet": {
+      "bytes": 43344899,
+      "sha256": "0366d9e853a5e42103c005546973f0d8b4f8b96dbd5fde5f4f826569b0601d56"
+    },
+    "runs/cre_9484540/source_before.log": {
+      "bytes": 1518,
+      "sha256": "0c8d15922cbf605ec38b6071381b0dfd19032956da9b071232e0fbfe8b5887e8"
+    },
+    "runs/cre_9484540/tests.log": {
+      "bytes": 912,
+      "sha256": "39101fc9f538d45cd922a5a883989f1df29e767c0c400b2e2252d3add8e5803a"
+    },
+    "runs/cre_9484540/tests.xml": {
+      "bytes": 685,
+      "sha256": "704af4c0c03b9e54a852ef02a75e1fd7ba0abd624c88f98d5eecdc17760ee9a7"
+    },
+    "runs/cre_9484540/tests_time.txt": {
+      "bytes": 1024,
+      "sha256": "6f2eaf71708c48db78b149f27f242f59b2992ca57d8b6fcfff44d493b56f5d23"
+    }
+  },
+  "sacct_before_submission": "JobID|State|Elapsed|ExitCode|MaxRSS\n9471688|TIMEOUT|06:05:27|0:0|\n9471688.batch|CANCELLED|06:05:39|0:15|11592248K\n9471688.extern|COMPLETED|06:05:45|0:0|\n9471719|PENDING|00:00:00|0:0|\n9471720|PENDING|00:00:00|0:0|\n9484540|TIMEOUT|06:05:06|0:0|\n9484540.batch|CANCELLED|06:05:09|0:15|11521524K\n9484540.extern|COMPLETED|06:05:09|0:0|\n9484541|PENDING|00:00:00|0:0|\n",
+  "source_manifest_sha256": "e78a80ca1e4a159c7280240e3ebe4fd5ef5d54a2acf888d58b42e8732466f0fd",
+  "status": "timeout_evidence_retained_fresh_unchanged_source_retry",
+  "verifier_script_sha256": "29fe35e5bd1cb7d868d0d0c4b03a049dd114eb8937fb8eed6ccb2f4d9614012f",
+  "walltime_override": "2-00:00:00"
+}

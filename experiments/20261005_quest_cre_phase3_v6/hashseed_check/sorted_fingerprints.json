@@ -1,0 +1,31 @@
+{
+  "elapsed_seconds_total": 28.6,
+  "fingerprints": {
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/dependencies.parquet": {
+      "elapsed_seconds": 14.2,
+      "key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "source_element_id",
+        "selection_role"
+      ],
+      "rows": 2000000,
+      "sorted_content_sha256": "b6c53b43dee0fa2ce26ed5b89488f476ce44658cf18a39372c38717696d7082e"
+    },
+    "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/dependencies.parquet": {
+      "elapsed_seconds": 13.8,
+      "key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "source_element_id",
+        "selection_role"
+      ],
+      "rows": 2000000,
+      "sorted_content_sha256": "b6c53b43dee0fa2ce26ed5b89488f476ce44658cf18a39372c38717696d7082e"
+    }
+  },
+  "note": "depends only on the multiset of rows; independent of build row order, thread count and PYTHONHASHSEED",
+  "phase": "section 30 sorted-content fingerprints"
+}

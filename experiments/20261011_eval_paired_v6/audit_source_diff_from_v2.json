@@ -1,0 +1,38 @@
+{
+  "audit_module_byte_identical_to_v2": false,
+  "canary_definition": "same active ledger and installed hook: clean fit has zero protected consolidated-source opens and passes ordering; planted fit records exactly one such open and raises during fit; legitimate prepared-label IO is permitted",
+  "comparison_rerun_required": true,
+  "new_snapshot_checksum": "37cf0e0838ec30a33a6f6a32ec054f4666a9f7c67439a5c5647e7196e52168eb",
+  "runtime_source_differences": [
+    {
+      "byte_identical": false,
+      "file": "src/evaluation/sealed_predictions.py",
+      "v2_sha256": "0f2bbda930f1b726576424218644c2fe43b3338b58defbcd9fcb73e13b017e0e",
+      "v6_sha256": "33db6e8de399b0e55e038ccbe4c2c975e56b604a16695563b85e11f256834f87"
+    },
+    {
+      "byte_identical": true,
+      "file": "src/evaluation/label_access_audit.py",
+      "v2_sha256": "291744ccd8555ed8624e7d7243e4a4019475b103b7417bdf815cf216c0182231",
+      "v6_sha256": "291744ccd8555ed8624e7d7243e4a4019475b103b7417bdf815cf216c0182231"
+    },
+    {
+      "byte_identical": true,
+      "file": "src/evaluation/prepared_labels.py",
+      "v2_sha256": "873b0f48d145d7ad7ee31de7947ba0a37ab6266f7b660ba63d3634ac0d4542c1",
+      "v6_sha256": "873b0f48d145d7ad7ee31de7947ba0a37ab6266f7b660ba63d3634ac0d4542c1"
+    },
+    {
+      "byte_identical": true,
+      "file": "scripts/run_phase5e_ap_null.py",
+      "v2_sha256": "663f53ffc62425bf4ab41e140613a5d33f29c2463a498b4bef5a78a1f3a824b8",
+      "v6_sha256": "663f53ffc62425bf4ab41e140613a5d33f29c2463a498b4bef5a78a1f3a824b8"
+    },
+    {
+      "byte_identical": false,
+      "file": "scripts/run_sealed_selector_comparison.py",
+      "v2_sha256": "0348d3d3193ac5e32004cceb1c54b3dc91160e3164687bacd4742161d6389dd3",
+      "v6_sha256": "dc8f8cc4fa2c79b3941d09e72cda9f0751f410d3f2b48f863dba4b99af259204"
+    }
+  ]
+}

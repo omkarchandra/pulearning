@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "aggregation_qc": {
+      "logical_sha256": "9c83d25cddf807fd469a449fecc8aa761f5c1181b431f5843fafe2a6f7d3ddb1",
+      "rows": 549600
+    },
+    "dependencies": {
+      "logical_sha256": "ecaccf7aa2b98bf5da66996bae7f0ed93d9d717ff9dc7a83e6e10123159c2e48",
+      "rows": 225784420
+    },
+    "view": {
+      "logical_sha256": "b5bd715b401a904c0259297bff06eba7fe31a5e0e7a85a15a5eb91befc41b0eb",
+      "rows": 549600
+    }
+  },
+  "replay": {
+    "aggregation_qc": 549600,
+    "dependencies": 225784420,
+    "view": 549600
+  },
+  "replay_mode": "full",
+  "schema_version": "feature-store-v1-cre-view-out-of-core-2",
+  "spill_bytes": 0,
+  "status": "valid"
+}

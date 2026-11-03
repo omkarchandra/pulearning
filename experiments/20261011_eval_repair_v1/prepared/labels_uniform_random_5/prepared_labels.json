@@ -1,0 +1,95 @@
+{
+  "configuration": {
+    "arm": "label_permutation",
+    "classifier": "random_forest",
+    "run_index": 5,
+    "run_kind": "shuffled",
+    "seed": 20261009,
+    "selector": "uniform_random"
+  },
+  "diseases": {
+    "Malignant neoplasm of breast": [
+      {
+        "eligible_sha256": "c857384aa1844fabb88295301929c68d17ae2782b104a8818b138bc828586ea3",
+        "fold": 0,
+        "permutation_seed": 20261069783027,
+        "pool_sha256": "1583d2ef3bc5afbe3335fe41ecceea43e52e2d6bb553a1c5912da937a299f609",
+        "positive_count": 2881,
+        "positive_sha256": "310da2cd4b3c949455d87a8861f688ea5c0cc67d6169d5ac51f0ca22dd31bab0",
+        "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__5__0",
+        "test_genes_sha256": "1f774553843a37e00108e692afafc4ebc2452530546d4184d7901cf743ed9a08",
+        "test_path": "bcaa06749b7313a181b4809bb062b476a1dff603956e82a15ce9536594b88376/test_labels.json",
+        "test_sha256": "1ad0cfccbc42644af9ca76acbac92e081fa5377c246732fbc5326947c7db460c",
+        "train_path": "bcaa06749b7313a181b4809bb062b476a1dff603956e82a15ce9536594b88376/train_labels.json",
+        "train_sha256": "f6871a4f0ba3b1eda387764ed6747762c22638afe7fd8ab7effb7ecfd1927ba7",
+        "true_positive_sha256": "14cfa010c03d31bbe7236bc9ba1e7290d12cb0d06a699674fada7f553b9a59d5",
+        "true_positives_in_pool": 2627
+      },
+      {
+        "eligible_sha256": "92114b9d51a85394c5a9b4fe9a5a56b380f6c37c5850bc91280e2ae85ef44c66",
+        "fold": 1,
+        "permutation_seed": 20261069783028,
+        "pool_sha256": "20f4e15bb84e18b808912c87da58711ef0bcacfaa7590f9f69d9238880cb450b",
+        "positive_count": 2927,
+        "positive_sha256": "4e1755642ed1161c0a45ba6e6696282a303e8e38a046e9564ca905fb3d80a145",
+        "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__5__1",
+        "test_genes_sha256": "1cbbc8be21f8757422cec07f333b05a7de953d405aaba622e75c8860893553eb",
+        "test_path": "5c4aafad58f0d7be655a341c9499a8324a6387228547639bed0c1acd9d899649/test_labels.json",
+        "test_sha256": "ae6c4d951159a84bd23fb86241dee0e54daae9a55498270e89f17dd5eb26de5e",
+        "train_path": "5c4aafad58f0d7be655a341c9499a8324a6387228547639bed0c1acd9d899649/train_labels.json",
+        "train_sha256": "bfa2a88525d0baf46b97023a2adb5669d329ec2b184942ef8e9232a60987c75a",
+        "true_positive_sha256": "94e97e59197ecfe3bedc7ee0065db6c72e78bc27fd0fdb47830ac88542a17c4b",
+        "true_positives_in_pool": 2664
+      },
+      {
+        "eligible_sha256": "ac2698754d3d58ec7697d473c137fe79d17eb6f30473bf6acfa6d9ce02a1dda4",
+        "fold": 2,
+        "permutation_seed": 20261069783029,
+        "pool_sha256": "4f87fbba3a4a9b37e51d6eb4821c96614017da0ecdba36eaf048d79a1b292d93",
+        "positive_count": 2677,
+        "positive_sha256": "d40e7c856e62d01fe865cc7567c3b2af905a450598c5fb8b89632cd7133b8c00",
+        "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__5__2",
+        "test_genes_sha256": "32ed841c97257713ec99939637a4dc07cf6715dcb592a09d1d7ff829179dc67d",
+        "test_path": "11f7603b34ea83bef3917bee52c3c8992cd770df622a63ec815c05cf04d9d32f/test_labels.json",
+        "test_sha256": "31bc92b1a6a26ef8d39a0cdcbd3806da1ed6f3bc7f97be122aa6a1e3edf1884f",
+        "train_path": "11f7603b34ea83bef3917bee52c3c8992cd770df622a63ec815c05cf04d9d32f/train_labels.json",
+        "train_sha256": "91494be92ddd18c24f10b16c756064b1f4018e4148c5782f4838283682cb75a2",
+        "true_positive_sha256": "9549fd3d93d33c6d5f0f027d5b45c07986358d259f8ef21da8cc5dfc4bc83890",
+        "true_positives_in_pool": 2447
+      },
+      {
+        "eligible_sha256": "1cbd69ca50091cb4ac790cbbbe6628db7d75136eeda30b26cc808d90b575e5c6",
+        "fold": 3,
+        "permutation_seed": 20261069783030,
+        "pool_sha256": "bd948f7bd9250c5db53838200f53e9a6fdd2b4a54d7ef8c4cc730e7612430a78",
+        "positive_count": 2838,
+        "positive_sha256": "5518b4d166f5d6e354484051874b373b70f1e9d2ad4d350d022778e07892fad8",
+        "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__5__3",
+        "test_genes_sha256": "6b05ff60bdca0e8ad90118f7d489925f2393184d23007d5011d7a77f4b25f855",
+        "test_path": "7b1ce4976e72587624bdece3470c2ccd21f91bda4dd19f9266a742a5171fc0ed/test_labels.json",
+        "test_sha256": "099d779d3b76121e28324386a23c4cb82da2c575f70d34bc854e181417329d78",
+        "train_path": "7b1ce4976e72587624bdece3470c2ccd21f91bda4dd19f9266a742a5171fc0ed/train_labels.json",
+        "train_sha256": "4081d9e418dae43d0a886a301e02fe82bf8b93e24d017f9e2ae2d84fc480012d",
+        "true_positive_sha256": "b61573725c4b67e4e81c3530e04c2d043c03eb2d4e8ceb44aade4bff04f7dac6",
+        "true_positives_in_pool": 2588
+      },
+      {
+        "eligible_sha256": "e85f1483c94f178973a55f09bf64c832c953868f7a043c548a4fa2110ff81e45",
+        "fold": 4,
+        "permutation_seed": 20261069783031,
+        "pool_sha256": "42d5a1a09e15e67d352b0976a82c3b10782df4eb35d41409a17c67ed97e45631",
+        "positive_count": 2941,
+        "positive_sha256": "bc8735a3a176e7f285253a8323fdbb715cdace3ceb1736264803517f6925ea56",
+        "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__5__4",
+        "test_genes_sha256": "1fcb0e09e72755b15c9c6921c9d62fe23aaef17c961a4e7c33ff14f48ac078bd",
+        "test_path": "fdb3b30857ad0566c06590472005be4d81d828508b2f75f02ba4e95cc7143074/test_labels.json",
+        "test_sha256": "8e244e17e40b96a2874b9adc893d010b8d797fed4432b5386da71aaf92643641",
+        "train_path": "fdb3b30857ad0566c06590472005be4d81d828508b2f75f02ba4e95cc7143074/train_labels.json",
+        "train_sha256": "ae0b0f7bf17c51ab88fb935c8643cf9240ca8b304fcc825246bcf95927b7d857",
+        "true_positive_sha256": "92a48d794d37c56744672c7ae7d2fcfa466e94db1be74b2efa6d7b52906d646d",
+        "true_positives_in_pool": 2683
+      }
+    ]
+  },
+  "schema_version": 1
+}

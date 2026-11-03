@@ -1,0 +1,180 @@
+{
+  "candidate_retained_policy": "identical fixed proximity links; no ranking or fallback",
+  "counts": {
+    "admitted_link_rows": 11289221,
+    "catalog_rows": 2348854,
+    "eligible_genes": 54960,
+    "feature_count": 10,
+    "source_link_rows": 15235813
+  },
+  "excluded_link_rows": 3946592,
+  "excluded_links_by_biotype": {
+    "IG_C_gene": 4245,
+    "IG_C_pseudogene": 2229,
+    "IG_D_gene": 7075,
+    "IG_J_gene": 4902,
+    "IG_J_pseudogene": 743,
+    "IG_V_gene": 20732,
+    "IG_V_pseudogene": 25412,
+    "IG_pseudogene": 168,
+    "TEC": 213792,
+    "TR_C_gene": 1747,
+    "TR_D_gene": 1509,
+    "TR_J_gene": 26560,
+    "TR_J_pseudogene": 1433,
+    "TR_V_gene": 19140,
+    "TR_V_pseudogene": 5899,
+    "artifact": 632,
+    "miRNA": 417556,
+    "misc_RNA": 428644,
+    "processed_pseudogene": 1490735,
+    "rRNA": 4854,
+    "rRNA_pseudogene": 81788,
+    "ribozyme": 1491,
+    "sRNA": 1438,
+    "scaRNA": 10978,
+    "snRNA": 335601,
+    "snoRNA": 182725,
+    "transcribed_processed_pseudogene": 182717,
+    "transcribed_unitary_pseudogene": 43866,
+    "transcribed_unprocessed_pseudogene": 195509,
+    "translated_processed_pseudogene": 299,
+    "unitary_pseudogene": 14788,
+    "unprocessed_pseudogene": 216621,
+    "vault_RNA": 764
+  },
+  "expected_dependency_rows": 225784420,
+  "expected_view_rows": 549600,
+  "features": {
+    "cre_intrinsic::class_CA": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class CA.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_CA_CTCF": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class CA-CTCF.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_CA_H3K4me3": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class CA-H3K4me3.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_CA_TF": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class CA-TF.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_PLS": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class PLS.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_TF": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class TF.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_dELS": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class dELS.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::class_pELS": {
+      "block": "catalog_intrinsic_subset",
+      "description": "One-hot indicator of original SCREEN class pELS.",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "indicator",
+      "version": "v4"
+    },
+    "cre_intrinsic::cre_length_bp": {
+      "block": "catalog_intrinsic_subset",
+      "description": "CRE length: BED end minus start (0-based, half-open).",
+      "dtype": "float32",
+      "source": "screen_ccre_registry",
+      "unit": "bp",
+      "version": "v4"
+    },
+    "cre_intrinsic::silencer_evidence": {
+      "block": "catalog_intrinsic_subset",
+      "description": "Presence in the seven-member silencer ID union; REST enhancer comparator excluded.",
+      "dtype": "float32",
+      "source": "screen_silencers",
+      "unit": "indicator",
+      "version": "v4"
+    }
+  },
+  "gene_universe": "certified core eligible genes, including chrY; original core partitions",
+  "inputs": {
+    "catalog": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/genomewide_intrinsic_v1/cre_catalog.parquet",
+      "sha256": "92762255f4e9d1e665a58a2e1bca7f5420d29e3bffa883a528707c10e8ab350d"
+    },
+    "core_certificate": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20260914_feature_store_v1_promoter_v3_validation.json",
+      "sha256": "e0bff03a966cbc7975956cf8e516e3c18b2f82c9db205cf64c68748063254ceb"
+    },
+    "core_manifest": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/manifest.json",
+      "sha256": "9ab7eebd2cb7f8cf5241ae55d3698214aa532cf7f9e897ee8dd1ed22fff1f837"
+    },
+    "feature_manifest": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/genomewide_intrinsic_v1/feature_manifest.json",
+      "sha256": "f2f330329bdecfbfee406c755d441739ed8da58a24f52525afdb7d1358eff5a6"
+    },
+    "features": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/genomewide_intrinsic_v1/cre_features.parquet",
+      "sha256": "2f899f2f699956eadec937fe0cf9a214caff4cca42c98e3b3c79051204f99247"
+    },
+    "genes": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/genes.parquet",
+      "sha256": "4b4e35f858a4845d4d339573b22608405e0ffab0f20bb1d2aac8847a517c21fe"
+    },
+    "links": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/feature_store_v1_proximity/cre_gene_links.parquet",
+      "sha256": "b0e129b1299b218ec422a4c94146f968aeaaeaee4b6acbce78946e7ab7c08c20"
+    },
+    "partitions": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/partitions.parquet",
+      "sha256": "0248ed02c299ee9a999a5388c5e947de008be3df0a144dfcf0732f10192562ef"
+    }
+  },
+  "outputs": {
+    "links": {
+      "path": "links.parquet",
+      "rows": 11289221,
+      "sha256": "b313dbcf01bdb4c4d04d5a83cc0e82df7c5dc3877988a80007aa7143361aeb5a"
+    },
+    "measurements": {
+      "path": "measurements.parquet",
+      "rows": 23488540,
+      "sha256": "40a20e75d0d6eae940ed91730d6f8558f6255f21f69259e15bf69680725840a1"
+    }
+  },
+  "schema_version": "quest-cre-intrinsic-inputs-v1",
+  "split_hash": "15899582172908ac1d1041bb25575cdc739e975bf5fbe1a955fc77ccd98b6dd4",
+  "status": "prepared"
+}

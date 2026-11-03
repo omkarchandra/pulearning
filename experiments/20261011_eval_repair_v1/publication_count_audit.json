@@ -1,0 +1,15 @@
+{
+  "count_rule": "tax_id=9606; positive PubMed_ID; distinct gene_id-PubMed_ID union across Entrez mappings",
+  "difference_examples": [],
+  "distinct_gene_pubmed_pairs": 3154880,
+  "human_source_rows": 3339654,
+  "mapped_genes": 24704,
+  "mapping_rule": "versioned GENCODE v50 Entrez transcript metadata joined on transcript_id_versioned to certified transcript table",
+  "rows_differing_from_retained_counts": 0,
+  "source_hashes": {
+    "datasets/processed/cre/gene2pubmed_counts.parquet": "97f9fa1f0cad5e5225a72443e01a489e42deb992eac8001a98e66f0d30e160eb",
+    "datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/transcripts.parquet": "74c53879a8a9303dffdffdac194b4d88d4df9d0ab79de0429040dcf70c386058",
+    "datasets/raw/gene2pubmed/gene2pubmed.gz": "22c112f8e12e3b585d647dee8a68783af91496095efe4ac38cbc6b6aa9b560ca",
+    "datasets/raw/remap/gencode.v50.metadata.EntrezGene.gz": "686c10607c94b1727422beca53ac6e669cf49e0791bd59b38fd765a9c5669bd0"
+  }
+}

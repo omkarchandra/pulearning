@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "e5a28a36eb5ea9662d8ab57402ff7f74645d8919f93d50d12ec9d8a3c11a600a",
+  "native_canary_sha256": "c212c16b52501f9ed6a5ef13d4513efb95c412f42160f4fe3747bd4aa1bd53c2",
+  "native_gate_sha256": "e323359bb6a4a5366922408fb6fd6e5b35b6427409cf45f0ce5807b9216ccc5e",
+  "native_job_id": "9481056",
+  "native_local_proposal_byte_identical": true,
+  "native_panel_manifest_sha256": "c456e5e7dd326d1cf42948c2db415fc654a9c44ac1f88b7a720e8bbd7896107c",
+  "native_proposal_sha256": "0d305dd8c4a274f0c1583e798dd5037e237fbc7fd41d10ad6586c2beb2bef7df",
+  "native_replay_sha256": "65829e863c4bc792bcd128c431f2ae2e80ef973a64b9047a3d05691d280f1ad3",
+  "native_tests_passed": 8,
+  "payloads_verified": 16,
+  "source_binding_fields_identical": true,
+  "status": "verified"
+}

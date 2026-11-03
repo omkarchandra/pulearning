@@ -1,0 +1,64 @@
+# --- common: python ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.Rhistory
+.Rproj.user
+
+# --- common: slurm/job logs ---
+*.err
+*.out
+*.log
+slurm-*
+logs/
+
+# --- common: heavy genomics data (GitHub is for code only) ---
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bam.bai
+*.bai
+*.sam
+*.cram
+*.h5
+*.h5ad
+*.mtx
+*.mtx.gz
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.bigWig
+*.bw
+*.npy
+*.npz
+*.parquet
+*.rds
+*.RData
+*.vcf
+*.vcf.gz
+*.bed.gz
+*.czi
+*.tif
+*.tiff
+*.png.tmp
+
+# --- common: envs / builds ---
+envs/
+datasets/
+releases/
+*.egg-info/
+.snakemake/
+
+# --- common: misc ---
+.DS_Store
+*~
+
+# --- per-repo ---
+datasets/
+envs/
+releases/
+logs/
+runs/

@@ -1,0 +1,68 @@
+--- v2/src/evaluation/sealed_predictions.py
++++ v7/src/evaluation/sealed_predictions.py
+@@ -33,6 +33,7 @@
+ import os
+ import sys
+ import time
++import weakref
+ from pathlib import Path
+ 
+ 
+@@ -184,24 +185,26 @@
+         resolved = str(Path(path).resolve())
+         binding = self.label_bindings.get(resolved)
+         protected = resolved in self.protected_label_paths
+-        if binding is None and not protected and "__test_labels_" not in resolved:
++        unbound_test = binding is None and Path(resolved).name == "test_labels.json"
++        if binding is None and not protected and not unbound_test and "__test_labels_" not in resolved:
+             return
+         self.open_events.append({"path": resolved, "timestamp": time.time_ns(),
+                                  "seal_key": self.active_test_key})
+         if protected:
+             raise SealOrderError(f"fitting worker opened consolidated true labels: {resolved}")
++        if unbound_test:
++            raise SealOrderError("unbound test-label file cannot inherit another configuration's full-key seal")
+         if binding and binding["kind"] == "test":
+             if self.active_test_key != binding["seal_key"] or binding["seal_key"] not in self.sealed_keys():
+                 raise SealOrderError("test-label access requires its own full-key sealed loader")
+ 
+-    def verify_order(self, test_markers: tuple[str, ...] = ("__test_labels_",)) -> dict:
++    def verify_order(self, test_markers: tuple[str, ...] = ("__test_labels_", "test_labels.json")) -> dict:
+         """Prove no TEST-label file open preceded its key's seal (§24.3).
+ 
+-        Training-label files (`__train_labels_`) may be opened at any time —
+-        fitting must read them. A test-label file
+-        (`<disease>__test_labels_fold<N>.json`) may be opened only after the
+-        seal event for a key covering the same disease and fold. Returns the
+-        verification report; raises on violation.
++        Bound training files may be read by fitting. Test-label reads require
++        the designated loader for their full configuration key, whose seal
++        must precede the recorded open. Legacy/unbound test reads fail the
++        audit. Prediction and label bindings are rehashed before acceptance.
+         """
+         records = [json.loads(line) for line in self.ledger_path.read_text().splitlines()]
+         seal_times = {}
+@@ -386,7 +389,14 @@
+     must not pollute the audit. Parquet/binary readers that bypass Python
+     file IO are out of scope; the guarantee covers the label files.
+     """
++    # Audit hooks cannot be removed from CPython. A hook must not keep a
++    # completed ledger (and its labels) alive or police unrelated later runs.
++    ledger_ref = weakref.ref(ledger)
++
+     def hook(event, payload):
++        current_ledger = ledger_ref()
++        if current_ledger is None or not current_ledger.audit_enabled:
++            return
+         if event != "open":
+             return
+         path = payload[0] if isinstance(payload, tuple) and payload else None
+@@ -400,7 +410,7 @@
+         reading = isinstance(mode, str) and ("r" in mode or "+" in mode)
+         reading = reading or (mode is None and isinstance(flags, int) and flags & os.O_ACCMODE != os.O_WRONLY)
+         if isinstance(path, str) and reading:
+-            ledger.record_file_open(path)
++            current_ledger.record_file_open(path)
+     sys.addaudithook(hook)
+     return hook
+ 

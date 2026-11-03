@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "f9bd3884bd2f479963ad05de38e9695ec835be3588e86041db95d5b7aacc773a",
+  "manifest_sha256": "9352c86c4aafb2dab6f3b440ea5e4564ab47bad52d6c61827a03d2a0c803f9ac",
+  "protocol_sha256": "3a2c4c1d1316aee07436e006cd42538e880279ed6bfbb320aef8b73c88b90a1c",
+  "remote_release": "/home/mes7956/projects/pulearning/releases/20261011_go_panels_v4",
+  "remote_verification": {
+    "manifest_sha256": "9352c86c4aafb2dab6f3b440ea5e4564ab47bad52d6c61827a03d2a0c803f9ac",
+    "source_files_verified": 13
+  },
+  "source_files": 13
+}

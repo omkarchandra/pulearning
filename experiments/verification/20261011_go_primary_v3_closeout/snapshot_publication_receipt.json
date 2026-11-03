@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "f5a5138ab2e18044b915ccdce673c57eab6244bdcb272c7ce7d065459d9a2950",
+  "manifest_sha256": "8d4e647b5ca14b7b6799a28dc0c5997c85ce1238ead414294c4d0fed94928729",
+  "remote_release": "/home/mes7956/projects/pulearning/releases/20261011_go_primary_v3",
+  "remote_verification": {
+    "manifest_sha256": "8d4e647b5ca14b7b6799a28dc0c5997c85ce1238ead414294c4d0fed94928729",
+    "source_files_verified": 11
+  }
+}

@@ -1,0 +1,5431 @@
+{
+  "base_independent_replay_sha256": "7dd9c7751d0d1d0389192455636d5169213d050c98dcdc57d1bddd8057c0f670",
+  "domain_gate": 25,
+  "models_fitted": 0,
+  "proposal_sha256": "0d305dd8c4a274f0c1583e798dd5037e237fbc7fd41d10ad6586c2beb2bef7df",
+  "real_scoring_authorized": false,
+  "source": "term_support already fully rederived by independent raw-source verifier",
+  "status": "descriptive_verified_panel_inventory",
+  "summaries": {
+    "pooled_support": {
+      "all_gene_individual_fold_domains_under_25": 92,
+      "honest_lncrna_terms_with_25_pooled_positives": 0,
+      "lncrna_terms_with_25_pooled_positives": 0,
+      "minimum_all_gene_fold_positives": 6,
+      "minimum_protein_coding_fold_positives": 6,
+      "protein_coding_individual_fold_domains_under_25": 92,
+      "selected_terms": 50
+    },
+    "strict_25_each_fold": {
+      "all_gene_individual_fold_domains_under_25": 0,
+      "honest_lncrna_terms_with_25_pooled_positives": 0,
+      "lncrna_terms_with_25_pooled_positives": 0,
+      "minimum_all_gene_fold_positives": 25,
+      "minimum_protein_coding_fold_positives": 25,
+      "protein_coding_individual_fold_domains_under_25": 0,
+      "selected_terms": 50
+    }
+  },
+  "terms": [
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        14,
+        15,
+        15,
+        15,
+        22
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "sensory organ development",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        14,
+        15,
+        15,
+        15,
+        22
+      ],
+      "term": "GO:0007423",
+      "universe_positives": 81
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        16,
+        7,
+        19,
+        20,
+        14
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of nuclear division",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        16,
+        7,
+        19,
+        20,
+        14
+      ],
+      "term": "GO:0051783",
+      "universe_positives": 76
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        12,
+        14,
+        15,
+        19,
+        13
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "response to steroid hormone",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        12,
+        14,
+        15,
+        19,
+        13
+      ],
+      "term": "GO:0048545",
+      "universe_positives": 73
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        10,
+        18,
+        19,
+        16,
+        13
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "negative regulation of vasculature development",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        10,
+        18,
+        19,
+        16,
+        13
+      ],
+      "term": "GO:1901343",
+      "universe_positives": 76
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        16,
+        13,
+        12,
+        10,
+        8
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "negative regulation of post-translational protein modification",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        16,
+        13,
+        12,
+        10,
+        8
+      ],
+      "term": "GO:1901874",
+      "universe_positives": 59
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        17,
+        10,
+        17,
+        18,
+        17
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "negative regulation of gene expression, epigenetic",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        17,
+        10,
+        16,
+        17,
+        17
+      ],
+      "term": "GO:0045814",
+      "universe_positives": 79
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        14,
+        10,
+        12,
+        18,
+        17
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of miRNA metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        14,
+        9,
+        11,
+        18,
+        15
+      ],
+      "term": "GO:2000628",
+      "universe_positives": 71
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        16,
+        9,
+        10,
+        13,
+        9
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "telomere organization",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        16,
+        9,
+        10,
+        12,
+        9
+      ],
+      "term": "GO:0032200",
+      "universe_positives": 57
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        11,
+        10,
+        16,
+        15,
+        16
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "renal system development",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        11,
+        10,
+        16,
+        15,
+        16
+      ],
+      "term": "GO:0072001",
+      "universe_positives": 68
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        38,
+        33,
+        38,
+        28,
+        29
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "negative regulation of molecular function",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        38,
+        33,
+        38,
+        28,
+        29
+      ],
+      "term": "GO:0044092",
+      "universe_positives": 166
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        19,
+        15,
+        31,
+        33,
+        28
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of chemotaxis",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        19,
+        15,
+        31,
+        33,
+        28
+      ],
+      "term": "GO:0050920",
+      "universe_positives": 126
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        18,
+        22,
+        24,
+        18,
+        25
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "nuclear transport",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        18,
+        22,
+        24,
+        18,
+        25
+      ],
+      "term": "GO:0051169",
+      "universe_positives": 107
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        29,
+        25,
+        35,
+        23,
+        30
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "humoral immune response",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        29,
+        25,
+        35,
+        23,
+        30
+      ],
+      "term": "GO:0006959",
+      "universe_positives": 142
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        34,
+        34,
+        42,
+        29,
+        26
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "negative regulation of cell adhesion",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        34,
+        34,
+        42,
+        29,
+        26
+      ],
+      "term": "GO:0007162",
+      "universe_positives": 165
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        23,
+        23,
+        34,
+        29,
+        22
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "locomotion",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        23,
+        23,
+        34,
+        29,
+        22
+      ],
+      "term": "GO:0040011",
+      "universe_positives": 131
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        43,
+        30,
+        37,
+        31,
+        29
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "autophagy",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        43,
+        30,
+        37,
+        31,
+        29
+      ],
+      "term": "GO:0006914",
+      "universe_positives": 170
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        22,
+        22,
+        34,
+        30,
+        16
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "response to oxygen levels",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        22,
+        22,
+        34,
+        29,
+        16
+      ],
+      "term": "GO:0070482",
+      "universe_positives": 124
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        20,
+        19,
+        31,
+        27,
+        22
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "nucleoside phosphate biosynthetic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        20,
+        19,
+        31,
+        27,
+        22
+      ],
+      "term": "GO:1901293",
+      "universe_positives": 119
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        86,
+        92,
+        109,
+        71,
+        67
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of cell adhesion",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        86,
+        92,
+        109,
+        71,
+        67
+      ],
+      "term": "GO:0030155",
+      "universe_positives": 425
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        98,
+        86,
+        121,
+        93,
+        89
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of molecular function",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        98,
+        86,
+        121,
+        93,
+        89
+      ],
+      "term": "GO:0065009",
+      "universe_positives": 487
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        177,
+        168,
+        216,
+        167,
+        167
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of response to stress",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        177,
+        168,
+        215,
+        167,
+        167
+      ],
+      "term": "GO:0080134",
+      "universe_positives": 895
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        50,
+        33,
+        50,
+        27,
+        32
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of immune effector process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        50,
+        33,
+        50,
+        27,
+        32
+      ],
+      "term": "GO:0002697",
+      "universe_positives": 192
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        56,
+        51,
+        65,
+        53,
+        51
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "nucleobase-containing small molecule metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        56,
+        51,
+        65,
+        53,
+        51
+      ],
+      "term": "GO:0055086",
+      "universe_positives": 276
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        410,
+        366,
+        465,
+        406,
+        402
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        1,
+        0,
+        0,
+        2,
+        1
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        1,
+        1,
+        1,
+        4,
+        3
+      ],
+      "mode": "pooled_support",
+      "name": "positive regulation of macromolecule metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        409,
+        365,
+        464,
+        402,
+        399
+      ],
+      "term": "GO:0010604",
+      "universe_positives": 2049
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        42,
+        35,
+        45,
+        53,
+        41
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "chromosome organization",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        42,
+        35,
+        45,
+        52,
+        41
+      ],
+      "term": "GO:0051276",
+      "universe_positives": 216
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        176,
+        152,
+        187,
+        158,
+        158
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "immune system process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        176,
+        152,
+        187,
+        158,
+        158
+      ],
+      "term": "GO:0002376",
+      "universe_positives": 831
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        118,
+        95,
+        93,
+        125,
+        112
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "homeostatic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        118,
+        95,
+        93,
+        125,
+        112
+      ],
+      "term": "GO:0042592",
+      "universe_positives": 543
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        37,
+        25,
+        49,
+        39,
+        40
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of monoatomic ion transport",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        37,
+        25,
+        49,
+        39,
+        40
+      ],
+      "term": "GO:0043269",
+      "universe_positives": 190
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        49,
+        36,
+        49,
+        46,
+        38
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "negative regulation of cell cycle",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        49,
+        36,
+        49,
+        46,
+        38
+      ],
+      "term": "GO:0045786",
+      "universe_positives": 218
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        66,
+        47,
+        66,
+        55,
+        46
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of cytoskeleton organization",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        66,
+        47,
+        66,
+        55,
+        46
+      ],
+      "term": "GO:0051493",
+      "universe_positives": 280
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        54,
+        46,
+        51,
+        46,
+        40
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of establishment of protein localization",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        53,
+        46,
+        51,
+        46,
+        40
+      ],
+      "term": "GO:0070201",
+      "universe_positives": 237
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        61,
+        45,
+        74,
+        66,
+        68
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "regulation of DNA metabolic process",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        61,
+        45,
+        74,
+        66,
+        68
+      ],
+      "term": "GO:0051052",
+      "universe_positives": 314
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        85,
+        94,
+        83,
+        112,
+        96
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "anatomical structure morphogenesis",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        85,
+        94,
+        83,
+        111,
+        96
+      ],
+      "term": "GO:0009653",
+      "universe_positives": 470
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        21,
+        14,
+        25,
+        14,
+        7
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "serine hydrolase activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        21,
+        14,
+        25,
+        14,
+        7
+      ],
+      "term": "GO:0017171",
+      "universe_positives": 81
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        10,
+        6,
+        14,
+        18,
+        12
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "peptide receptor activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        10,
+        6,
+        14,
+        18,
+        12
+      ],
+      "term": "GO:0001653",
+      "universe_positives": 60
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        10,
+        10,
+        15,
+        16,
+        10
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "exonuclease activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        10,
+        10,
+        15,
+        16,
+        10
+      ],
+      "term": "GO:0004527",
+      "universe_positives": 61
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        21,
+        22,
+        22,
+        14,
+        28
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "potassium ion transmembrane transporter activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        21,
+        22,
+        22,
+        14,
+        28
+      ],
+      "term": "GO:0015079",
+      "universe_positives": 107
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        24,
+        32,
+        34,
+        15,
+        28
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "ligand-gated monoatomic ion channel activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        24,
+        32,
+        34,
+        15,
+        28
+      ],
+      "term": "GO:0015276",
+      "universe_positives": 133
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        255,
+        239,
+        277,
+        271,
+        242
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "small molecule binding",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        255,
+        239,
+        277,
+        271,
+        242
+      ],
+      "term": "GO:0036094",
+      "universe_positives": 1284
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        252,
+        232,
+        258,
+        225,
+        206
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        1,
+        0,
+        3,
+        1
+      ],
+      "mode": "pooled_support",
+      "name": "DNA binding",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        252,
+        231,
+        258,
+        222,
+        205
+      ],
+      "term": "GO:0003677",
+      "universe_positives": 1173
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        70,
+        66,
+        89,
+        73,
+        66
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "hydrolase activity, acting on acid anhydrides",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        70,
+        66,
+        89,
+        73,
+        66
+      ],
+      "term": "GO:0016817",
+      "universe_positives": 364
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        130,
+        120,
+        144,
+        125,
+        120
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "transferase activity, transferring phosphorus-containing groups",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        130,
+        120,
+        144,
+        124,
+        120
+      ],
+      "term": "GO:0016772",
+      "universe_positives": 639
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        24,
+        12,
+        11,
+        17,
+        9
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "Sm-like protein family complex",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        24,
+        12,
+        11,
+        17,
+        9
+      ],
+      "term": "GO:0120114",
+      "universe_positives": 73
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        19,
+        13,
+        21,
+        19,
+        11
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "RNA polymerase complex",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        19,
+        13,
+        21,
+        19,
+        11
+      ],
+      "term": "GO:0030880",
+      "universe_positives": 83
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        31,
+        25,
+        23,
+        33,
+        34
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "mitochondrial protein-containing complex",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        31,
+        25,
+        23,
+        33,
+        34
+      ],
+      "term": "GO:0098798",
+      "universe_positives": 146
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        34,
+        28,
+        37,
+        25,
+        35
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "spliceosomal complex",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        34,
+        28,
+        37,
+        25,
+        35
+      ],
+      "term": "GO:0005681",
+      "universe_positives": 159
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        120,
+        100,
+        111,
+        110,
+        99
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "vacuole",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        120,
+        100,
+        111,
+        110,
+        99
+      ],
+      "term": "GO:0005773",
+      "universe_positives": 540
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        221,
+        193,
+        181,
+        233,
+        204
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "intracellular vesicle",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        221,
+        193,
+        181,
+        233,
+        204
+      ],
+      "term": "GO:0097708",
+      "universe_positives": 1032
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        57,
+        45,
+        57,
+        57,
+        46
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "chromosomal region",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        57,
+        45,
+        57,
+        56,
+        46
+      ],
+      "term": "GO:0098687",
+      "universe_positives": 262
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        160,
+        124,
+        150,
+        155,
+        132
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "pooled_support",
+      "name": "organelle envelope",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        160,
+        124,
+        150,
+        155,
+        132
+      ],
+      "term": "GO:0031967",
+      "universe_positives": 721
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        47,
+        42,
+        43,
+        43,
+        35
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "activation of immune response",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        47,
+        42,
+        43,
+        43,
+        35
+      ],
+      "term": "GO:0002253",
+      "universe_positives": 210
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        45,
+        33,
+        62,
+        47,
+        38
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "actin filament-based process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        45,
+        33,
+        62,
+        47,
+        38
+      ],
+      "term": "GO:0030029",
+      "universe_positives": 225
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        42,
+        38,
+        40,
+        52,
+        26
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "negative regulation of locomotion",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        42,
+        38,
+        40,
+        52,
+        26
+      ],
+      "term": "GO:0040013",
+      "universe_positives": 198
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        49,
+        40,
+        43,
+        38,
+        41
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of growth",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        48,
+        40,
+        43,
+        38,
+        41
+      ],
+      "term": "GO:0040008",
+      "universe_positives": 211
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        40,
+        41,
+        47,
+        52,
+        45
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "reproductive process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        40,
+        41,
+        47,
+        52,
+        45
+      ],
+      "term": "GO:0022414",
+      "universe_positives": 225
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        40,
+        25,
+        29,
+        27,
+        40
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "translation",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        40,
+        25,
+        29,
+        27,
+        40
+      ],
+      "term": "GO:0006412",
+      "universe_positives": 161
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        43,
+        30,
+        37,
+        31,
+        29
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "autophagy",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        43,
+        30,
+        37,
+        31,
+        29
+      ],
+      "term": "GO:0006914",
+      "universe_positives": 170
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        38,
+        36,
+        37,
+        31,
+        30
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "central nervous system development",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        38,
+        36,
+        37,
+        31,
+        30
+      ],
+      "term": "GO:0007417",
+      "universe_positives": 172
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        40,
+        40,
+        52,
+        56,
+        46
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "response to hormone",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        40,
+        40,
+        52,
+        56,
+        46
+      ],
+      "term": "GO:0009725",
+      "universe_positives": 234
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        93,
+        86,
+        109,
+        98,
+        90
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "phosphorus metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        93,
+        86,
+        109,
+        98,
+        90
+      ],
+      "term": "GO:0006793",
+      "universe_positives": 476
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        86,
+        92,
+        109,
+        71,
+        67
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of cell adhesion",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        86,
+        92,
+        109,
+        71,
+        67
+      ],
+      "term": "GO:0030155",
+      "universe_positives": 425
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        73,
+        58,
+        62,
+        63,
+        60
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "mRNA metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        73,
+        58,
+        62,
+        63,
+        60
+      ],
+      "term": "GO:0016071",
+      "universe_positives": 316
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        85,
+        94,
+        83,
+        112,
+        96
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "anatomical structure morphogenesis",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        85,
+        94,
+        83,
+        111,
+        96
+      ],
+      "term": "GO:0009653",
+      "universe_positives": 470
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        79,
+        80,
+        100,
+        95,
+        93
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "response to endogenous stimulus",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        79,
+        80,
+        100,
+        95,
+        92
+      ],
+      "term": "GO:0009719",
+      "universe_positives": 447
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        72,
+        70,
+        85,
+        82,
+        87
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "response to cytokine",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        72,
+        70,
+        85,
+        82,
+        87
+      ],
+      "term": "GO:0034097",
+      "universe_positives": 396
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        70,
+        57,
+        92,
+        61,
+        63
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "phosphate-containing compound metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        70,
+        57,
+        92,
+        61,
+        63
+      ],
+      "term": "GO:0006796",
+      "universe_positives": 343
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        73,
+        66,
+        80,
+        75,
+        61
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "establishment of protein localization",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        73,
+        66,
+        80,
+        75,
+        61
+      ],
+      "term": "GO:0045184",
+      "universe_positives": 355
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        56,
+        53,
+        65,
+        54,
+        58
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "cell death",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        56,
+        53,
+        65,
+        54,
+        58
+      ],
+      "term": "GO:0008219",
+      "universe_positives": 286
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        98,
+        86,
+        121,
+        93,
+        89
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of molecular function",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        98,
+        86,
+        121,
+        93,
+        89
+      ],
+      "term": "GO:0065009",
+      "universe_positives": 487
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        177,
+        168,
+        216,
+        167,
+        167
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of response to stress",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        177,
+        168,
+        215,
+        167,
+        167
+      ],
+      "term": "GO:0080134",
+      "universe_positives": 895
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        410,
+        366,
+        465,
+        406,
+        402
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        1,
+        0,
+        0,
+        2,
+        1
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        1,
+        1,
+        1,
+        4,
+        3
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "positive regulation of macromolecule metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        409,
+        365,
+        464,
+        402,
+        399
+      ],
+      "term": "GO:0010604",
+      "universe_positives": 2049
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        176,
+        152,
+        187,
+        158,
+        158
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "immune system process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        176,
+        152,
+        187,
+        158,
+        158
+      ],
+      "term": "GO:0002376",
+      "universe_positives": 831
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        411,
+        354,
+        409,
+        354,
+        357
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "biosynthetic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        411,
+        354,
+        409,
+        353,
+        357
+      ],
+      "term": "GO:0009058",
+      "universe_positives": 1885
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        359,
+        306,
+        356,
+        304,
+        306
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        2,
+        4,
+        3,
+        3,
+        2
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "negative regulation of metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        357,
+        302,
+        353,
+        301,
+        304
+      ],
+      "term": "GO:0009892",
+      "universe_positives": 1631
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        118,
+        95,
+        93,
+        125,
+        112
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "homeostatic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        118,
+        95,
+        93,
+        125,
+        112
+      ],
+      "term": "GO:0042592",
+      "universe_positives": 543
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        430,
+        348,
+        442,
+        400,
+        383
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of cell communication",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        428,
+        348,
+        442,
+        399,
+        383
+      ],
+      "term": "GO:0010646",
+      "universe_positives": 2003
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        372,
+        340,
+        410,
+        356,
+        313
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "protein metabolic process",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        372,
+        340,
+        410,
+        356,
+        313
+      ],
+      "term": "GO:0019538",
+      "universe_positives": 1791
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        133,
+        117,
+        153,
+        136,
+        123
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of cell cycle",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        133,
+        117,
+        152,
+        136,
+        123
+      ],
+      "term": "GO:0051726",
+      "universe_positives": 662
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        91,
+        80,
+        117,
+        112,
+        84
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "cell cycle",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        91,
+        79,
+        117,
+        112,
+        84
+      ],
+      "term": "GO:0007049",
+      "universe_positives": 484
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        114,
+        107,
+        85,
+        93,
+        94
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "transmembrane transport",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        114,
+        107,
+        85,
+        93,
+        94
+      ],
+      "term": "GO:0055085",
+      "universe_positives": 493
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        190,
+        157,
+        202,
+        183,
+        162
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of developmental process",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        189,
+        157,
+        202,
+        183,
+        162
+      ],
+      "term": "GO:0050793",
+      "universe_positives": 894
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        285,
+        231,
+        310,
+        241,
+        242
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "regulation of multicellular organismal process",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        284,
+        231,
+        310,
+        241,
+        242
+      ],
+      "term": "GO:0051239",
+      "universe_positives": 1309
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        97,
+        87,
+        105,
+        111,
+        76
+      ],
+      "aspect": "biological_process",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "response to abiotic stimulus",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        97,
+        87,
+        105,
+        109,
+        76
+      ],
+      "term": "GO:0009628",
+      "universe_positives": 476
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        35,
+        31,
+        34,
+        31,
+        32
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "transferase activity, transferring one-carbon groups",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        35,
+        31,
+        34,
+        31,
+        32
+      ],
+      "term": "GO:0016741",
+      "universe_positives": 163
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        35,
+        32,
+        33,
+        31,
+        42
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "kinase regulator activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        35,
+        32,
+        33,
+        31,
+        42
+      ],
+      "term": "GO:0019207",
+      "universe_positives": 173
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        51,
+        33,
+        55,
+        51,
+        38
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "nucleoside-triphosphatase regulator activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        51,
+        33,
+        55,
+        51,
+        38
+      ],
+      "term": "GO:0060589",
+      "universe_positives": 228
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        70,
+        66,
+        89,
+        73,
+        66
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "hydrolase activity, acting on acid anhydrides",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        70,
+        66,
+        89,
+        73,
+        66
+      ],
+      "term": "GO:0016817",
+      "universe_positives": 364
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        107,
+        91,
+        123,
+        98,
+        84
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "acyltransferase activity",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        107,
+        91,
+        123,
+        98,
+        84
+      ],
+      "term": "GO:0016746",
+      "universe_positives": 503
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        255,
+        239,
+        277,
+        271,
+        242
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "small molecule binding",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        255,
+        239,
+        277,
+        271,
+        242
+      ],
+      "term": "GO:0036094",
+      "universe_positives": 1284
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        252,
+        232,
+        258,
+        225,
+        206
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        1,
+        0,
+        3,
+        1
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "DNA binding",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        252,
+        231,
+        258,
+        222,
+        205
+      ],
+      "term": "GO:0003677",
+      "universe_positives": 1173
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        174,
+        173,
+        148,
+        144,
+        158
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "transporter activity",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        174,
+        173,
+        148,
+        144,
+        158
+      ],
+      "term": "GO:0005215",
+      "universe_positives": 797
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        130,
+        120,
+        144,
+        125,
+        120
+      ],
+      "aspect": "molecular_function",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "transferase activity, transferring phosphorus-containing groups",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        130,
+        120,
+        144,
+        124,
+        120
+      ],
+      "term": "GO:0016772",
+      "universe_positives": 639
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        33,
+        27,
+        30,
+        33,
+        27
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "outer membrane",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        33,
+        27,
+        30,
+        33,
+        27
+      ],
+      "term": "GO:0019867",
+      "universe_positives": 150
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        37,
+        33,
+        35,
+        42,
+        34
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "membrane raft",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        37,
+        33,
+        35,
+        42,
+        34
+      ],
+      "term": "GO:0045121",
+      "universe_positives": 181
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        120,
+        100,
+        111,
+        110,
+        99
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "vacuole",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        120,
+        100,
+        111,
+        110,
+        99
+      ],
+      "term": "GO:0005773",
+      "universe_positives": 540
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        79,
+        76,
+        81,
+        76,
+        79
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "supramolecular polymer",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        79,
+        76,
+        81,
+        76,
+        79
+      ],
+      "term": "GO:0099081",
+      "universe_positives": 391
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        221,
+        193,
+        181,
+        233,
+        204
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "intracellular vesicle",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        221,
+        193,
+        181,
+        233,
+        204
+      ],
+      "term": "GO:0097708",
+      "universe_positives": 1032
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        160,
+        124,
+        150,
+        155,
+        132
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "organelle envelope",
+      "panel": "development",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        160,
+        124,
+        150,
+        155,
+        132
+      ],
+      "term": "GO:0031967",
+      "universe_positives": 721
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        253,
+        217,
+        214,
+        240,
+        224
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "endoplasmic reticulum",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        253,
+        217,
+        214,
+        240,
+        224
+      ],
+      "term": "GO:0005783",
+      "universe_positives": 1148
+    },
+    {
+      "all_gene_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "all_gene_pooled_ap_reportable": true,
+      "all_gene_test_positives": [
+        240,
+        230,
+        253,
+        255,
+        231
+      ],
+      "aspect": "cellular_component",
+      "honest_lncrna_pooled_ap_reportable": false,
+      "honest_lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lncrna_pooled_ap_reportable": false,
+      "lncrna_test_positives": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mode": "strict_25_each_fold",
+      "name": "cytoskeleton",
+      "panel": "final",
+      "protein_coding_fold_ap_reportable": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "protein_coding_pooled_ap_reportable": true,
+      "protein_coding_test_positives": [
+        240,
+        230,
+        253,
+        255,
+        231
+      ],
+      "term": "GO:0005856",
+      "universe_positives": 1209
+    }
+  ]
+}

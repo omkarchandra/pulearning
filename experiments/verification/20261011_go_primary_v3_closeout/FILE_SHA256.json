@@ -1,0 +1,15 @@
+{
+  "PROTOCOL.json": "25f52c579aac9855e971b2f5ae1cd6831558b27826a7de6915025341a7d31c2d",
+  "README.md": "0069bd16ce2566547a713d13c7200ad85b096a1edf65b0eba62b8f2c4b166ba4",
+  "check_gate_mutations_stream.py": "af537fbee14aa2637ea3cca6dc5003960ee08941a4d4b8f52080b54c64d71610",
+  "cluster_inventory.json": "22d30e9118bcb5e5290d2fdc49625bfc7abf67c5cf86c692ce18ca52c71bc736",
+  "evaluation-repair-20261011.md": "c390647e53dfaf4484a5ea70a068f4679f4b18a1a9ce15e6c804a4a9b5300e1c",
+  "failure_v1.json": "bb31312f579cdfa015b6b5d6815c38d27c2527c703eaaf2a7a4ec6770bc80033",
+  "failure_v2.json": "70d8c5ab2d871df6a94f82c9eaebdf17ab8653b2943443142d89ec9da06d267d",
+  "input_import_receipt.json": "7aa2210de7faa800b34d1a24103f7f3a951720e85061dcf26a583007a51033d3",
+  "local_stream_canary_verdict.json": "588b06fe8c26f45990378ef0a9ef5079333e49bb2e44d231ea321b2dec1a9941",
+  "native_import_receipt.json": "9046db1459e9e35ff247d87bf22a3418b06681e69de91d48e2ab9effdd0ed921",
+  "project-vault-main.md": "7669a3cbd4e83614eebe585318109b40c883d70f3f56ea4f635b97029b9f4620",
+  "snapshot_publication_receipt.json": "5c886d9bb0961f09311ae3049fea399088932ab67ee3798a3e1a566c211d5d27",
+  "source_database_inventory.json": "083a44b55be99b33752689b891f538d2ea1a5bdb0256f26eca1d208885883189"
+}

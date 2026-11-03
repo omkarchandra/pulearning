@@ -1,0 +1,23 @@
+	Command being timed: "/gpfs/projects/p32724/pulearning/envs/20261005_quest_cre_phase3_v6/bin/python -u scripts/run_sealed_selector_comparison.py worker --plan /home/mes7956/projects/pulearning/experiments/20261011_eval_paired_v7/prepared/plan.json --task-index 3 --output-dir /home/mes7956/projects/pulearning/experiments/20261011_eval_paired_v7/results/task_3"
+	User time (seconds): 22.80
+	System time (seconds): 0.71
+	Percent of CPU this job got: 60%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:39.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 342096
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 165882
+	Voluntary context switches: 53039
+	Involuntary context switches: 448
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,154 @@
+{
+  "classifier": "random_forest",
+  "diseases": {
+    "AICARDI-GOUTIERES SYNDROME 1": {
+      "elapsed_seconds": 14.4,
+      "evaluation_n": 54710,
+      "evaluation_positives": 57,
+      "folds_scored": 5,
+      "label_hashes": {
+        "test_fold0": "2f40368e8eba5c97d047d98d17c3f4ff754bb754a03c4fc0a9d9e995221d8596",
+        "test_fold1": "9fdf0b53a89fba9f22390c7ab5ff9f4d3df63a58a2551575b38f2a1bdf13ef1f",
+        "test_fold2": "9a1d86f59972fc8ff19ee9e61628e561003bcc2dae1a14f60e8aac480656f4d9",
+        "test_fold3": "bf7c5dcc8b9bee6deb2fb077032142d88eda507c7314a129e6d0b0096dd51d2c",
+        "test_fold4": "d2f7f5950596e2b7ad44d3a4a2fa0291956317402032f90c109ce20028f0fd02",
+        "train_fold0": "ff6a14796d7b3dbd6267b92cb51032d0570a6dc5aba380958f8f7b318f6a266a",
+        "train_fold1": "4c8c5af36e6a423b7bb19b22597705767aef972c168312d1785735e67f9a3f89",
+        "train_fold2": "1c44a382d7977bb60a5c38e0184e81bd77c35cb26471b8cc9cb407c5afb75374",
+        "train_fold3": "b0d26759f08d4ee7b4ae153b5e0c9f560fff44cc70d4ebf6e1221975d4051c38",
+        "train_fold4": "b8e2779d8c0df878411c4da40cf162af4131198bb947d5870e6e9f348580fa8e"
+      },
+      "pooled_auprc": 0.00079,
+      "seals": [
+        {
+          "fold": 0,
+          "n": 11016,
+          "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__0",
+          "sha256": "2a5c77976150aba105e5c9bc3c5532b5970de7252bd1988cf0fd1345c748ba5e"
+        },
+        {
+          "fold": 1,
+          "n": 10931,
+          "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__1",
+          "sha256": "0460eb611b4f5016c183937efaa251f329cdf5aa79d6a421a4eb1e725811bcd7"
+        },
+        {
+          "fold": 2,
+          "n": 11254,
+          "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__2",
+          "sha256": "94678ef9759afd603fe469c73f26a8da916dc903c846e30b4c9c91eee0e708dd"
+        },
+        {
+          "fold": 3,
+          "n": 10942,
+          "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__3",
+          "sha256": "52d8f4eb680321f83aacfdcfc8dc2c22f432a357db1b61de15df61eae67a7a08"
+        },
+        {
+          "fold": 4,
+          "n": 10567,
+          "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__4",
+          "sha256": "568b0ce6cb1b1372fd4e844608fd0097a2f45e34e72b15703b7e2a2a413fa85f"
+        }
+      ],
+      "status": "evaluated"
+    }
+  },
+  "elapsed_seconds_total": 53.8,
+  "ledger_entries": [
+    {
+      "event": "seal",
+      "n": 11016,
+      "path": "sealed__AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__0.json",
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__0",
+      "sha256": "2a5c77976150aba105e5c9bc3c5532b5970de7252bd1988cf0fd1345c748ba5e",
+      "timestamp": 1791306308681305632
+    },
+    {
+      "event": "seal",
+      "n": 10931,
+      "path": "sealed__AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__1.json",
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__1",
+      "sha256": "0460eb611b4f5016c183937efaa251f329cdf5aa79d6a421a4eb1e725811bcd7",
+      "timestamp": 1791306310963528492
+    },
+    {
+      "event": "seal",
+      "n": 11254,
+      "path": "sealed__AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__2.json",
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__2",
+      "sha256": "94678ef9759afd603fe469c73f26a8da916dc903c846e30b4c9c91eee0e708dd",
+      "timestamp": 1791306313095846214
+    },
+    {
+      "event": "seal",
+      "n": 10942,
+      "path": "sealed__AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__3.json",
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__3",
+      "sha256": "52d8f4eb680321f83aacfdcfc8dc2c22f432a357db1b61de15df61eae67a7a08",
+      "timestamp": 1791306315162020389
+    },
+    {
+      "event": "seal",
+      "n": 10567,
+      "path": "sealed__AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__4.json",
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__4",
+      "sha256": "568b0ce6cb1b1372fd4e844608fd0097a2f45e34e72b15703b7e2a2a413fa85f",
+      "timestamp": 1791306317636357222
+    },
+    {
+      "event": "label_load",
+      "n_positive": 14,
+      "n_total": 11016,
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__0",
+      "timestamp": 1791306318155690917
+    },
+    {
+      "event": "label_load",
+      "n_positive": 12,
+      "n_total": 10931,
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__1",
+      "timestamp": 1791306318665118265
+    },
+    {
+      "event": "label_load",
+      "n_positive": 12,
+      "n_total": 11254,
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__2",
+      "timestamp": 1791306319202078688
+    },
+    {
+      "event": "label_load",
+      "n_positive": 13,
+      "n_total": 10942,
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__3",
+      "timestamp": 1791306319786525467
+    },
+    {
+      "event": "label_load",
+      "n_positive": 6,
+      "n_total": 10567,
+      "seal_key": "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__4",
+      "timestamp": 1791306320406438404
+    }
+  ],
+  "negative_mode": "confounder_matched",
+  "phase": "sealed control run (sections 23/25)",
+  "provenance_gate": null,
+  "run_index": 1,
+  "run_kind": "shuffled",
+  "sealed_arm": "label_permutation",
+  "seed": 20261004,
+  "verification": {
+    "file_opens_recorded": 54799,
+    "sealed_keys": [
+      "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__0",
+      "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__1",
+      "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__2",
+      "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__3",
+      "AICARDI-GOUTIERES SYNDROME 1__label_permutation__confounder_matched__random_forest__shuffled__1__4"
+    ],
+    "status": "order_verified",
+    "violations": 0
+  }
+}

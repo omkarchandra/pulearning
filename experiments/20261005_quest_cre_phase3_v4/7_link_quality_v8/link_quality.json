@@ -1,0 +1,78 @@
+{
+  "distance_stratification": {
+    "fraction_0_10kb": 0.099414,
+    "fraction_10_50kb": 0.207115,
+    "fraction_50_100kb": 0.167427,
+    "fraction_over_100kb": 0.526044,
+    "total_distinct_pairs": 4023451
+  },
+  "elapsed_seconds_total": 350.0,
+  "lncrna_proximity_coverage": {
+    "note": "context only; coverage is not evidence of link quality",
+    "total": 34866,
+    "with_link": 34774
+  },
+  "phase": "7 link-quality validation",
+  "protein_coding_genes_with_re2g": 17809,
+  "rE2G_distinct_pairs": 4023451,
+  "rE2G_rows": 290317828,
+  "thresholds": {
+    "1": {
+      "elapsed_seconds": 1.1,
+      "genes": 17809,
+      "precision_iqr": [
+        0.262931,
+        0.678571
+      ],
+      "precision_median": 0.463415,
+      "recall_iqr": [
+        0.407692,
+        0.816568
+      ],
+      "recall_median": 0.605882,
+      "weighted_precision_iqr": [
+        0.185283,
+        0.617134
+      ],
+      "weighted_precision_median": 0.375751
+    },
+    "20": {
+      "elapsed_seconds": 0.6,
+      "genes": 17809,
+      "precision_iqr": [
+        0.072289,
+        0.285714
+      ],
+      "precision_median": 0.151079,
+      "recall_iqr": [
+        0.624669,
+        1.0
+      ],
+      "recall_median": 0.833333,
+      "weighted_precision_iqr": [
+        0.043099,
+        0.221479
+      ],
+      "weighted_precision_median": 0.103799
+    },
+    "5": {
+      "elapsed_seconds": 0.7,
+      "genes": 17809,
+      "precision_iqr": [
+        0.134426,
+        0.462406
+      ],
+      "precision_median": 0.270588,
+      "recall_iqr": [
+        0.545455,
+        0.931034
+      ],
+      "recall_median": 0.753334,
+      "weighted_precision_iqr": [
+        0.086781,
+        0.385136
+      ],
+      "weighted_precision_median": 0.199768
+    }
+  }
+}

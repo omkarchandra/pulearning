@@ -1,0 +1,515 @@
+{
+  "classifier_config": {
+    "baseline": {
+      "candidate_multiplier": 5,
+      "max_candidates": 500,
+      "rn_threshold": "mean"
+    },
+    "classifier": {
+      "name": "random_forest",
+      "random_forest_jobs": 4,
+      "random_forest_max_depth": 6,
+      "random_forest_trees": 100,
+      "xgboost_trees": 100
+    },
+    "data": {
+      "eval_negative_ratio": 5,
+      "max_genes_per_task": 800,
+      "max_tasks": 5,
+      "min_task_positives": 10,
+      "validation_fraction": 0.2
+    },
+    "features": {
+      "max_policy_dims": 64
+    },
+    "paths": {
+      "disgenet": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_repair_v2/datasets/raw/DisGeNET.txt",
+      "experiments_dir": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_repair_v2/experiments",
+      "features": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_repair_v2/datasets/processed/features/binary_gene_feature_score.csv",
+      "gpt_reliable_negatives": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_repair_v2/datasets/processed/labels/reliable_neg_set_gpt.csv",
+      "project_root": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_repair_v2",
+      "string_links": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_repair_v2/datasets/raw/string/9606.protein.links.v12.0.txt"
+    },
+    "project": {
+      "name": "pu_rl_rn_selection",
+      "seed": 42
+    },
+    "rl": {
+      "candidate_multiplier": 5,
+      "class_balance_penalty": 0.0,
+      "class_balance_target_ratio": 1.0,
+      "entropy_coeff": 0.01,
+      "episodes": 80,
+      "eval_max_selected": 80,
+      "eval_min_selected": 1,
+      "eval_selected_ratio": 3.0,
+      "false_negative_penalty": 0.0,
+      "initial_distance_weight": 2.0,
+      "learning_rate": 0.08,
+      "max_candidates": 500,
+      "reward_baseline_decay": 0.9,
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "smoke": {
+      "max_candidates": 60,
+      "max_genes_per_task": 250,
+      "max_tasks": 2,
+      "min_task_positives": 5,
+      "random_policy_episodes": 2,
+      "reinforce_episodes": 30
+    }
+  },
+  "diseases": {
+    "Malignant neoplasm of breast": {
+      "elapsed_seconds": 5.6,
+      "evaluation_n": 54710,
+      "evaluation_positives": 4686,
+      "fold_audits": [
+        {
+          "N": 2881,
+          "P": 2881,
+          "candidate_count": 30282,
+          "candidate_sha256": "3b21b1c0c3a2f95a01cc376895af60983266230f6bdcbc56654de0c6d7ba2f83",
+          "classifier_parameters": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "class_weight": "balanced_subsample",
+            "criterion": "gini",
+            "max_depth": 6,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 100,
+            "n_jobs": 4,
+            "oob_score": false,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false
+          },
+          "fit_scope_sha256": "c857384aa1844fabb88295301929c68d17ae2782b104a8818b138bc828586ea3",
+          "fold": 0,
+          "negative_sha256": "3bc27434f42d048b5588303240110bbea821c06642b7f8fc1b5d0c3a52c4cac9",
+          "permutation_seed": 20261066783018,
+          "pool_count": 30282,
+          "pool_equals_inner_train_minus_shuffled": true,
+          "pool_equals_inner_train_minus_training_anchors": true,
+          "pool_sha256": "3b21b1c0c3a2f95a01cc376895af60983266230f6bdcbc56654de0c6d7ba2f83",
+          "positive_sha256": "0ed13d1ce7652b6a12c917d3e7c123b9975f9717c06f58e54e04ed54fd6a2149",
+          "sampling_seed": 1575840263662,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__0",
+          "selection_inputs_path": "/home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_6/ledger/selection__31777ebf0c98694709c4e7d35b41652ed013b0e5ce8ca9f176256f348fc23cbb.json",
+          "selection_inputs_sha256": "5af87a31c82561b8b738eefdad4327a542fbcd4ad0f6e85833aaab62b26f5222",
+          "true_positive_sha256": "14cfa010c03d31bbe7236bc9ba1e7290d12cb0d06a699674fada7f553b9a59d5",
+          "true_positives_in_pool": 2628
+        },
+        {
+          "N": 2927,
+          "P": 2927,
+          "candidate_count": 30291,
+          "candidate_sha256": "21545aa292dd64d76e03e27ee7908c8c38592afe535cfbd0435965bba2dfc184",
+          "classifier_parameters": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "class_weight": "balanced_subsample",
+            "criterion": "gini",
+            "max_depth": 6,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 100,
+            "n_jobs": 4,
+            "oob_score": false,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false
+          },
+          "fit_scope_sha256": "92114b9d51a85394c5a9b4fe9a5a56b380f6c37c5850bc91280e2ae85ef44c66",
+          "fold": 1,
+          "negative_sha256": "0ce589eced2973c3544fad55049f5863ea5dc9cf5c4a98c671426628d621e9ff",
+          "permutation_seed": 20261066783019,
+          "pool_count": 30291,
+          "pool_equals_inner_train_minus_shuffled": true,
+          "pool_equals_inner_train_minus_training_anchors": true,
+          "pool_sha256": "21545aa292dd64d76e03e27ee7908c8c38592afe535cfbd0435965bba2dfc184",
+          "positive_sha256": "9d2f405e53712b5633e8f468161456b4c0ffd1db21e3ceec9f25299211783f8a",
+          "sampling_seed": 1575840263663,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__1",
+          "selection_inputs_path": "/home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_6/ledger/selection__3f44dc8730a53f1c82540a9c270c1449eb24d048500c4ee0da9de7229c171c72.json",
+          "selection_inputs_sha256": "9a6dda66e7f1be36b9a7715ad640208546dd04e7c103ad5b12b6e1a8be4d3008",
+          "true_positive_sha256": "94e97e59197ecfe3bedc7ee0065db6c72e78bc27fd0fdb47830ac88542a17c4b",
+          "true_positives_in_pool": 2653
+        },
+        {
+          "N": 2677,
+          "P": 2677,
+          "candidate_count": 29988,
+          "candidate_sha256": "dd6ff3a9ac3ae8a1068111505f341eadf6d68816bc857bc97fdc19111918aa96",
+          "classifier_parameters": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "class_weight": "balanced_subsample",
+            "criterion": "gini",
+            "max_depth": 6,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 100,
+            "n_jobs": 4,
+            "oob_score": false,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false
+          },
+          "fit_scope_sha256": "ac2698754d3d58ec7697d473c137fe79d17eb6f30473bf6acfa6d9ce02a1dda4",
+          "fold": 2,
+          "negative_sha256": "32651316a358566d6f9a87bbf87987c9bb49427f747c360e3f78ef5869558eb0",
+          "permutation_seed": 20261066783020,
+          "pool_count": 29988,
+          "pool_equals_inner_train_minus_shuffled": true,
+          "pool_equals_inner_train_minus_training_anchors": true,
+          "pool_sha256": "dd6ff3a9ac3ae8a1068111505f341eadf6d68816bc857bc97fdc19111918aa96",
+          "positive_sha256": "fc2c4cea0d6157ce4bdf51d4675a9b8fde49dc67ce3e622918ecded85218124a",
+          "sampling_seed": 1575840263664,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__2",
+          "selection_inputs_path": "/home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_6/ledger/selection__b8272102a0d83774b37d43a8cc1336c595d589449de10ff360075695a3a33cac.json",
+          "selection_inputs_sha256": "00fe213e0033f6d3ceb4805be9a5611b0c77a6d45960d9a0538543e883447da0",
+          "true_positive_sha256": "9549fd3d93d33c6d5f0f027d5b45c07986358d259f8ef21da8cc5dfc4bc83890",
+          "true_positives_in_pool": 2458
+        },
+        {
+          "N": 2838,
+          "P": 2838,
+          "candidate_count": 30441,
+          "candidate_sha256": "acf300044b2fd2f099d8cc9ae007a96845e350ada378581ce7a509e9dce8c0ef",
+          "classifier_parameters": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "class_weight": "balanced_subsample",
+            "criterion": "gini",
+            "max_depth": 6,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 100,
+            "n_jobs": 4,
+            "oob_score": false,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false
+          },
+          "fit_scope_sha256": "1cbd69ca50091cb4ac790cbbbe6628db7d75136eeda30b26cc808d90b575e5c6",
+          "fold": 3,
+          "negative_sha256": "2740b15a2214aa0aaa6802fc0013aceb50f14e4e3ea11a6b9f6ebcefe6cf811b",
+          "permutation_seed": 20261066783021,
+          "pool_count": 30441,
+          "pool_equals_inner_train_minus_shuffled": true,
+          "pool_equals_inner_train_minus_training_anchors": true,
+          "pool_sha256": "acf300044b2fd2f099d8cc9ae007a96845e350ada378581ce7a509e9dce8c0ef",
+          "positive_sha256": "6adc821366dd281934807b916fdc6fcfdd40f3740cb82d436f61d32970d47ab1",
+          "sampling_seed": 1575840263665,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__3",
+          "selection_inputs_path": "/home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_6/ledger/selection__dab5e47fcb6f0bb87279055f7f2c4db49b1fcabacd8b9108ce8f7a07b4a1aa6b.json",
+          "selection_inputs_sha256": "ee7b45d088dd48189fe061debb39cf6de83b2ed5dae14f00dba2841829da3f02",
+          "true_positive_sha256": "b61573725c4b67e4e81c3530e04c2d043c03eb2d4e8ceb44aade4bff04f7dac6",
+          "true_positives_in_pool": 2593
+        },
+        {
+          "N": 2941,
+          "P": 2941,
+          "candidate_count": 30740,
+          "candidate_sha256": "d762c36bb876f290f326a1a757d5981a2049f5a65a3848162e3c8213c0198c57",
+          "classifier_parameters": {
+            "bootstrap": true,
+            "ccp_alpha": 0.0,
+            "class_weight": "balanced_subsample",
+            "criterion": "gini",
+            "max_depth": 6,
+            "max_features": "sqrt",
+            "max_leaf_nodes": null,
+            "max_samples": null,
+            "min_impurity_decrease": 0.0,
+            "min_samples_leaf": 1,
+            "min_samples_split": 2,
+            "min_weight_fraction_leaf": 0.0,
+            "monotonic_cst": null,
+            "n_estimators": 100,
+            "n_jobs": 4,
+            "oob_score": false,
+            "random_state": 42,
+            "verbose": 0,
+            "warm_start": false
+          },
+          "fit_scope_sha256": "e85f1483c94f178973a55f09bf64c832c953868f7a043c548a4fa2110ff81e45",
+          "fold": 4,
+          "negative_sha256": "51c38f28f4525f1461a294ab85a48e287ae930730a2369a9b45e7bec9f4494dd",
+          "permutation_seed": 20261066783022,
+          "pool_count": 30740,
+          "pool_equals_inner_train_minus_shuffled": true,
+          "pool_equals_inner_train_minus_training_anchors": true,
+          "pool_sha256": "d762c36bb876f290f326a1a757d5981a2049f5a65a3848162e3c8213c0198c57",
+          "positive_sha256": "ea4f30fc91e14db2c72764200586ec6522b0169925dd4177dc0539557e7564c5",
+          "sampling_seed": 1575840263666,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__4",
+          "selection_inputs_path": "/home/mes7956/projects/pulearning/experiments/20261011_eval_repair_v2/results/task_6/ledger/selection__b55de0691581744d9fdca08ddddafe0eb4efa3510abeb1f57d3e565ce125246a.json",
+          "selection_inputs_sha256": "e4ab7bb1f7c1a59ba6096ed8f5b74b74a0f4ab1300b88df0e8e370469d914cff",
+          "true_positive_sha256": "92a48d794d37c56744672c7ae7d2fcfa466e94db1be74b2efa6d7b52906d646d",
+          "true_positives_in_pool": 2684
+        }
+      ],
+      "folds_scored": 5,
+      "label_hashes": {
+        "test_fold0": "e72e4f10494830ce9882d8405f61f91213b367699daf491e9cd6386c3a4cbb3b",
+        "test_fold1": "d15e1c01bcbc16b1fdfc424fafe5d2190c547e9513c8f5670d0244408db01192",
+        "test_fold2": "2fc9b2ba2eecf04a215093668a2bf3eb09a56100ca6d36d6669bf5567ac4c4eb",
+        "test_fold3": "34bcf4f01793d13195caa6ea366e236ba5ef2c9d58852e847f52bcbaff3abe41",
+        "test_fold4": "051e868a3d1f959a6a444364d2fbde90ec4ffde82136c8eec463fe614b5afec8",
+        "train_fold0": "816bf7aeaa67d0dbc58f0c385742d07957b5aa679d2f22a07a5cb1e20cea8099",
+        "train_fold1": "8374fc93ef8e82e2fda9f2f098729405588572445238ec337d38ef5993da5c08",
+        "train_fold2": "ffd6036cbf7956e52b096fb9ac5c579e1e344b6572dfcc906b975062eb33908e",
+        "train_fold3": "3caa9c78fc420d720a4305c720cb618de755ea302d629e8ba0991d843810e171",
+        "train_fold4": "7c777431d4791d19d178b10d8e2c381c286de49e2b0f620894b4487aee1f2446"
+      },
+      "pooled_auprc": 0.082488,
+      "provenance_gate": null,
+      "seals": [
+        {
+          "fold": 0,
+          "n": 11016,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__0",
+          "sha256": "6275a1b20752f1585440a0183c2c343151f515f6614f0c06375b5282dbdcd9d9"
+        },
+        {
+          "fold": 1,
+          "n": 10931,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__1",
+          "sha256": "9859e2bebec24035fbfc3e15a5d6939e667cb53c20e360100ba3972c4bf60808"
+        },
+        {
+          "fold": 2,
+          "n": 11254,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__2",
+          "sha256": "f7063201cc11d1fcccba6e7ba80338932f1dbb561ebae3819d1c47a62257df9e"
+        },
+        {
+          "fold": 3,
+          "n": 10942,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__3",
+          "sha256": "b6cfde7d4610a8a6e75223dd908d7a3608945572187c6c25f5c439984e5e4e27"
+        },
+        {
+          "fold": 4,
+          "n": 10567,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__4",
+          "sha256": "c90aca7407b0e40808142d2b72b2852e128f1d7a01ebad6978ee325a04a6ee54"
+        }
+      ],
+      "status": "evaluated"
+    }
+  },
+  "feature_columns": [
+    "log_span",
+    "n_linked_cres",
+    "log_density",
+    "is_lncrna",
+    "log_transcripts",
+    "log_publications"
+  ],
+  "label_access_scope": "separate process; no true-label vector supplied during fit; Python file-open enforcement",
+  "open_events": [
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/31777ebf0c98694709c4e7d35b41652ed013b0e5ce8ca9f176256f348fc23cbb/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697065923474335
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/3f44dc8730a53f1c82540a9c270c1449eb24d048500c4ee0da9de7229c171c72/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697067070523437
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b8272102a0d83774b37d43a8cc1336c595d589449de10ff360075695a3a33cac/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697068112456653
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/dab5e47fcb6f0bb87279055f7f2c4db49b1fcabacd8b9108ce8f7a07b4a1aa6b/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697069166348738
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b55de0691581744d9fdca08ddddafe0eb4efa3510abeb1f57d3e565ce125246a/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697070241104129
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/31777ebf0c98694709c4e7d35b41652ed013b0e5ce8ca9f176256f348fc23cbb/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__0",
+      "timestamp": 1791697071012282545
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/31777ebf0c98694709c4e7d35b41652ed013b0e5ce8ca9f176256f348fc23cbb/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__0",
+      "timestamp": 1791697071029483607
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/3f44dc8730a53f1c82540a9c270c1449eb24d048500c4ee0da9de7229c171c72/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__1",
+      "timestamp": 1791697071050416080
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/3f44dc8730a53f1c82540a9c270c1449eb24d048500c4ee0da9de7229c171c72/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__1",
+      "timestamp": 1791697071071932444
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b8272102a0d83774b37d43a8cc1336c595d589449de10ff360075695a3a33cac/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__2",
+      "timestamp": 1791697071093442915
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b8272102a0d83774b37d43a8cc1336c595d589449de10ff360075695a3a33cac/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__2",
+      "timestamp": 1791697071104444799
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/dab5e47fcb6f0bb87279055f7f2c4db49b1fcabacd8b9108ce8f7a07b4a1aa6b/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__3",
+      "timestamp": 1791697071125886442
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/dab5e47fcb6f0bb87279055f7f2c4db49b1fcabacd8b9108ce8f7a07b4a1aa6b/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__3",
+      "timestamp": 1791697071143252385
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b55de0691581744d9fdca08ddddafe0eb4efa3510abeb1f57d3e565ce125246a/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__4",
+      "timestamp": 1791697071164197497
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b55de0691581744d9fdca08ddddafe0eb4efa3510abeb1f57d3e565ce125246a/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__4",
+      "timestamp": 1791697071183313371
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/31777ebf0c98694709c4e7d35b41652ed013b0e5ce8ca9f176256f348fc23cbb/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697071266823559
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/31777ebf0c98694709c4e7d35b41652ed013b0e5ce8ca9f176256f348fc23cbb/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__0",
+      "timestamp": 1791697071268894922
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/3f44dc8730a53f1c82540a9c270c1449eb24d048500c4ee0da9de7229c171c72/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697071269917410
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/3f44dc8730a53f1c82540a9c270c1449eb24d048500c4ee0da9de7229c171c72/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__1",
+      "timestamp": 1791697071271979334
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b8272102a0d83774b37d43a8cc1336c595d589449de10ff360075695a3a33cac/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697071272982519
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b8272102a0d83774b37d43a8cc1336c595d589449de10ff360075695a3a33cac/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__2",
+      "timestamp": 1791697071275002763
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/dab5e47fcb6f0bb87279055f7f2c4db49b1fcabacd8b9108ce8f7a07b4a1aa6b/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697071276009801
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/dab5e47fcb6f0bb87279055f7f2c4db49b1fcabacd8b9108ce8f7a07b4a1aa6b/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__3",
+      "timestamp": 1791697071278055790
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b55de0691581744d9fdca08ddddafe0eb4efa3510abeb1f57d3e565ce125246a/train_labels.json",
+      "seal_key": null,
+      "timestamp": 1791697071279036059
+    },
+    {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/b55de0691581744d9fdca08ddddafe0eb4efa3510abeb1f57d3e565ce125246a/test_labels.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__4",
+      "timestamp": 1791697071281102637
+    }
+  ],
+  "plan_sha256": "7ca00cb01daa55785261c1f4c8949057ac8f333bd8205e0245220921d6b925ba",
+  "publication_counts": {
+    "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/gene2pubmed_counts.parquet",
+    "sha256": "97f9fa1f0cad5e5225a72443e01a489e42deb992eac8001a98e66f0d30e160eb"
+  },
+  "publication_provenance": {
+    "audit": {
+      "count_rule": "tax_id=9606; positive PubMed_ID; distinct gene_id-PubMed_ID union across Entrez mappings",
+      "difference_examples": [],
+      "distinct_gene_pubmed_pairs": 3154880,
+      "human_source_rows": 3339654,
+      "mapped_genes": 24704,
+      "mapping_rule": "versioned GENCODE v50 Entrez transcript metadata joined on transcript_id_versioned to certified transcript table",
+      "rows_differing_from_retained_counts": 0,
+      "source_hashes": {
+        "datasets/processed/cre/gene2pubmed_counts.parquet": "97f9fa1f0cad5e5225a72443e01a489e42deb992eac8001a98e66f0d30e160eb",
+        "datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/transcripts.parquet": "74c53879a8a9303dffdffdac194b4d88d4df9d0ab79de0429040dcf70c386058",
+        "datasets/raw/gene2pubmed/gene2pubmed.gz": "22c112f8e12e3b585d647dee8a68783af91496095efe4ac38cbc6b6aa9b560ca",
+        "datasets/raw/remap/gencode.v50.metadata.EntrezGene.gz": "686c10607c94b1727422beca53ac6e669cf49e0791bd59b38fd765a9c5669bd0"
+      }
+    },
+    "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v1/publication_count_audit.json",
+    "sha256": "3ccc2d966c87e5933b0a06bf63d644f7e272a9eb42da3400462dd5863fe9c0bf"
+  },
+  "snapshot_checksum": "0aac9e946ba831a2c4b91de7c307b7b06c4618ae7120ff419d59e4a7de69394b",
+  "task": {
+    "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v2/prepared/labels_uniform_random_2/prepared_labels.json",
+    "label_manifest_sha256": "0a9f3138dd3e093b9bdbd5f71e87fde7fbcf951e9789b5d6196fa44e4cc85f00",
+    "run_index": 2,
+    "seed": 20261006,
+    "selector": "uniform_random",
+    "task_index": 6
+  },
+  "true_label_map_supplied": false,
+  "verification": {
+    "file_opens_recorded": 25,
+    "sealed_keys": [
+      "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__0",
+      "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__1",
+      "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__2",
+      "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__3",
+      "Malignant neoplasm of breast__label_permutation__uniform_random__random_forest__shuffled__2__4"
+    ],
+    "status": "order_verified",
+    "violations": 0
+  }
+}

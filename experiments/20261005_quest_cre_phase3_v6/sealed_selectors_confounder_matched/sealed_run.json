@@ -1,0 +1,154 @@
+{
+  "classifier": "random_forest",
+  "diseases": {
+    "Malignant neoplasm of breast": {
+      "elapsed_seconds": 28.0,
+      "evaluation_n": 54710,
+      "evaluation_positives": 4686,
+      "folds_scored": 5,
+      "label_hashes": {
+        "test_fold0": "63ed2737b17ad40143770ca06dc5be4bc45d53dea066b5731a80aa00fb8965ed",
+        "test_fold1": "dfc4e8822d61544612fb07f88a638af062f77fc8208b33138468ba13d6d3b80c",
+        "test_fold2": "d307ab3e2c5a830d9387a85d71b0ed98eccbeffcb8aa3f19dd851ee2b75dd07f",
+        "test_fold3": "022b08bd1cc3f1bf04c4f8f7b12824cf3b7c2f8c3fbd51f4da97bb44aca7d5c0",
+        "test_fold4": "8be14276708ea52ea59dd70839a462bc77da4dafd610ef7fee1089727f103ab1",
+        "train_fold0": "48bd920a62651f64d390a5b517969521864ebe3d7e59ccb87b6e9775023417ea",
+        "train_fold1": "a32f2cf9e93445300944917b62932f6bbf6f6a7bf815bfccb236cc37dab133ea",
+        "train_fold2": "f725180f96c416a0014d4a06a01c048f2d6164841e9603cf00abbac46202201b",
+        "train_fold3": "a7f527037cc662bfc0d9cfbf75b3c32b954687111e981ce1ef3337829bd2258b",
+        "train_fold4": "2c44f4b8393265f24d36e669da402c121acf340e76b96c93f2f10983251d90b7"
+      },
+      "pooled_auprc": 0.064592,
+      "seals": [
+        {
+          "fold": 0,
+          "n": 11016,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__0",
+          "sha256": "b03fb376474e2a134f4f80afa41ce6a5ed0b2a4e69d61936cdc82f9389f2074e"
+        },
+        {
+          "fold": 1,
+          "n": 10931,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__1",
+          "sha256": "47ea8f9c7a7fb992057b25287c7e6f3c5a48723e74ab6084970ed2d17361fbfa"
+        },
+        {
+          "fold": 2,
+          "n": 11254,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__2",
+          "sha256": "c68f1e682151882b6dcd497f2130b952bda581f4d132eac2c5777afeb4501425"
+        },
+        {
+          "fold": 3,
+          "n": 10942,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__3",
+          "sha256": "52c5fff36977c076e65c8709d9ac26198da40e2b06ed041b360e7caf693b4b24"
+        },
+        {
+          "fold": 4,
+          "n": 10567,
+          "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__4",
+          "sha256": "f236367d9dcf9ba855413205d3368ba5e0397f7610494cebe558a6eb5e80d450"
+        }
+      ],
+      "status": "evaluated"
+    }
+  },
+  "elapsed_seconds_total": 68.5,
+  "ledger_entries": [
+    {
+      "event": "seal",
+      "n": 11016,
+      "path": "sealed__Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__0.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__0",
+      "sha256": "b03fb376474e2a134f4f80afa41ce6a5ed0b2a4e69d61936cdc82f9389f2074e",
+      "timestamp": 1791305709091412035
+    },
+    {
+      "event": "seal",
+      "n": 10931,
+      "path": "sealed__Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__1.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__1",
+      "sha256": "47ea8f9c7a7fb992057b25287c7e6f3c5a48723e74ab6084970ed2d17361fbfa",
+      "timestamp": 1791305713011959911
+    },
+    {
+      "event": "seal",
+      "n": 11254,
+      "path": "sealed__Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__2.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__2",
+      "sha256": "c68f1e682151882b6dcd497f2130b952bda581f4d132eac2c5777afeb4501425",
+      "timestamp": 1791305716649077942
+    },
+    {
+      "event": "seal",
+      "n": 10942,
+      "path": "sealed__Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__3.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__3",
+      "sha256": "52c5fff36977c076e65c8709d9ac26198da40e2b06ed041b360e7caf693b4b24",
+      "timestamp": 1791305720411978902
+    },
+    {
+      "event": "seal",
+      "n": 10567,
+      "path": "sealed__Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__4.json",
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__4",
+      "sha256": "f236367d9dcf9ba855413205d3368ba5e0397f7610494cebe558a6eb5e80d450",
+      "timestamp": 1791305724330569187
+    },
+    {
+      "event": "label_load",
+      "n_positive": 929,
+      "n_total": 11016,
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__0",
+      "timestamp": 1791305725879565709
+    },
+    {
+      "event": "label_load",
+      "n_positive": 850,
+      "n_total": 10931,
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__1",
+      "timestamp": 1791305727379328969
+    },
+    {
+      "event": "label_load",
+      "n_positive": 1044,
+      "n_total": 11254,
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__2",
+      "timestamp": 1791305729110326667
+    },
+    {
+      "event": "label_load",
+      "n_positive": 966,
+      "n_total": 10942,
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__3",
+      "timestamp": 1791305730734416546
+    },
+    {
+      "event": "label_load",
+      "n_positive": 897,
+      "n_total": 10567,
+      "seal_key": "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__4",
+      "timestamp": 1791305732207061791
+    }
+  ],
+  "negative_mode": "centroid",
+  "phase": "sealed control run (sections 23/25)",
+  "provenance_gate": null,
+  "run_index": 1,
+  "run_kind": "shuffled",
+  "sealed_arm": "label_permutation",
+  "seed": 20261004,
+  "verification": {
+    "file_opens_recorded": 54798,
+    "sealed_keys": [
+      "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__0",
+      "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__1",
+      "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__2",
+      "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__3",
+      "Malignant neoplasm of breast__label_permutation__centroid__random_forest__shuffled__1__4"
+    ],
+    "status": "order_verified",
+    "violations": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "schema_version": "smoke",
+  "dependency_rows": 0,
+  "output_sha256": {},
+  "inputs": {
+    "retained_links": {
+      "path": "/home/mes7956/projects/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/links.parquet",
+      "sha256": "a57702e515e00aed41d0fe2a113a6d31282b891dad0f8f49996d956b5546bce7"
+    },
+    "catalog": {
+      "path": "/home/mes7956/projects/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/catalog.parquet",
+      "sha256": "84887feadfe2f153965752908a91d7c043c5d6313b66ffe3e839d66f787a39a7"
+    }
+  }
+}

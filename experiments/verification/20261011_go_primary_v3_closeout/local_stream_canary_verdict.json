@@ -1,0 +1,15 @@
+{
+  "adapter_sha256": "e8ec9066c63ba91e76a0610ceda4f7e4a15fef5a3b70374cc0514238789b2023",
+  "fixture_method": "exclusive stream copies; no rename, unlink or symlink",
+  "originals_unchanged": true,
+  "rehash_forged_positive": {
+    "error": "GO positives do not rederive from raw sources: propagated",
+    "rejected": true
+  },
+  "script_sha256": "af537fbee14aa2637ea3cca6dc5003960ee08941a4d4b8f52080b54c64d71610",
+  "source_mutation": {
+    "error": "GO source changed: PROTOCOL.json",
+    "rejected": true
+  },
+  "status": "passed"
+}

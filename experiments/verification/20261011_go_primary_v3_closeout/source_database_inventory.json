@@ -1,0 +1,10 @@
+{
+  "HUMAN-uniprot.gaf.gz": {
+    "ComplexPortal": 9558,
+    "RNAcentral": 38224,
+    "UniProtKB": 862694
+  },
+  "goa_human_rna.gaf.gz": {
+    "RNAcentral": 47173
+  }
+}

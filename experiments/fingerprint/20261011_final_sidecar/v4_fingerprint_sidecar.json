@@ -1,0 +1,223 @@
+{
+  "artifacts": {
+    "aggregation_qc": {
+      "artifact_sha256": "c0e9ffed4e76794523cec06714be6109b63ddb925ac8454a19f0108cfa9d8392",
+      "file_order_logical_sha256": "9c83d25cddf807fd469a449fecc8aa761f5c1181b431f5843fafe2a6f7d3ddb1",
+      "rows": 549600,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "weighted_sum",
+          "double",
+          true
+        ],
+        [
+          "observed_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "observed_weight_fraction",
+          "double",
+          true
+        ],
+        [
+          "candidate_link_count",
+          "int64",
+          false
+        ],
+        [
+          "candidate_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_link_count",
+          "int64",
+          false
+        ],
+        [
+          "observed_link_count",
+          "int64",
+          false
+        ],
+        [
+          "aggregation_reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "5b9f4f7fdd88dc7d9fa81fb1151059c08b9d4fc589013290d6c13f0df098786c",
+      "sorted_key_columns": [
+        "gene_id",
+        "feature_id"
+      ]
+    },
+    "dependencies": {
+      "artifact_sha256": "8a35ff2aef4645934deb3ae6ddacbc01093570348aa341f566958f3168315c1f",
+      "file_order_logical_sha256": "ecaccf7aa2b98bf5da66996bae7f0ed93d9d717ff9dc7a83e6e10123159c2e48",
+      "rows": 225784420,
+      "schema": [
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "entity_type",
+          "string",
+          false
+        ],
+        [
+          "entity_id",
+          "string",
+          false
+        ],
+        [
+          "source_element_id",
+          "string",
+          false
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "start",
+          "int64",
+          true
+        ],
+        [
+          "end",
+          "int64",
+          true
+        ],
+        [
+          "source_record_id",
+          "string",
+          true
+        ],
+        [
+          "dependency_type",
+          "string",
+          false
+        ],
+        [
+          "selection_role",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "9cff3122dd69ce86eb75e5e790c39ed50d12526a89ddcf359d93090dce2447a4",
+      "sorted_key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "selection_role",
+        "source_element_id",
+        "dependency_type"
+      ]
+    },
+    "view": {
+      "artifact_sha256": "5120bca04eff7998180377050e51c7c09ba2b0062a526f82cae976061c36a0fb",
+      "file_order_logical_sha256": "b5bd715b401a904c0259297bff06eba7fe31a5e0e7a85a15a5eb91befc41b0eb",
+      "rows": 549600,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "value",
+          "double",
+          true
+        ],
+        [
+          "observed",
+          "bool",
+          false
+        ],
+        [
+          "reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "564fd5badf321c8f64e55f9b0efe3ad0ab2ed1543e3e86618b06b303c22d56d6",
+      "sorted_key_columns": [
+        "gene_id",
+        "feature_id"
+      ]
+    }
+  },
+  "bundle": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data",
+  "bundle_manifest_sha256": "21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f",
+  "dependency_encoder_scope": "integer/string/null schema; signed-zero float-cache correction is inapplicable",
+  "finalizer_code_sha256": "96d637011d33efbb2120322a079b4540bcab18d5af7b18c725bd77238d551830",
+  "fingerprint_reports": {
+    "/home/mes7956/projects/pulearning/experiments/fingerprint/20261011_eval_repair_v1/v4_fingerprint.json": {
+      "elapsed_seconds": 3868.1,
+      "peak_rss_kib": 16263884,
+      "settings": {
+        "batch_size": 10000,
+        "duckdb_version": "1.5.5",
+        "memory_limit": "12GB",
+        "preserve_insertion_order": true,
+        "pyarrow_version": "25.0.0",
+        "threads": 4
+      },
+      "sha256": "94ce49c658788e38b3cc02a956b97a7a1a2ccc03c9b2a126d49ba9369ede837e",
+      "source_snapshot_checksum": "7b2a0e9abfccbd3271b47bdddca277e8da4bb1c8cf5b4552d96b12b36644ae10"
+    },
+    "/home/mes7956/projects/pulearning/experiments/fingerprint/20261011_fingerprint_v3/v4_values_qc_fingerprints.json": {
+      "elapsed_seconds": 10.9,
+      "peak_rss_kib": 291412,
+      "settings": {
+        "batch_size": 10000,
+        "duckdb_version": "1.5.5",
+        "memory_limit": "12GB",
+        "preserve_insertion_order": true,
+        "pyarrow_version": "25.0.0",
+        "threads": 4
+      },
+      "sha256": "108be4323e127328210bd7c99ec2ea3626a9d8f512d45315334b00c2627810da",
+      "source_snapshot_checksum": "d314ab74fbf465042b7afe798e6549ac38860a8fb64e1108296aa030678a9aac"
+    }
+  },
+  "fingerprint_scheme": "cre-sorted-content-v1",
+  "full_replay_certificate": {
+    "path": "/home/mes7956/projects/pulearning/experiments/20261005_quest_cre_phase3_v4/validate_full.json",
+    "replay_mode": "full",
+    "sha256": "f0cfdcd4b193a047bf890bf4f64bd07eccd404407cf88185c801029d3e45e7c3",
+    "status": "valid"
+  },
+  "golden_encoding_verifier": {
+    "path": "/home/mes7956/projects/pulearning/experiments/fingerprint/20261011_fingerprint_v3/golden_verdict.json",
+    "sha256": "fee3c6bccf5862390468e1b299424dcaddce33014f0ba6a8526b7bd039607ff7"
+  },
+  "interpretation": "sorted content is auxiliary reproducibility evidence; original file-order hashes and full semantic replay certificate remain bound to retained bytes",
+  "numbers_reread_from_completed_artifacts": true,
+  "original_build_settings": "not recorded in original manifest",
+  "status": "verified"
+}

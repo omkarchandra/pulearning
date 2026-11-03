@@ -1,0 +1,245 @@
+{
+  "aggregation_qc_contract": {
+    "coverage_formula": "observed_weight_sum / retained_weight_sum",
+    "keys": [
+      "gene_id",
+      "feature_id"
+    ],
+    "units": "weights inherit link score units; weighted_sum is weight_times_feature_value",
+    "value_formula": "weighted_sum / observed_weight_sum"
+  },
+  "dependency_rows": 2000000,
+  "expected_method": "tier1_distance_window_unconstrained",
+  "feature_ids": [
+    "f0",
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9"
+  ],
+  "input_sha256": {
+    "candidate_links": "f3b095eaeb02b350bd39be29146d3e91e1540f88b6b1e8afd8e070691fb90b3e",
+    "catalog": "ffb3fc55565f197febf188f89935c011800857a38e05c43ab317c0f15a09f137",
+    "genes": "b2fbf03681a4d43e3742e064b3ea7dd9ce2fbda16a69e0b614bb754c01bec0eb",
+    "measurements": "d540b7186ad4e63164ac563ed7d627a2dfe9ef95d9e95d6fa4bffdbcbd9e4aa5",
+    "partitions": "55ed1c664b123bd3322340a177969954cb3a0a82244c9fe88f97073a9f2abc7a",
+    "retained_links": "f3b095eaeb02b350bd39be29146d3e91e1540f88b6b1e8afd8e070691fb90b3e"
+  },
+  "inputs": {
+    "candidate_links": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/fixture/candidate_links.parquet",
+      "sha256": "f3b095eaeb02b350bd39be29146d3e91e1540f88b6b1e8afd8e070691fb90b3e"
+    },
+    "catalog": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/fixture/catalog.parquet",
+      "sha256": "ffb3fc55565f197febf188f89935c011800857a38e05c43ab317c0f15a09f137"
+    },
+    "genes": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/fixture/genes.parquet",
+      "sha256": "b2fbf03681a4d43e3742e064b3ea7dd9ce2fbda16a69e0b614bb754c01bec0eb"
+    },
+    "measurements": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/fixture/measurements.parquet",
+      "sha256": "d540b7186ad4e63164ac563ed7d627a2dfe9ef95d9e95d6fa4bffdbcbd9e4aa5"
+    },
+    "partitions": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/fixture/partitions.parquet",
+      "sha256": "55ed1c664b123bd3322340a177969954cb3a0a82244c9fe88f97073a9f2abc7a"
+    },
+    "retained_links": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/fixture/retained_links.parquet",
+      "sha256": "f3b095eaeb02b350bd39be29146d3e91e1540f88b6b1e8afd8e070691fb90b3e"
+    }
+  },
+  "min_observed_weight_fraction": 0.8,
+  "output_sha256": {
+    "aggregation_qc.parquet": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+    "dependencies.parquet": "99d9c4c578c70b2943807acd6e228434ab9c32a4fdae7df95e3fe15b33435f99",
+    "view.parquet": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de"
+  },
+  "outputs": {
+    "aggregation_qc": {
+      "bytes": 37499,
+      "keys": [
+        "gene_id",
+        "feature_id"
+      ],
+      "logical_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "path": "aggregation_qc.parquet",
+      "rows": 100000,
+      "schema": [
+        {
+          "name": "gene_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "feature_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "weighted_sum",
+          "nullable": true,
+          "type": "double"
+        },
+        {
+          "name": "observed_weight_sum",
+          "nullable": false,
+          "type": "double"
+        },
+        {
+          "name": "retained_weight_sum",
+          "nullable": false,
+          "type": "double"
+        },
+        {
+          "name": "observed_weight_fraction",
+          "nullable": true,
+          "type": "double"
+        },
+        {
+          "name": "candidate_link_count",
+          "nullable": false,
+          "type": "int64"
+        },
+        {
+          "name": "candidate_weight_sum",
+          "nullable": false,
+          "type": "double"
+        },
+        {
+          "name": "retained_link_count",
+          "nullable": false,
+          "type": "int64"
+        },
+        {
+          "name": "observed_link_count",
+          "nullable": false,
+          "type": "int64"
+        },
+        {
+          "name": "aggregation_reason",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "sha256": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731"
+    },
+    "dependencies": {
+      "bytes": 11687954,
+      "keys": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "source_element_id",
+        "dependency_type",
+        "selection_role"
+      ],
+      "logical_sha256": "7bae073bd837ddd04428e6a6fc0773fd5bf0979b63f4fef5ddab20f9ef7cf971",
+      "path": "dependencies.parquet",
+      "rows": 2000000,
+      "schema": [
+        {
+          "name": "feature_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "entity_type",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "entity_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "source_element_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "chrom",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "start",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "end",
+          "nullable": true,
+          "type": "int64"
+        },
+        {
+          "name": "source_record_id",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "dependency_type",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "selection_role",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "sha256": "99d9c4c578c70b2943807acd6e228434ab9c32a4fdae7df95e3fe15b33435f99"
+    },
+    "view": {
+      "bytes": 33180,
+      "keys": [
+        "gene_id",
+        "feature_id"
+      ],
+      "logical_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "path": "view.parquet",
+      "rows": 100000,
+      "schema": [
+        {
+          "name": "gene_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "feature_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "nullable": true,
+          "type": "double"
+        },
+        {
+          "name": "observed",
+          "nullable": false,
+          "type": "bool"
+        },
+        {
+          "name": "reason",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "sha256": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de"
+    }
+  },
+  "peak_spill_bytes": 0,
+  "qc_rows": 100000,
+  "schema_version": "feature-store-v1-cre-view-out-of-core-2",
+  "status": "complete",
+  "view_rows": 100000
+}

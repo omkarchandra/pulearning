@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "bundle_tier_semantics": true,
+    "canonical_column_binding": true,
+    "coverage_arithmetic": true,
+    "distance_bins_partition_pairs": true,
+    "pair_integrity": true,
+    "pinned_inputs": true
+  },
+  "report": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/context_results_corrected/section15_context_revalidation.json",
+  "report_sha256": "394a63d5dd8ac3262f9fe1b1adb7b4d8dfd51881b47bf7c8a289f4f105ee72a8",
+  "status": "verified",
+  "verifier_sha256": "5b7e688d6209078a154248b135224ea702446e099e621bac9c9791453fd12d2f"
+}

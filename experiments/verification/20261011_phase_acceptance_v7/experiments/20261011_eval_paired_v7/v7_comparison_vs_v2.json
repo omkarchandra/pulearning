@@ -1,0 +1,61 @@
+{
+  "all_reported_run_aps_equal_v2": true,
+  "comparisons": {
+    "biotype_stratified": {
+      "all_reported_run_aps_equal_v2": true,
+      "mean_difference": 0.0,
+      "v2_mean_auprc": 0.0653504,
+      "v7_mean_auprc": 0.0653504,
+      "v7_run_auprcs": [
+        0.066322,
+        0.064455,
+        0.064341,
+        0.066026,
+        0.065608
+      ]
+    },
+    "centroid": {
+      "all_reported_run_aps_equal_v2": true,
+      "mean_difference": 0.0,
+      "v2_mean_auprc": 0.048791600000000004,
+      "v7_mean_auprc": 0.048791600000000004,
+      "v7_run_auprcs": [
+        0.048842,
+        0.048413,
+        0.048451,
+        0.049452,
+        0.0488
+      ]
+    },
+    "confounder_matched": {
+      "all_reported_run_aps_equal_v2": true,
+      "mean_difference": 0.0,
+      "v2_mean_auprc": 0.15075460000000002,
+      "v7_mean_auprc": 0.15075460000000002,
+      "v7_run_auprcs": [
+        0.136475,
+        0.149025,
+        0.162322,
+        0.144522,
+        0.161429
+      ]
+    },
+    "uniform_random": {
+      "all_reported_run_aps_equal_v2": true,
+      "mean_difference": 0.0,
+      "v2_mean_auprc": 0.1423246,
+      "v7_mean_auprc": 0.1423246,
+      "v7_run_auprcs": [
+        0.166478,
+        0.082488,
+        0.12443,
+        0.185313,
+        0.152914
+      ]
+    }
+  },
+  "scope": "configuration/runner reproducibility of a shuffled one-disease diagnostic; no scientific predictive claim",
+  "summary_sha256": "7966e58e75479db9c9cd98c7e5cb5bf836f30cadd4584311f8ef7e60b02a3d19",
+  "v7_snapshot_checksum": "4d9e0e4c1b5663080d8183ad97024785861eaaf62e74ba538c2993f6301fc47d",
+  "verdict_sha256": "691a677bd91db983ed36b2fa558e7f1f958449e679b92191be9c89154037178c"
+}

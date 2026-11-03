@@ -1,0 +1,143 @@
+{
+  "base_raw_replay": {
+    "all_product_mappings_replayed": 42695,
+    "all_term_support_records_replayed": 16996,
+    "by_aspect": {
+      "biological_process": {
+        "candidate_terms": 1151,
+        "experimentally_annotated_genes": 10643,
+        "honest_lncrna_genes": 7,
+        "lncrna_genes": 25,
+        "panel_supported_terms": 1135,
+        "protein_coding_genes": 10618,
+        "terms_with_25_test_positives_every_fold": 409
+      },
+      "cellular_component": {
+        "candidate_terms": 228,
+        "experimentally_annotated_genes": 12990,
+        "honest_lncrna_genes": 4,
+        "lncrna_genes": 11,
+        "panel_supported_terms": 227,
+        "protein_coding_genes": 12979,
+        "terms_with_25_test_positives_every_fold": 102
+      },
+      "molecular_function": {
+        "candidate_terms": 306,
+        "experimentally_annotated_genes": 15411,
+        "honest_lncrna_genes": 5,
+        "lncrna_genes": 22,
+        "panel_supported_terms": 304,
+        "protein_coding_genes": 15389,
+        "terms_with_25_test_positives_every_fold": 129
+      }
+    },
+    "development_terms": 28,
+    "direct_gene_term_pairs": 133507,
+    "errors": [],
+    "final_terms": 0,
+    "gaf_rows_replayed": 957649,
+    "honest_lncrna_stratum_in_evaluation_universe": 11913,
+    "label_manifest_sha256": "24b83fb3746e143dd277629997487b2c5eaafd8ddb0167738af628f34361aa3d",
+    "panel_clusters": 28,
+    "panel_complete": false,
+    "propagated_gene_term_pairs": 760145,
+    "protocol_sha256": "25f52c579aac9855e971b2f5ae1cd6831558b27826a7de6915025341a7d31c2d",
+    "real_scoring_authorized": false,
+    "scope": "independent code and process, not a separate model reviewer; no production adapter imports",
+    "source_files_verified": 17,
+    "status": "verified"
+  },
+  "base_raw_verifier_sha256": "54d1a3683f2233509738f6a0f69f60699f397d12c549e2de4c412f08ac0173de",
+  "errors": [],
+  "mode_summaries": {
+    "pooled_support": {
+      "attempts": [
+        {
+          "aspects": {
+            "biological_process": {
+              "clusters": 368,
+              "development_hierarchy_pairs": 5,
+              "development_terms": 27,
+              "eligible_terms": 1135,
+              "final_terms": 6,
+              "hierarchy_skips": 2
+            },
+            "cellular_component": {
+              "clusters": 106,
+              "development_hierarchy_pairs": 0,
+              "development_terms": 6,
+              "eligible_terms": 227,
+              "final_terms": 2,
+              "hierarchy_skips": 0
+            },
+            "molecular_function": {
+              "clusters": 131,
+              "development_hierarchy_pairs": 0,
+              "development_terms": 7,
+              "eligible_terms": 304,
+              "final_terms": 2,
+              "hierarchy_skips": 1
+            }
+          },
+          "step": "average_j030"
+        }
+      ],
+      "complete": true,
+      "development_terms": 40,
+      "eligible_terms": 1666,
+      "final_terms": 10,
+      "selected_step": "average_j030"
+    },
+    "strict_25_each_fold": {
+      "attempts": [
+        {
+          "aspects": {
+            "biological_process": {
+              "clusters": 135,
+              "development_hierarchy_pairs": 4,
+              "development_terms": 27,
+              "eligible_terms": 409,
+              "final_terms": 6,
+              "hierarchy_skips": 5
+            },
+            "cellular_component": {
+              "clusters": 48,
+              "development_hierarchy_pairs": 0,
+              "development_terms": 6,
+              "eligible_terms": 102,
+              "final_terms": 2,
+              "hierarchy_skips": 1
+            },
+            "molecular_function": {
+              "clusters": 45,
+              "development_hierarchy_pairs": 0,
+              "development_terms": 7,
+              "eligible_terms": 129,
+              "final_terms": 2,
+              "hierarchy_skips": 0
+            }
+          },
+          "step": "average_j030"
+        }
+      ],
+      "complete": true,
+      "development_terms": 40,
+      "eligible_terms": 640,
+      "final_terms": 10,
+      "selected_step": "average_j030"
+    }
+  },
+  "models_fitted": 0,
+  "pair_distances_replayed": 812095,
+  "panel_content_sha256": "0cda37bef9fc033fedffa13c66b8d4c4425be4d8f1a020028b995bad6dd5f076",
+  "panel_manifest_sha256": "c456e5e7dd326d1cf42948c2db415fc654a9c44ac1f88b7a720e8bbd7896107c",
+  "panel_proposal_sha256": "0d305dd8c4a274f0c1583e798dd5037e237fbc7fd41d10ad6586c2beb2bef7df",
+  "protocol_sha256": "3a2c4c1d1316aee07436e006cd42538e880279ed6bfbb320aef8b73c88b90a1c",
+  "real_scoring_authorized": false,
+  "recorded_at_utc": "2026-10-11T09:38:40.642756+00:00",
+  "scope": "separate code/process; bitset-heap producer versus set-intersection matrix-scan verifier; no production adapter imports",
+  "selected_merges_replayed": 1473,
+  "slurm_job_id": "9481056",
+  "status": "verified",
+  "verifier_sha256": "4d6f842f1d1a2a59affa1093f5912882973db4952b811a3455993629ffd5ace2"
+}

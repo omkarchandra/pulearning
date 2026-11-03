@@ -1,0 +1,306 @@
+{
+  "classifier_config": {
+    "baseline": {
+      "candidate_multiplier": 5,
+      "max_candidates": 500,
+      "rn_threshold": "mean"
+    },
+    "classifier": {
+      "name": "random_forest",
+      "random_forest_jobs": 4,
+      "random_forest_max_depth": 6,
+      "random_forest_trees": 100,
+      "xgboost_trees": 100
+    },
+    "data": {
+      "eval_negative_ratio": 5,
+      "max_genes_per_task": 800,
+      "max_tasks": 5,
+      "min_task_positives": 10,
+      "validation_fraction": 0.2
+    },
+    "features": {
+      "max_policy_dims": 64
+    },
+    "paths": {
+      "disgenet": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_paired_v7/datasets/raw/DisGeNET.txt",
+      "experiments_dir": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_paired_v7/experiments",
+      "features": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_paired_v7/datasets/processed/features/binary_gene_feature_score.csv",
+      "gpt_reliable_negatives": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_paired_v7/datasets/processed/labels/reliable_neg_set_gpt.csv",
+      "project_root": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_paired_v7",
+      "string_links": "/gpfs/projects/p32724/pulearning/releases/20261011_eval_paired_v7/datasets/raw/string/9606.protein.links.v12.0.txt"
+    },
+    "project": {
+      "name": "pu_rl_rn_selection",
+      "seed": 42
+    },
+    "rl": {
+      "candidate_multiplier": 5,
+      "class_balance_penalty": 0.0,
+      "class_balance_target_ratio": 1.0,
+      "entropy_coeff": 0.01,
+      "episodes": 80,
+      "eval_max_selected": 80,
+      "eval_min_selected": 1,
+      "eval_selected_ratio": 3.0,
+      "false_negative_penalty": 0.0,
+      "initial_distance_weight": 2.0,
+      "learning_rate": 0.08,
+      "max_candidates": 500,
+      "reward_baseline_decay": 0.9,
+      "seeds": [
+        42,
+        43,
+        44
+      ]
+    },
+    "smoke": {
+      "max_candidates": 60,
+      "max_genes_per_task": 250,
+      "max_tasks": 2,
+      "min_task_positives": 5,
+      "random_policy_episodes": 2,
+      "reinforce_episodes": 30
+    }
+  },
+  "disease": "Malignant neoplasm of breast",
+  "feature_columns": [
+    "log_span",
+    "n_linked_cres",
+    "log_density",
+    "is_lncrna",
+    "log_transcripts",
+    "log_publications"
+  ],
+  "files": {
+    "features": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/features.parquet",
+      "sha256": "1d3429bdb566de42b29b500e118aa33010b0885880f8914662e3e4bd16ef5875"
+    },
+    "split": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/split.parquet",
+      "sha256": "2b2b44e074078997a0223edc703d4094f10ade2cece5e36ca53fcfbe3d30bbd1"
+    },
+    "universe": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/universe.parquet",
+      "sha256": "6e2a8c661e265deeb00c3b53ea33594e1f256989690528c00d49ae2a1b26b245"
+    }
+  },
+  "inputs": {
+    "gtf": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/raw/cre/gencode/v50/gencode.v50.annotation.gtf.gz",
+      "sha256": "83fba3e9b03f0b8c958f3595c6c350adc55f468abf8b0e47b6d5284cfe13a453"
+    },
+    "links": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/feature_store_v1_proximity/cre_gene_links.parquet",
+      "sha256": "b0e129b1299b218ec422a4c94146f968aeaaeaee4b6acbce78946e7ab7c08c20"
+    },
+    "positives": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_13_2_remap_v1/remapped_positives.json",
+      "sha256": "cccf437a27a0a7381fcf1265418b1ad7524df99c2db9ee954be615263607ccc5"
+    },
+    "publication_counts": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/gene2pubmed_counts.parquet",
+      "sha256": "97f9fa1f0cad5e5225a72443e01a489e42deb992eac8001a98e66f0d30e160eb"
+    },
+    "split": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/20261005_locus_split_v1_balancer_v4/splits/0dfef23274047a5547e63765208953e47323b582630c512441f74ab1fb98fe00.parquet",
+      "sha256": "2b2b44e074078997a0223edc703d4094f10ade2cece5e36ca53fcfbe3d30bbd1"
+    }
+  },
+  "protected_true_label_source": "/gpfs/projects/p32724/pulearning/experiments/20261005_13_2_remap_v1/remapped_positives.json",
+  "protocol": "shuffled training files prepared separately; exact N=P; canonical candidates; inner-train scaling",
+  "publication_provenance": {
+    "audit": {
+      "count_rule": "tax_id=9606; positive PubMed_ID; distinct gene_id-PubMed_ID union across Entrez mappings",
+      "difference_examples": [],
+      "distinct_gene_pubmed_pairs": 3154880,
+      "human_source_rows": 3339654,
+      "mapped_genes": 24704,
+      "mapping_rule": "versioned GENCODE v50 Entrez transcript metadata joined on transcript_id_versioned to certified transcript table",
+      "rows_differing_from_retained_counts": 0,
+      "source_hashes": {
+        "datasets/processed/cre/gene2pubmed_counts.parquet": "97f9fa1f0cad5e5225a72443e01a489e42deb992eac8001a98e66f0d30e160eb",
+        "datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/transcripts.parquet": "74c53879a8a9303dffdffdac194b4d88d4df9d0ab79de0429040dcf70c386058",
+        "datasets/raw/gene2pubmed/gene2pubmed.gz": "22c112f8e12e3b585d647dee8a68783af91496095efe4ac38cbc6b6aa9b560ca",
+        "datasets/raw/remap/gencode.v50.metadata.EntrezGene.gz": "686c10607c94b1727422beca53ac6e669cf49e0791bd59b38fd765a9c5669bd0"
+      }
+    },
+    "path": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_repair_v1/publication_count_audit.json",
+    "sha256": "3ccc2d966c87e5933b0a06bf63d644f7e272a9eb42da3400462dd5863fe9c0bf"
+  },
+  "publication_zero_fill": {
+    "lncRNA": {
+      "denominator": 34677,
+      "n": 31736
+    },
+    "protein_coding": {
+      "denominator": 20033,
+      "n": 763
+    }
+  },
+  "schema_version": 1,
+  "snapshot_checksum": "4d9e0e4c1b5663080d8183ad97024785861eaaf62e74ba538c2993f6301fc47d",
+  "tasks": [
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_centroid_1/prepared_labels.json",
+      "label_manifest_sha256": "4b35213eaee4a5ad00a751938c162b2a02beb17b952b212a5effdab814b6bf21",
+      "run_index": 1,
+      "seed": 20261005,
+      "selector": "centroid",
+      "task_index": 0
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_centroid_2/prepared_labels.json",
+      "label_manifest_sha256": "bdcc8195e95085b3441471b1c059248597f709a83ae429993d92e59954aa69dd",
+      "run_index": 2,
+      "seed": 20261006,
+      "selector": "centroid",
+      "task_index": 1
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_centroid_3/prepared_labels.json",
+      "label_manifest_sha256": "0b2bae857d660ecf32502bf86372817117a2af590b9744b963dcf69e9b527bf2",
+      "run_index": 3,
+      "seed": 20261007,
+      "selector": "centroid",
+      "task_index": 2
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_centroid_4/prepared_labels.json",
+      "label_manifest_sha256": "9ccaed2243cdae3f76fa7e12269803ed2fc5575b4a38abd7e4a239dcc39b364d",
+      "run_index": 4,
+      "seed": 20261008,
+      "selector": "centroid",
+      "task_index": 3
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_centroid_5/prepared_labels.json",
+      "label_manifest_sha256": "aabe3fbc865a29d3a3668217f68364f2ca427bc4cc8baf711d6afce8c662af0f",
+      "run_index": 5,
+      "seed": 20261009,
+      "selector": "centroid",
+      "task_index": 4
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_uniform_random_1/prepared_labels.json",
+      "label_manifest_sha256": "bda159e14b416f1b0c29761af200b51495996d1566881f36372edb21bffa493b",
+      "run_index": 1,
+      "seed": 20261005,
+      "selector": "uniform_random",
+      "task_index": 5
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_uniform_random_2/prepared_labels.json",
+      "label_manifest_sha256": "0a9f3138dd3e093b9bdbd5f71e87fde7fbcf951e9789b5d6196fa44e4cc85f00",
+      "run_index": 2,
+      "seed": 20261006,
+      "selector": "uniform_random",
+      "task_index": 6
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_uniform_random_3/prepared_labels.json",
+      "label_manifest_sha256": "74d7edeecb6f7033eca3b14357837001e7f92318b2c4698f6f7a2c64b5c3a835",
+      "run_index": 3,
+      "seed": 20261007,
+      "selector": "uniform_random",
+      "task_index": 7
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_uniform_random_4/prepared_labels.json",
+      "label_manifest_sha256": "b0a58dcc26381dd3603bc61051be998f616f32f70370c8ec331581ca9fcaa80a",
+      "run_index": 4,
+      "seed": 20261008,
+      "selector": "uniform_random",
+      "task_index": 8
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_uniform_random_5/prepared_labels.json",
+      "label_manifest_sha256": "62008c04b3022e9d1c776b46bde883314bd1beceeee299c94eaf8eb7b631e60f",
+      "run_index": 5,
+      "seed": 20261009,
+      "selector": "uniform_random",
+      "task_index": 9
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_confounder_matched_1/prepared_labels.json",
+      "label_manifest_sha256": "2703d30fc5e3aad26f71a57740598578000bf7cbd691729a6e0990dc86811928",
+      "run_index": 1,
+      "seed": 20261005,
+      "selector": "confounder_matched",
+      "task_index": 10
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_confounder_matched_2/prepared_labels.json",
+      "label_manifest_sha256": "f846914ce21661ed3652052ac3d552c4ba08285974c1e8b99efeb73fcb926336",
+      "run_index": 2,
+      "seed": 20261006,
+      "selector": "confounder_matched",
+      "task_index": 11
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_confounder_matched_3/prepared_labels.json",
+      "label_manifest_sha256": "12e291e1466b213f821006e5095c2dd299648f8127b721a195d098d79a0d603f",
+      "run_index": 3,
+      "seed": 20261007,
+      "selector": "confounder_matched",
+      "task_index": 12
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_confounder_matched_4/prepared_labels.json",
+      "label_manifest_sha256": "fe77b7f252efb638e2e4168eb2ba58ab0e731b191dcbab55b7b1012fbf679cb5",
+      "run_index": 4,
+      "seed": 20261008,
+      "selector": "confounder_matched",
+      "task_index": 13
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_confounder_matched_5/prepared_labels.json",
+      "label_manifest_sha256": "5b777faa2f45de58f50f8f34954a3fb170827f7347cbf8cd4d127b9e64b0e679",
+      "run_index": 5,
+      "seed": 20261009,
+      "selector": "confounder_matched",
+      "task_index": 14
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_biotype_stratified_1/prepared_labels.json",
+      "label_manifest_sha256": "5b8b55988002e2ff59a572b0b80a8e4af2316f7f9dd6eac063f706ef7fb5dd10",
+      "run_index": 1,
+      "seed": 20261005,
+      "selector": "biotype_stratified",
+      "task_index": 15
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_biotype_stratified_2/prepared_labels.json",
+      "label_manifest_sha256": "822a381309f9d2aaa3997298a833dda834870791619aaaa79412246c15b53ba9",
+      "run_index": 2,
+      "seed": 20261006,
+      "selector": "biotype_stratified",
+      "task_index": 16
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_biotype_stratified_3/prepared_labels.json",
+      "label_manifest_sha256": "e0a795d167b2d55628a51b9cfd407565a835a9b85a4585a85d508801338b53fc",
+      "run_index": 3,
+      "seed": 20261007,
+      "selector": "biotype_stratified",
+      "task_index": 17
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_biotype_stratified_4/prepared_labels.json",
+      "label_manifest_sha256": "3f019ca33197e4c1673f046fda623d2618627d7afd779809ee5e59be1c27dfec",
+      "run_index": 4,
+      "seed": 20261008,
+      "selector": "biotype_stratified",
+      "task_index": 18
+    },
+    {
+      "label_manifest": "/gpfs/projects/p32724/pulearning/experiments/20261011_eval_paired_v7/prepared/labels_biotype_stratified_5/prepared_labels.json",
+      "label_manifest_sha256": "7e797abea1a381ace8f2723ca723edb68e94f99937f842de6aa6d5b53f77da54",
+      "run_index": 5,
+      "seed": 20261009,
+      "selector": "biotype_stratified",
+      "task_index": 19
+    }
+  ]
+}

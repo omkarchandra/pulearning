@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "class_partitions_overall": true,
+    "distance_and_class_partitions_overall": true,
+    "distance_partitions_overall": true,
+    "threshold_1_arithmetic": true,
+    "threshold_20_arithmetic": true,
+    "threshold_5_arithmetic": true
+  },
+  "report": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_results/link_quality_section15_6.json",
+  "report_sha256": "e3d4c40f26246282dfd4070a4ee1ced5a71cf8226be7e18ea2b3a1f30b8c0521",
+  "status": "verified",
+  "verifier_sha256": "5e5a72c1b94b54d255036b11c8acadc28fd7e144296abab88c5a5d5eca14ea19"
+}

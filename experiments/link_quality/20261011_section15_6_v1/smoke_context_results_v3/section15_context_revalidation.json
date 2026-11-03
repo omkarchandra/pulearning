@@ -1,0 +1,153 @@
+{
+  "bundle": {
+    "manifest_sha256": "db3501fbd2a8c46ae7bd3739d605e4983b7e211124841b4aa26412c5b0ba91dc",
+    "path": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture",
+    "status": "complete"
+  },
+  "contract": {
+    "bundle_tier_semantics": {
+      "admitted_method": "tier1_distance_window_unconstrained",
+      "excluded_fallback": "wider rescue links applied only to lncRNAs uncovered by primary links; the v4 input contract rejects every is_lncRNA_fallback=true row",
+      "nonfallback": "primary fixed-window proximity link with is_lncRNA_fallback false; candidate and retained links coincide and no ranking is applied",
+      "primary_rule": "same-chromosome cCRE midpoint within plus or minus 100,000 bp of the gene TSS"
+    },
+    "distance_definition": "distance from TSS to the closed rE2G region interval",
+    "gene_id_column": "column1",
+    "lncRNA_coverage_definition": "GENCODE v50 lncRNA gene IDs present in at least one non-fallback bundle retained link",
+    "lncRNA_rE2G_coverage_definition": "GENCODE v50 lncRNA gene IDs present in at least one row of the pinned rE2G source",
+    "protein_coding_coverage_definition": "GENCODE v50 protein-coding gene IDs present in at least one rE2G pair",
+    "region_column": "column5",
+    "zero_based_columns": {
+      "0": "cre_id",
+      "1": "gene_id",
+      "2": "gene_symbol",
+      "3": "gene_biotype",
+      "4": "method",
+      "5": "region",
+      "6": "source_accession",
+      "7": "biosample",
+      "8": "score"
+    }
+  },
+  "elapsed_seconds_total": 4.4,
+  "inputs": {
+    "re2g": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/re2g.tsv.gz",
+      "sha256": "1e83051dc7d897bdfbacc27dca5631191cbbac7e311f315242b695bf6c9bb0fa"
+    },
+    "retained_links": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/links.parquet",
+      "sha256": "a57702e515e00aed41d0fe2a113a6d31282b891dad0f8f49996d956b5546bce7"
+    },
+    "tss": {
+      "path": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/smoke_signed_fixture/tss.parquet",
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          true
+        ],
+        [
+          "gene_biotype",
+          "string",
+          true
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "tss",
+          "int64",
+          true
+        ]
+      ],
+      "sha256": "3d1dab1dca31700ea0bbd45c998eaed5c23374ac239dea437de59e94ffca682a"
+    }
+  },
+  "integrity": {
+    "chromosome_mismatches": 0,
+    "malformed_region_or_distance": 0,
+    "maximum_distance_bp": 0,
+    "minimum_distance_bp": 0,
+    "pairs_with_multiple_regions": 0,
+    "protein_coding_pairs_with_tss": 3,
+    "re2g_distinct_protein_coding_genes": 1,
+    "re2g_distinct_protein_coding_pairs": 3,
+    "re2g_distinct_target_genes": 1,
+    "re2g_rows": 26
+  },
+  "lncRNA_proximity_coverage": {
+    "fraction": 0.0,
+    "linked": 0,
+    "total": 1
+  },
+  "lncRNA_rE2G_coverage": {
+    "fraction": 0.0,
+    "linked": 0,
+    "total": 1
+  },
+  "old_reference_coverage": {
+    "distance_fractions": {
+      "0-10kb": 0.099414,
+      "10-50kb": 0.207115,
+      "50-100kb": 0.167427,
+      ">100kb": 0.526044
+    },
+    "documented_lncRNA_rE2G_coverage": {
+      "linked": 1434,
+      "total": 34866
+    },
+    "lncRNA_proximity_coverage": {
+      "linked": 34774,
+      "total": 34866
+    },
+    "protein_coding_rE2G_coverage": {
+      "linked": 17809
+    }
+  },
+  "peak_rss_kib": 159876,
+  "phase": "section 15 context revalidation",
+  "protein_coding_pair_distance": {
+    "bins": {
+      "0-10kb": {
+        "difference": 0.900586,
+        "fraction": 1.0,
+        "old_reference_fraction": 0.099414,
+        "pairs": 3
+      },
+      "10-50kb": {
+        "difference": -0.207115,
+        "fraction": 0.0,
+        "old_reference_fraction": 0.207115,
+        "pairs": 0
+      },
+      "50-100kb": {
+        "difference": -0.167427,
+        "fraction": 0.0,
+        "old_reference_fraction": 0.167427,
+        "pairs": 0
+      },
+      ">100kb": {
+        "difference": -0.526044,
+        "fraction": 0.0,
+        "old_reference_fraction": 0.526044,
+        "pairs": 0
+      }
+    },
+    "total_pairs": 3
+  },
+  "protein_coding_rE2G_coverage": {
+    "fraction": 1.0,
+    "linked": 1,
+    "total": 1
+  },
+  "settings": {
+    "duckdb_version": "1.5.5",
+    "memory_limit": "1GB",
+    "preserve_insertion_order": false,
+    "threads": 2
+  },
+  "status": "complete"
+}

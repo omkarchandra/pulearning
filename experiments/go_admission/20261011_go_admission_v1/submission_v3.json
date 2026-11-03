@@ -1,0 +1,17 @@
+{
+  "jobs": {
+    "cage_admission": 9484538,
+    "cre_excluded_build": 9484540,
+    "cre_independent_replay": 9484541
+  },
+  "models_fitted": 0,
+  "obsolete_dependency_cancel_exit_code": 0,
+  "obsolete_failed_dependency_job": 9484334,
+  "real_scoring_authorized": false,
+  "recorded_at_utc": "2026-10-11T10:29:59.602212+00:00",
+  "retained_failed_jobs": [
+    9484332,
+    9484333
+  ],
+  "status": "v2_admission_jobs_submitted"
+}

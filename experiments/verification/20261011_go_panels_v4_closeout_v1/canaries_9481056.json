@@ -1,0 +1,19 @@
+{
+  "changed_protocol": {
+    "error": "GO panel protocol binding changed",
+    "rejected": true
+  },
+  "fixture_method": "create-only JSON files",
+  "originals_unchanged": true,
+  "rehashed_valid_term_substitution": {
+    "error": "GO panels do not rederive from frozen sources and selection rule",
+    "rejected": true
+  },
+  "script_sha256": "d2a8f811a073e9ca8bb563714109e3a8163f2e1b95ffa1492753e26978663b95",
+  "status": "passed",
+  "substitution": {
+    "mode": "pooled_support",
+    "new_eligible_representative": "GO:0009058",
+    "old_final_term": "GO:0043269"
+  }
+}

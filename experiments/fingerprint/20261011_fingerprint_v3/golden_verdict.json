@@ -1,0 +1,69 @@
+{
+  "all_three_fixture_artifacts_match": true,
+  "checked_artifacts": [
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/aggregation_qc.parquet",
+      "artifact_sha256": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+      "golden_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "original_logical_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "rows": 100000
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/dependencies.parquet",
+      "artifact_sha256": "06271a0a17dc6876b8021101630705b80d8ca41ba679f8c9b8ada0fabaf1b3c6",
+      "golden_sha256": "b2c921fc09bd8ed676e88204cbd40dc055fcbfa23b7c3fe3daaa8e7127d5bd24",
+      "original_logical_sha256": "8a9ed113a9182d6c0ec8d3350252955cbe9787ff2f4e3fc039a320e69dca53fa",
+      "rows": 2000000
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed0.published-h0by1bzi/data/view.parquet",
+      "artifact_sha256": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de",
+      "golden_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "original_logical_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "rows": 100000
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/aggregation_qc.parquet",
+      "artifact_sha256": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+      "golden_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "original_logical_sha256": "2c1135f656ae2748a929648b65e05d002fbe31ee7098ef862e34270a4a333003",
+      "rows": 100000
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/dependencies.parquet",
+      "artifact_sha256": "89446ade1424d114f9fb515034b93c7f95a5c78b4b1e5e2fab4dcb2ce1e15b76",
+      "golden_sha256": "b2c921fc09bd8ed676e88204cbd40dc055fcbfa23b7c3fe3daaa8e7127d5bd24",
+      "original_logical_sha256": "0e8c8b049a06bbf83180d80782993703ccb6b7f5186470cebb6b47adc405e393",
+      "rows": 2000000
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/experiments/20261005_quest_cre_phase3_v6/hashseed_check/.bundle_seed1.published-9a9bdrep/data/view.parquet",
+      "artifact_sha256": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de",
+      "golden_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "original_logical_sha256": "765b67699d036f4665f311dfedb44a33e8709d07932f0441b838e519929c1cc0",
+      "rows": 100000
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data/aggregation_qc.parquet",
+      "artifact_sha256": "c0e9ffed4e76794523cec06714be6109b63ddb925ac8454a19f0108cfa9d8392",
+      "golden_sha256": "5b9f4f7fdd88dc7d9fa81fb1151059c08b9d4fc589013290d6c13f0df098786c",
+      "original_logical_sha256": "9c83d25cddf807fd469a449fecc8aa761f5c1181b431f5843fafe2a6f7d3ddb1",
+      "rows": 549600
+    },
+    {
+      "artifact": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data/view.parquet",
+      "artifact_sha256": "5120bca04eff7998180377050e51c7c09ba2b0062a526f82cae976061c36a0fb",
+      "golden_sha256": "564fd5badf321c8f64e55f9b0efe3ad0ab2ed1543e3e86618b06b303c22d56d6",
+      "original_logical_sha256": "b5bd715b401a904c0259297bff06eba7fe31a5e0e7a85a15a5eb91befc41b0eb",
+      "rows": 549600
+    }
+  ],
+  "report_hashes": {
+    "/home/mes7956/projects/pulearning/experiments/fingerprint/20261011_fingerprint_v3/fixture_fingerprints.json": "810e507b731c4982ee52b05e9a8cff2d4a40047aa9aa0dcfc19b536d5fc99ce4",
+    "/home/mes7956/projects/pulearning/experiments/fingerprint/20261011_fingerprint_v3/v4_values_qc_fingerprints.json": "108be4323e127328210bd7c99ec2ea3626a9d8f512d45315334b00c2627810da"
+  },
+  "source_snapshot_checksum": "d314ab74fbf465042b7afe798e6549ac38860a8fb64e1108296aa030678a9aac",
+  "store_encoding_golden_replay": true,
+  "verdict": "verified",
+  "verifier_code_sha256": "cca41888f957c5956f9004a84ee7d8ba0e49d87a183afa01cd32b8f1154770b2"
+}

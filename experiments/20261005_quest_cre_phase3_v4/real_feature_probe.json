@@ -1,0 +1,11 @@
+{
+  "job_id": "8683294",
+  "threads": 4,
+  "memory_limit": "8GB",
+  "feature": "cre_intrinsic::class_CA",
+  "source_release": "20261005_quest_cre_phase3_v4",
+  "input_release": "20261005_quest_cre_phase3_v3",
+  "status": "passed",
+  "rows": 54960,
+  "elapsed_seconds": 10.96618066355586
+}

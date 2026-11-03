@@ -1,0 +1,24 @@
+Command exited with non-zero status 1
+	Command being timed: "/home/mes7956/projects/pulearning/envs/20261005_quest_cre_phase3_v2/bin/python scripts/prepare_feature_store_v1_cre_view.py --catalog /home/mes7956/projects/pulearning/datasets/processed/cre/genomewide_intrinsic_v1/cre_catalog.parquet --genes /home/mes7956/projects/pulearning/datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/genes.parquet --candidate-links /home/mes7956/projects/pulearning/datasets/processed/cre/phase3_inputs/20261005_quest_cre_phase3_v2/links.parquet --retained-links /home/mes7956/projects/pulearning/datasets/processed/cre/phase3_inputs/20261005_quest_cre_phase3_v2/links.parquet --measurements /home/mes7956/projects/pulearning/datasets/processed/cre/phase3_inputs/20261005_quest_cre_phase3_v2/measurements.parquet --partitions /home/mes7956/projects/pulearning/datasets/processed/feature_store_v1/store_v1_real_core_promoter_v3_20260914/partitions.parquet --output-dir /home/mes7956/projects/pulearning/datasets/processed/cre/phase3_bundles/20261005_quest_cre_phase3_v2 --scratch-dir /scratch/mes7956/pulearning/20261005_quest_cre_phase3_v2 --memory-limit 8GB --threads 4"
+	User time (seconds): 55.91
+	System time (seconds): 6.03
+	Percent of CPU this job got: 331%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:18.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8377348
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 727829
+	Voluntary context switches: 19777
+	Involuntary context switches: 1643
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

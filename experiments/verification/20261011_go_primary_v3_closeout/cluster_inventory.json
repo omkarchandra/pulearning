@@ -1,0 +1,291 @@
+{
+  "clusters": [
+    {
+      "aspect_members": {
+        "biological_process": 1123,
+        "cellular_component": 217,
+        "molecular_function": 288
+      },
+      "name": "endomembrane system",
+      "rank_zero_based": 0,
+      "representative": "GO:0012505",
+      "representative_propagated_positives": 2514,
+      "size": 1628
+    },
+    {
+      "aspect_members": {
+        "cellular_component": 4
+      },
+      "name": "external encapsulating structure",
+      "rank_zero_based": 1,
+      "representative": "GO:0030312",
+      "representative_propagated_positives": 342,
+      "size": 4
+    },
+    {
+      "aspect_members": {
+        "biological_process": 3
+      },
+      "name": "response to metal ion",
+      "rank_zero_based": 2,
+      "representative": "GO:0010038",
+      "representative_propagated_positives": 126,
+      "size": 3
+    },
+    {
+      "aspect_members": {
+        "biological_process": 2
+      },
+      "name": "ossification",
+      "rank_zero_based": 3,
+      "representative": "GO:0001503",
+      "representative_propagated_positives": 90,
+      "size": 2
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 2
+      },
+      "name": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds",
+      "rank_zero_based": 4,
+      "representative": "GO:0016810",
+      "representative_propagated_positives": 88,
+      "size": 2
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 2
+      },
+      "name": "lyase activity",
+      "rank_zero_based": 5,
+      "representative": "GO:0016829",
+      "representative_propagated_positives": 133,
+      "size": 2
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 2
+      },
+      "name": "ubiquitin-like protein binding",
+      "rank_zero_based": 6,
+      "representative": "GO:0032182",
+      "representative_propagated_positives": 66,
+      "size": 2
+    },
+    {
+      "aspect_members": {
+        "cellular_component": 2
+      },
+      "name": "melanosome",
+      "rank_zero_based": 7,
+      "representative": "GO:0042470",
+      "representative_propagated_positives": 73,
+      "size": 2
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 2
+      },
+      "name": "molecular sequestering activity",
+      "rank_zero_based": 8,
+      "representative": "GO:0140313",
+      "representative_propagated_positives": 83,
+      "size": 2
+    },
+    {
+      "aspect_members": {
+        "cellular_component": 1
+      },
+      "name": "lipid droplet",
+      "rank_zero_based": 9,
+      "representative": "GO:0005811",
+      "representative_propagated_positives": 74,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "cell population proliferation",
+      "rank_zero_based": 10,
+      "representative": "GO:0008283",
+      "representative_propagated_positives": 131,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "Wnt signaling pathway",
+      "rank_zero_based": 11,
+      "representative": "GO:0016055",
+      "representative_propagated_positives": 63,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "cellular_component": 1
+      },
+      "name": "nuclear matrix",
+      "rank_zero_based": 12,
+      "representative": "GO:0016363",
+      "representative_propagated_positives": 68,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "cellular_component": 1
+      },
+      "name": "PML body",
+      "rank_zero_based": 13,
+      "representative": "GO:0016605",
+      "representative_propagated_positives": 67,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "protein domain specific binding",
+      "rank_zero_based": 14,
+      "representative": "GO:0019904",
+      "representative_propagated_positives": 392,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "carbohydrate binding",
+      "rank_zero_based": 15,
+      "representative": "GO:0030246",
+      "representative_propagated_positives": 55,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "peptide binding",
+      "rank_zero_based": 16,
+      "representative": "GO:0042277",
+      "representative_propagated_positives": 66,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "histone deacetylase binding",
+      "rank_zero_based": 17,
+      "representative": "GO:0042826",
+      "representative_propagated_positives": 79,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "cellular_component": 1
+      },
+      "name": "perinuclear region of cytoplasm",
+      "rank_zero_based": 18,
+      "representative": "GO:0048471",
+      "representative_propagated_positives": 366,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "regulation of calcium-mediated signaling",
+      "rank_zero_based": 19,
+      "representative": "GO:0050848",
+      "representative_propagated_positives": 51,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "regulation of small GTPase mediated signal transduction",
+      "rank_zero_based": 20,
+      "representative": "GO:0051056",
+      "representative_propagated_positives": 94,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "ATPase binding",
+      "rank_zero_based": 21,
+      "representative": "GO:0051117",
+      "representative_propagated_positives": 65,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "phosphoprotein binding",
+      "rank_zero_based": 22,
+      "representative": "GO:0051219",
+      "representative_propagated_positives": 66,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "scaffold protein binding",
+      "rank_zero_based": 23,
+      "representative": "GO:0097110",
+      "representative_propagated_positives": 50,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "molecular_function": 1
+      },
+      "name": "modification-dependent protein binding",
+      "rank_zero_based": 24,
+      "representative": "GO:0140030",
+      "representative_propagated_positives": 62,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "regulation of non-canonical NF-kappaB signal transduction",
+      "rank_zero_based": 25,
+      "representative": "GO:1901222",
+      "representative_propagated_positives": 57,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "regulation of receptor signaling pathway via STAT",
+      "rank_zero_based": 26,
+      "representative": "GO:1904892",
+      "representative_propagated_positives": 55,
+      "size": 1
+    },
+    {
+      "aspect_members": {
+        "biological_process": 1
+      },
+      "name": "regulation of reactive oxygen species metabolic process",
+      "rank_zero_based": 27,
+      "representative": "GO:2000377",
+      "representative_propagated_positives": 73,
+      "size": 1
+    }
+  ],
+  "models_fitted": 0,
+  "panel_hash": "dd375136bbe0f7da5d12a14d9fdcb0e0a677115cc46cd5d903356afbfbe8f9c0",
+  "scientific_rules_changed": false,
+  "status": "descriptive_inventory_only",
+  "term_support_sha256": "0c631aa3b48c5eee9369e751993f98a20cfbc63260a3cd6ffe9a4f13f916dfcf"
+}

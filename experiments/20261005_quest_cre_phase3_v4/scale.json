@@ -1,0 +1,14 @@
+{
+  "dependency_rows": 2000000,
+  "elapsed_seconds": 177.84923072904348,
+  "feature_count": 10,
+  "link_rows": 100000,
+  "memory_limit": "256MB",
+  "peak_spill_bytes": 22347776,
+  "publisher_max_rss_mib": 515.37109375,
+  "qc_rows": 100000,
+  "status": "passed",
+  "validation_status": "valid",
+  "validator_max_rss_mib": 468.28125,
+  "view_rows": 100000
+}

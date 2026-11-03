@@ -1,0 +1,13 @@
+{
+  "dependency": "cre_build_afterok_to_independent_replay",
+  "jobs": {
+    "cage_admission": 9484332,
+    "cre_excluded_build": 9484333,
+    "cre_independent_replay": 9484334
+  },
+  "models_fitted": 0,
+  "real_scoring_authorized": false,
+  "recorded_at_utc": "2026-10-11T10:26:20.376041+00:00",
+  "source_manifest_sha256": "2f9cdacb449abf8263dac94eb4b2264bcfb62eebd307d8c3e0458f839f8d1349",
+  "status": "admission_jobs_submitted"
+}

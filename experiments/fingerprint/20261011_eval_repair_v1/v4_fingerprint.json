@@ -1,0 +1,86 @@
+{
+  "elapsed_seconds_total": 3868.1,
+  "fingerprints": {
+    "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data/dependencies.parquet": {
+      "artifact_sha256": "8a35ff2aef4645934deb3ae6ddacbc01093570348aa341f566958f3168315c1f",
+      "elapsed_seconds": 3868.1,
+      "key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "selection_role",
+        "source_element_id",
+        "dependency_type"
+      ],
+      "original_build_settings": "not recorded in original manifest",
+      "original_file_order_logical_sha256": "ecaccf7aa2b98bf5da66996bae7f0ed93d9d717ff9dc7a83e6e10123159c2e48",
+      "original_manifest_sha256": "21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f",
+      "rows": 225784420,
+      "schema": [
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "entity_type",
+          "string",
+          false
+        ],
+        [
+          "entity_id",
+          "string",
+          false
+        ],
+        [
+          "source_element_id",
+          "string",
+          false
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "start",
+          "int64",
+          true
+        ],
+        [
+          "end",
+          "int64",
+          true
+        ],
+        [
+          "source_record_id",
+          "string",
+          true
+        ],
+        [
+          "dependency_type",
+          "string",
+          false
+        ],
+        [
+          "selection_role",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "9cff3122dd69ce86eb75e5e790c39ed50d12526a89ddcf359d93090dce2447a4"
+    }
+  },
+  "hash_format": "store logical hash: schema header + canonical JSON rows, sorted on unique full key",
+  "peak_rss_kib": 16263884,
+  "phase": "section 30 sorted-content fingerprints",
+  "settings": {
+    "batch_size": 10000,
+    "duckdb_version": "1.5.5",
+    "memory_limit": "12GB",
+    "preserve_insertion_order": true,
+    "pyarrow_version": "25.0.0",
+    "threads": 4
+  },
+  "snapshot_checksum": "7b2a0e9abfccbd3271b47bdddca277e8da4bb1c8cf5b4552d96b12b36644ae10"
+}

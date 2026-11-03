@@ -1,0 +1,14 @@
+{
+  "hashseed_check": "bounded 100k fixture, PYTHONHASHSEED 0 vs 1",
+  "logical_hashes_identical": false,
+  "seed0": {
+    "aggregation_qc.parquet": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+    "dependencies.parquet": "06271a0a17dc6876b8021101630705b80d8ca41ba679f8c9b8ada0fabaf1b3c6",
+    "view.parquet": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de"
+  },
+  "seed1": {
+    "aggregation_qc.parquet": "6ec6e973b75ff4f09c27a362dcdfaab0a281399b599aed43fa8c50744a28e731",
+    "dependencies.parquet": "89446ade1424d114f9fb515034b93c7f95a5c78b4b1e5e2fab4dcb2ce1e15b76",
+    "view.parquet": "66266fc47867062d1d66d8ae5e419bc248b24dda58c5bac07bbb548b7ea6f3de"
+  }
+}

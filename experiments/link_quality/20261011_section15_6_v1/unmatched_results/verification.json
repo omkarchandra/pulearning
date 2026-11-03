@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "biotype_partitions_summary": true,
+    "canonical_column_binding": true,
+    "one_source_biotype_per_target": true,
+    "pinned_inputs": true
+  },
+  "report": "/gpfs/projects/p32724/pulearning/experiments/link_quality/20261011_section15_6_v1/unmatched_results/section15_unmatched_targets.json",
+  "report_sha256": "6f1ee43be45d9bac6fc44103fe3c2c9dc41b4eaefc8c8df6f70182b1ea941e44",
+  "status": "verified",
+  "verifier_sha256": "445a50c2e4d8ef40a0c4bbcd2daf3ca56936a430c8a7487562c3bb0860820f3d"
+}

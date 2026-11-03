@@ -1,0 +1,150 @@
+{
+  "all_rounded_run_aps_reproduced": true,
+  "audit_diff_report_sha256": "8acb65a4726c2f18fee264b33ea330cb213532cfffc1a6a17441709f598c1f44",
+  "comparison_sha256": "7966e58e75479db9c9cd98c7e5cb5bf836f30cadd4584311f8ef7e60b02a3d19",
+  "current_source_differences": [],
+  "distinct_worker_job_ids": [
+    "9469053",
+    "9469054",
+    "9469055",
+    "9469056",
+    "9469147",
+    "9469148",
+    "9469151",
+    "9469152",
+    "9469168",
+    "9469220",
+    "9469276",
+    "9469277",
+    "9469281",
+    "9469283",
+    "9470202",
+    "9470204",
+    "9470206",
+    "9470224",
+    "9470254",
+    "9469050"
+  ],
+  "export_archive_sha256": "4db51f282551a2e00c5cfe01a3e75c6d0e388d1b957b7abe1bcf4cdb2464da90",
+  "export_payloads_verified": 1906,
+  "frozen_v7_source_files_verified": 175,
+  "import_manifest_sha256": "0b208ba78b2a112614c3c3683e91eb374b0f445845dd11e10c073ecd9cb8ad72",
+  "max_native_verdict_ap_delta_from_v2": 2.7755575615628914e-17,
+  "max_prediction_score_delta_from_v2": 4.440892098500626e-16,
+  "max_same_environment_sklearn_ap_delta": 0.0,
+  "max_same_environment_threshold_group_ap_delta": 0.0,
+  "native_tests": {
+    "failed": 0,
+    "passed": 68,
+    "skipped": 1
+  },
+  "per_run_ap_comparisons": [
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 0,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 1,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 2,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 3,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 4,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 5,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 6,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 7,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 8,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 9,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 10,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 11,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 12,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 13,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 14,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 15,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 16,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 17,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 18,
+      "threshold_group_ap_delta": 0.0
+    },
+    {
+      "sklearn_ap_delta": 0.0,
+      "task_index": 19,
+      "threshold_group_ap_delta": 0.0
+    }
+  ],
+  "prediction_payloads_with_byte_differences_from_v2": 100,
+  "same_job_source_seal_pairs_checked": 22,
+  "scope": "retention/binding and numerical-roundoff check for the accepted v7 phase",
+  "script_sha256": "4bbbdf4ccd8f76e4938d09ad01342908a8b26f9dce462219d99ef8e04835ca22",
+  "status": "closeout_bytes_and_bindings_verified",
+  "v7_source_manifest_sha256": "4d9e0e4c1b5663080d8183ad97024785861eaaf62e74ba538c2993f6301fc47d",
+  "verdict_sha256": "691a677bd91db983ed36b2fa558e7f1f958449e679b92191be9c89154037178c"
+}

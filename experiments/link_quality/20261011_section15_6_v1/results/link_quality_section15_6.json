@@ -1,0 +1,1780 @@
+{
+  "bundle": {
+    "dependency_rows": 225784420,
+    "manifest_sha256": "21cccb8082d9c5217602507601209098d30eec71ce99eadf24e2ec24aef69d2f",
+    "output_sha256": {
+      "aggregation_qc.parquet": "c0e9ffed4e76794523cec06714be6109b63ddb925ac8454a19f0108cfa9d8392",
+      "dependencies.parquet": "8a35ff2aef4645934deb3ae6ddacbc01093570348aa341f566958f3168315c1f",
+      "view.parquet": "5120bca04eff7998180377050e51c7c09ba2b0062a526f82cae976061c36a0fb"
+    },
+    "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_bundles/.20261005_quest_cre_phase3_v4.published-0yx0vs11/data",
+    "schema_version": "feature-store-v1-cre-view-out-of-core-2",
+    "status": "complete"
+  },
+  "definition": {
+    "caution": "rE2G support is a comparator, not biological ground truth",
+    "ccre_classes": [
+      "PLS",
+      "pELS",
+      "dELS",
+      "CA-CTCF",
+      "CA-H3K4me3",
+      "CA-TF",
+      "CA",
+      "TF"
+    ],
+    "cohort": "protein-coding genes in the published bundle retained-link table with at least one rE2G pair",
+    "distance": "absolute cCRE-midpoint to TSS distance; bundle distance_to_tss is signed",
+    "distance_bins_bp": [
+      {
+        "lower_exclusive_except_zero": 0,
+        "name": "0-10kb",
+        "upper_inclusive": 10000
+      },
+      {
+        "lower_exclusive_except_zero": 10000,
+        "name": "10-50kb",
+        "upper_inclusive": 50000
+      },
+      {
+        "lower_exclusive_except_zero": 50000,
+        "name": "50-100kb",
+        "upper_inclusive": 100000
+      }
+    ],
+    "macro_precision": "per-gene supported/proximity precision summarized by median and IQR; genes with no proximity pair in a stratum are excluded from that stratum",
+    "micro_precision": "pooled supported pairs / pooled proximity pairs",
+    "support": "same (cCRE, gene) pair in at least k distinct rE2G biosamples",
+    "unit": "distinct (cCRE, gene) proximity pair"
+  },
+  "elapsed_seconds_total": 301.3,
+  "inputs": {
+    "catalog": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/genomewide_intrinsic_v1/cre_catalog.parquet",
+      "schema": [
+        [
+          "cre_id",
+          "string",
+          false
+        ],
+        [
+          "chrom",
+          "string",
+          false
+        ],
+        [
+          "start",
+          "int64",
+          false
+        ],
+        [
+          "end",
+          "int64",
+          false
+        ],
+        [
+          "source_region_id",
+          "string",
+          false
+        ],
+        [
+          "class",
+          "string",
+          false
+        ],
+        [
+          "is_silencer",
+          "bool",
+          false
+        ],
+        [
+          "genome_build",
+          "string",
+          false
+        ],
+        [
+          "source_version",
+          "string",
+          false
+        ]
+      ],
+      "sha256": "92762255f4e9d1e665a58a2e1bca7f5420d29e3bffa883a528707c10e8ab350d"
+    },
+    "re2g": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/raw/cre/encode_re2g/V4-hg38.Gene-Links.Computational-Methods.rE2G.txt.gz",
+      "prior_reader_defect": "The preceding Section 15 script used column8 (score) as biosample; its k-threshold results are retained only as a diagnostic reference and are not treated as reproduced.",
+      "sha256": "074820992b59f46273e650aabe6d8c96156e43b12ee5213f56a56f5815298d12",
+      "support_column": "column7 (biosample)",
+      "zero_based_columns": {
+        "0": "cre_id",
+        "1": "gene_id",
+        "2": "gene_symbol",
+        "3": "gene_biotype",
+        "4": "method",
+        "5": "region",
+        "6": "source_accession",
+        "7": "biosample",
+        "8": "score"
+      }
+    },
+    "retained_links": {
+      "path": "/gpfs/projects/p32724/pulearning/datasets/processed/cre/phase3_inputs/.20261005_quest_cre_phase3_v4.published-jaq0o3hv/data/links.parquet",
+      "schema": [
+        [
+          "cre_id",
+          "string",
+          true
+        ],
+        [
+          "gene_id",
+          "string",
+          true
+        ],
+        [
+          "gene_symbol",
+          "string",
+          true
+        ],
+        [
+          "gene_biotype",
+          "string",
+          true
+        ],
+        [
+          "score",
+          "float",
+          true
+        ],
+        [
+          "method",
+          "string",
+          true
+        ],
+        [
+          "biosample",
+          "string",
+          true
+        ],
+        [
+          "tissue_group",
+          "string",
+          true
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "distance_to_tss",
+          "int64",
+          true
+        ],
+        [
+          "crosses_tad_boundary",
+          "bool",
+          true
+        ],
+        [
+          "is_self_locus",
+          "bool",
+          true
+        ],
+        [
+          "is_pseudoautosomal_xy",
+          "bool",
+          true
+        ],
+        [
+          "genome_build",
+          "string",
+          true
+        ],
+        [
+          "source_method",
+          "string",
+          true
+        ],
+        [
+          "prediction_region",
+          "string",
+          true
+        ],
+        [
+          "source_accession",
+          "string",
+          true
+        ],
+        [
+          "is_lncRNA_fallback",
+          "bool",
+          true
+        ]
+      ],
+      "sha256": "b313dbcf01bdb4c4d04d5a83cc0e82df7c5dc3877988a80007aa7143361aeb5a"
+    }
+  },
+  "integrity": {
+    "analysis_distinct_ccres": 1459783,
+    "analysis_genes": 17809,
+    "analysis_proximity_pairs": 3965503,
+    "bundle_protein_coding_genes_with_proximity": 20071,
+    "bundle_protein_coding_nonfallback_proximity_pairs": 4366160,
+    "distinct_proximity_ccres": 1491150,
+    "duplicate_proximity_pairs": 0,
+    "invalid_distance_bin": 0,
+    "maximum_distance_bp": 100000,
+    "maximum_signed_distance_bp": 100000,
+    "minimum_distance_bp": 0,
+    "minimum_signed_distance_bp": -100000,
+    "missing_ccre_class": 0,
+    "observed_ccre_classes": [
+      "CA",
+      "CA-CTCF",
+      "CA-H3K4me3",
+      "CA-TF",
+      "PLS",
+      "TF",
+      "dELS",
+      "pELS"
+    ],
+    "re2g_distinct_pairs_for_bundle_protein_coding_genes": 4023451,
+    "re2g_rows": 290317828
+  },
+  "peak_rss_kib": 20798164,
+  "phase": "section 15.6 link-quality follow-up",
+  "precision_by_ccre_class": [
+    {
+      "ccre_class": "PLS",
+      "genes_with_proximity": 17599,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.3,
+        0.727273
+      ],
+      "macro_precision_median": 0.5,
+      "micro_precision": 0.417986,
+      "proximity_pairs": 159192,
+      "supported_pairs": 66540
+    },
+    {
+      "ccre_class": "pELS",
+      "genes_with_proximity": 17749,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.384615,
+        0.794872
+      ],
+      "macro_precision_median": 0.591549,
+      "micro_precision": 0.506088,
+      "proximity_pairs": 784616,
+      "supported_pairs": 397085
+    },
+    {
+      "ccre_class": "dELS",
+      "genes_with_proximity": 17800,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.26996,
+        0.753086
+      ],
+      "macro_precision_median": 0.517241,
+      "micro_precision": 0.533855,
+      "proximity_pairs": 2335041,
+      "supported_pairs": 1246573
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "genes_with_proximity": 17331,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.166667,
+      "micro_precision": 0.308261,
+      "proximity_pairs": 130088,
+      "supported_pairs": 40101
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "genes_with_proximity": 16622,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.583333
+      ],
+      "macro_precision_median": 0.244898,
+      "micro_precision": 0.3587,
+      "proximity_pairs": 105283,
+      "supported_pairs": 37765
+    },
+    {
+      "ccre_class": "CA-TF",
+      "genes_with_proximity": 13788,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.314774,
+      "proximity_pairs": 35705,
+      "supported_pairs": 11239
+    },
+    {
+      "ccre_class": "CA",
+      "genes_with_proximity": 17600,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.4
+      ],
+      "macro_precision_median": 0.142857,
+      "micro_precision": 0.274606,
+      "proximity_pairs": 221852,
+      "supported_pairs": 60922
+    },
+    {
+      "ccre_class": "TF",
+      "genes_with_proximity": 17716,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.388889
+      ],
+      "macro_precision_median": 0.166667,
+      "micro_precision": 0.233686,
+      "proximity_pairs": 193726,
+      "supported_pairs": 45271
+    },
+    {
+      "ccre_class": "PLS",
+      "genes_with_proximity": 17599,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.230769,
+        0.666667
+      ],
+      "macro_precision_median": 0.4,
+      "micro_precision": 0.352794,
+      "proximity_pairs": 159192,
+      "supported_pairs": 56162
+    },
+    {
+      "ccre_class": "pELS",
+      "genes_with_proximity": 17749,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.219512,
+        0.6
+      ],
+      "macro_precision_median": 0.387597,
+      "micro_precision": 0.354858,
+      "proximity_pairs": 784616,
+      "supported_pairs": 278427
+    },
+    {
+      "ccre_class": "dELS",
+      "genes_with_proximity": 17800,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.086331,
+        0.462276
+      ],
+      "macro_precision_median": 0.240857,
+      "micro_precision": 0.324269,
+      "proximity_pairs": 2335041,
+      "supported_pairs": 757181
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "genes_with_proximity": 17331,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.166667
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.138068,
+      "proximity_pairs": 130088,
+      "supported_pairs": 17961
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "genes_with_proximity": 16622,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.25
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.18456,
+      "proximity_pairs": 105283,
+      "supported_pairs": 19431
+    },
+    {
+      "ccre_class": "CA-TF",
+      "genes_with_proximity": 13788,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.12466,
+      "proximity_pairs": 35705,
+      "supported_pairs": 4451
+    },
+    {
+      "ccre_class": "CA",
+      "genes_with_proximity": 17600,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.090909
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.099273,
+      "proximity_pairs": 221852,
+      "supported_pairs": 22024
+    },
+    {
+      "ccre_class": "TF",
+      "genes_with_proximity": 17716,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.142857
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.09851,
+      "proximity_pairs": 193726,
+      "supported_pairs": 19084
+    },
+    {
+      "ccre_class": "PLS",
+      "genes_with_proximity": 17599,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.166667,
+        0.571429
+      ],
+      "macro_precision_median": 0.333333,
+      "micro_precision": 0.293959,
+      "proximity_pairs": 159192,
+      "supported_pairs": 46796
+    },
+    {
+      "ccre_class": "pELS",
+      "genes_with_proximity": 17749,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.121622,
+        0.416667
+      ],
+      "macro_precision_median": 0.245614,
+      "micro_precision": 0.236604,
+      "proximity_pairs": 784616,
+      "supported_pairs": 185643
+    },
+    {
+      "ccre_class": "dELS",
+      "genes_with_proximity": 17800,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.018309,
+        0.215204
+      ],
+      "macro_precision_median": 0.08547,
+      "micro_precision": 0.165339,
+      "proximity_pairs": 2335041,
+      "supported_pairs": 386074
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "genes_with_proximity": 17331,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.059152,
+      "proximity_pairs": 130088,
+      "supported_pairs": 7695
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "genes_with_proximity": 16622,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.096426,
+      "proximity_pairs": 105283,
+      "supported_pairs": 10152
+    },
+    {
+      "ccre_class": "CA-TF",
+      "genes_with_proximity": 13788,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.043243,
+      "proximity_pairs": 35705,
+      "supported_pairs": 1544
+    },
+    {
+      "ccre_class": "CA",
+      "genes_with_proximity": 17600,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.034428,
+      "proximity_pairs": 221852,
+      "supported_pairs": 7638
+    },
+    {
+      "ccre_class": "TF",
+      "genes_with_proximity": 17716,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.033346,
+      "proximity_pairs": 193726,
+      "supported_pairs": 6460
+    }
+  ],
+  "precision_by_distance_and_ccre_class": [
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 16222,
+      "k": 1,
+      "macro_precision_iqr": [
+        1.0,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.851996,
+      "proximity_pairs": 38472,
+      "supported_pairs": 32778
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 16912,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.833333,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.871278,
+      "proximity_pairs": 169839,
+      "supported_pairs": 147977
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 17238,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.666667,
+        1.0
+      ],
+      "macro_precision_median": 0.904762,
+      "micro_precision": 0.82123,
+      "proximity_pairs": 217106,
+      "supported_pairs": 178294
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 6087,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.653767,
+      "proximity_pairs": 9716,
+      "supported_pairs": 6352
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 6081,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.715409,
+      "proximity_pairs": 12207,
+      "supported_pairs": 8733
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 2371,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.68291,
+      "proximity_pairs": 2914,
+      "supported_pairs": 1990
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 8287,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 0.75,
+      "micro_precision": 0.60194,
+      "proximity_pairs": 16289,
+      "supported_pairs": 9805
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 10645,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 0.5,
+      "micro_precision": 0.508485,
+      "proximity_pairs": 20329,
+      "supported_pairs": 10337
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 12683,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.666667
+      ],
+      "macro_precision_median": 0.333333,
+      "micro_precision": 0.338496,
+      "proximity_pairs": 54429,
+      "supported_pairs": 18424
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 15184,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.262449,
+        0.823529
+      ],
+      "macro_precision_median": 0.558824,
+      "micro_precision": 0.503249,
+      "proximity_pairs": 276199,
+      "supported_pairs": 138997
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 17775,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.333333,
+        0.851064
+      ],
+      "macro_precision_median": 0.625,
+      "micro_precision": 0.616783,
+      "proximity_pairs": 942215,
+      "supported_pairs": 581142
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 15096,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.666667
+      ],
+      "macro_precision_median": 0.166667,
+      "micro_precision": 0.379012,
+      "proximity_pairs": 53745,
+      "supported_pairs": 20370
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 12719,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.833333
+      ],
+      "macro_precision_median": 0.25,
+      "micro_precision": 0.421211,
+      "proximity_pairs": 41751,
+      "supported_pairs": 17586
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 8641,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.391869,
+      "proximity_pairs": 14561,
+      "supported_pairs": 5706
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 16349,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.142857,
+      "micro_precision": 0.339414,
+      "proximity_pairs": 90232,
+      "supported_pairs": 30626
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 16796,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.166667,
+      "micro_precision": 0.277684,
+      "proximity_pairs": 79151,
+      "supported_pairs": 21979
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 14244,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.1,
+      "micro_precision": 0.231374,
+      "proximity_pairs": 66291,
+      "supported_pairs": 15338
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 15946,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.030769,
+        0.6
+      ],
+      "macro_precision_median": 0.321429,
+      "micro_precision": 0.325216,
+      "proximity_pairs": 338578,
+      "supported_pairs": 110111
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17777,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.111111,
+        0.642857
+      ],
+      "macro_precision_median": 0.36,
+      "micro_precision": 0.414331,
+      "proximity_pairs": 1175720,
+      "supported_pairs": 487137
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 15969,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.25
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.200804,
+      "proximity_pairs": 66627,
+      "supported_pairs": 13379
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 13953,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.333333
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.22301,
+      "proximity_pairs": 51325,
+      "supported_pairs": 11446
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 9931,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.19435,
+      "proximity_pairs": 18230,
+      "supported_pairs": 3543
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 16938,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.2
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.177671,
+      "proximity_pairs": 115331,
+      "supported_pairs": 20491
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17182,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.0,
+        0.25
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.137459,
+      "proximity_pairs": 94246,
+      "supported_pairs": 12955
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 16222,
+      "k": 5,
+      "macro_precision_iqr": [
+        1.0,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.818751,
+      "proximity_pairs": 38472,
+      "supported_pairs": 31499
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 16912,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.625,
+        1.0
+      ],
+      "macro_precision_median": 0.846154,
+      "micro_precision": 0.750475,
+      "proximity_pairs": 169839,
+      "supported_pairs": 127460
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 17238,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.25,
+        0.846154
+      ],
+      "macro_precision_median": 0.583333,
+      "micro_precision": 0.605612,
+      "proximity_pairs": 217106,
+      "supported_pairs": 131482
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 6087,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.360951,
+      "proximity_pairs": 9716,
+      "supported_pairs": 3507
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 6081,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.444991,
+      "proximity_pairs": 12207,
+      "supported_pairs": 5432
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 2371,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        1.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.367193,
+      "proximity_pairs": 2914,
+      "supported_pairs": 1070
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 8287,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.280496,
+      "proximity_pairs": 16289,
+      "supported_pairs": 4569
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 10645,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.262433,
+      "proximity_pairs": 20329,
+      "supported_pairs": 5335
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 12683,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.142857,
+      "micro_precision": 0.263499,
+      "proximity_pairs": 54429,
+      "supported_pairs": 14342
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 15184,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.558824
+      ],
+      "macro_precision_median": 0.267731,
+      "micro_precision": 0.325475,
+      "proximity_pairs": 276199,
+      "supported_pairs": 89896
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 17775,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0875,
+        0.562803
+      ],
+      "macro_precision_median": 0.290323,
+      "micro_precision": 0.389492,
+      "proximity_pairs": 942215,
+      "supported_pairs": 366985
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 15096,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.2
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.1749,
+      "proximity_pairs": 53745,
+      "supported_pairs": 9400
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 12719,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.25
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.216905,
+      "proximity_pairs": 41751,
+      "supported_pairs": 9056
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 8641,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.157201,
+      "proximity_pairs": 14561,
+      "supported_pairs": 2289
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 16349,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.125787,
+      "proximity_pairs": 90232,
+      "supported_pairs": 11350
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 16796,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.142857
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.117585,
+      "proximity_pairs": 79151,
+      "supported_pairs": 9307
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 14244,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.285714
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.155692,
+      "proximity_pairs": 66291,
+      "supported_pairs": 10321
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 15946,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.333333
+      ],
+      "macro_precision_median": 0.083333,
+      "micro_precision": 0.180375,
+      "proximity_pairs": 338578,
+      "supported_pairs": 61071
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17777,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.318182
+      ],
+      "macro_precision_median": 0.112676,
+      "micro_precision": 0.220047,
+      "proximity_pairs": 1175720,
+      "supported_pairs": 258714
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 15969,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.075855,
+      "proximity_pairs": 66627,
+      "supported_pairs": 5054
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 13953,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.096308,
+      "proximity_pairs": 51325,
+      "supported_pairs": 4943
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 9931,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.059901,
+      "proximity_pairs": 18230,
+      "supported_pairs": 1092
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 16938,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.052935,
+      "proximity_pairs": 115331,
+      "supported_pairs": 6105
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17182,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.047132,
+      "proximity_pairs": 94246,
+      "supported_pairs": 4442
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 16222,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.666667,
+        1.0
+      ],
+      "macro_precision_median": 1.0,
+      "micro_precision": 0.772874,
+      "proximity_pairs": 38472,
+      "supported_pairs": 29734
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 16912,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.4,
+        0.857143
+      ],
+      "macro_precision_median": 0.666667,
+      "micro_precision": 0.59985,
+      "proximity_pairs": 169839,
+      "supported_pairs": 101878
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 17238,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.5
+      ],
+      "macro_precision_median": 0.230769,
+      "micro_precision": 0.364159,
+      "proximity_pairs": 217106,
+      "supported_pairs": 79061
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 6087,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.165912,
+      "proximity_pairs": 9716,
+      "supported_pairs": 1612
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 6081,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.246088,
+      "proximity_pairs": 12207,
+      "supported_pairs": 3004
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 2371,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.147907,
+      "proximity_pairs": 2914,
+      "supported_pairs": 431
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 8287,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.1059,
+      "proximity_pairs": 16289,
+      "supported_pairs": 1725
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 10645,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.10335,
+      "proximity_pairs": 20329,
+      "supported_pairs": 2101
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 12683,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.333333
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.19225,
+      "proximity_pairs": 54429,
+      "supported_pairs": 10464
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 15184,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.304348
+      ],
+      "macro_precision_median": 0.071429,
+      "micro_precision": 0.189751,
+      "proximity_pairs": 276199,
+      "supported_pairs": 52409
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 17775,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.264706
+      ],
+      "macro_precision_median": 0.09375,
+      "micro_precision": 0.204408,
+      "proximity_pairs": 942215,
+      "supported_pairs": 192596
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 15096,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.0769,
+      "proximity_pairs": 53745,
+      "supported_pairs": 4133
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 12719,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.116644,
+      "proximity_pairs": 41751,
+      "supported_pairs": 4870
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 8641,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.053705,
+      "proximity_pairs": 14561,
+      "supported_pairs": 782
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 16349,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.044142,
+      "proximity_pairs": 90232,
+      "supported_pairs": 3983
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 16796,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.03957,
+      "proximity_pairs": 79151,
+      "supported_pairs": 3132
+    },
+    {
+      "ccre_class": "PLS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 14244,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.090909
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.099531,
+      "proximity_pairs": 66291,
+      "supported_pairs": 6598
+    },
+    {
+      "ccre_class": "pELS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 15946,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.138889
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.092611,
+      "proximity_pairs": 338578,
+      "supported_pairs": 31356
+    },
+    {
+      "ccre_class": "dELS",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17777,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.113636
+      ],
+      "macro_precision_median": 0.015625,
+      "micro_precision": 0.097317,
+      "proximity_pairs": 1175720,
+      "supported_pairs": 114417
+    },
+    {
+      "ccre_class": "CA-CTCF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 15969,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.029267,
+      "proximity_pairs": 66627,
+      "supported_pairs": 1950
+    },
+    {
+      "ccre_class": "CA-H3K4me3",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 13953,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.044384,
+      "proximity_pairs": 51325,
+      "supported_pairs": 2278
+    },
+    {
+      "ccre_class": "CA-TF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 9931,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.018157,
+      "proximity_pairs": 18230,
+      "supported_pairs": 331
+    },
+    {
+      "ccre_class": "CA",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 16938,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.016734,
+      "proximity_pairs": 115331,
+      "supported_pairs": 1930
+    },
+    {
+      "ccre_class": "TF",
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17182,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.0
+      ],
+      "macro_precision_median": 0.0,
+      "micro_precision": 0.013019,
+      "proximity_pairs": 94246,
+      "supported_pairs": 1227
+    }
+  ],
+  "precision_by_distance_bin": [
+    {
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 17801,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.688889,
+        0.964286
+      ],
+      "macro_precision_median": 0.863636,
+      "micro_precision": 0.813902,
+      "proximity_pairs": 486872,
+      "supported_pairs": 396266
+    },
+    {
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 17809,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.283019,
+        0.761905
+      ],
+      "macro_precision_median": 0.531915,
+      "micro_precision": 0.537808,
+      "proximity_pairs": 1552283,
+      "supported_pairs": 834830
+    },
+    {
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17808,
+      "k": 1,
+      "macro_precision_iqr": [
+        0.104137,
+        0.55
+      ],
+      "macro_precision_median": 0.302944,
+      "micro_precision": 0.350093,
+      "proximity_pairs": 1926348,
+      "supported_pairs": 674400
+    },
+    {
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 17801,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.425,
+        0.821429
+      ],
+      "macro_precision_median": 0.636364,
+      "micro_precision": 0.637445,
+      "proximity_pairs": 486872,
+      "supported_pairs": 310354
+    },
+    {
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 17809,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.088235,
+        0.478261
+      ],
+      "macro_precision_median": 0.246753,
+      "micro_precision": 0.330239,
+      "proximity_pairs": 1552283,
+      "supported_pairs": 512625
+    },
+    {
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17808,
+      "k": 5,
+      "macro_precision_iqr": [
+        0.014706,
+        0.264151
+      ],
+      "macro_precision_median": 0.103774,
+      "micro_precision": 0.182595,
+      "proximity_pairs": 1926348,
+      "supported_pairs": 351742
+    },
+    {
+      "distance_bin": "0-10kb",
+      "genes_with_proximity": 17801,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.25641,
+        0.586207
+      ],
+      "macro_precision_median": 0.411765,
+      "micro_precision": 0.450932,
+      "proximity_pairs": 486872,
+      "supported_pairs": 219546
+    },
+    {
+      "distance_bin": "10-50kb",
+      "genes_with_proximity": 17809,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.012987,
+        0.231405
+      ],
+      "macro_precision_median": 0.093023,
+      "micro_precision": 0.175463,
+      "proximity_pairs": 1552283,
+      "supported_pairs": 272369
+    },
+    {
+      "distance_bin": "50-100kb",
+      "genes_with_proximity": 17808,
+      "k": 20,
+      "macro_precision_iqr": [
+        0.0,
+        0.103774
+      ],
+      "macro_precision_median": 0.028169,
+      "micro_precision": 0.083104,
+      "proximity_pairs": 1926348,
+      "supported_pairs": 160087
+    }
+  ],
+  "settings": {
+    "duckdb_version": "1.5.5",
+    "memory_limit": "20GB",
+    "preserve_insertion_order": false,
+    "pyarrow_version": "25.0.0",
+    "threads": 4
+  },
+  "status": "complete",
+  "thresholds": {
+    "1": {
+      "difference_from_section15": {
+        "precision_median": 0.0,
+        "recall_median": 0.0
+      },
+      "genes_with_proximity": 17809,
+      "genes_with_re2g_at_threshold": 17809,
+      "macro_precision_iqr": [
+        0.262931,
+        0.678571
+      ],
+      "macro_precision_median": 0.463415,
+      "macro_recall_iqr": [
+        0.407692,
+        0.816568
+      ],
+      "macro_recall_median": 0.605882,
+      "micro_precision": 0.480518,
+      "micro_recall": 0.473597,
+      "proximity_pairs": 3965503,
+      "section15_reference": {
+        "precision_median": 0.463415,
+        "recall_median": 0.605882
+      },
+      "section15_reference_note": "Diagnostic only: the preceding Section 15 reader bound column8 (score) as biosample. This run correctly binds column7 as biosample.",
+      "supported_pairs": 1905496
+    },
+    "20": {
+      "difference_from_section15": {
+        "precision_median": -0.039968,
+        "recall_median": 0.036232
+      },
+      "genes_with_proximity": 17809,
+      "genes_with_re2g_at_threshold": 16880,
+      "macro_precision_iqr": [
+        0.054348,
+        0.214876
+      ],
+      "macro_precision_median": 0.111111,
+      "macro_recall_iqr": [
+        0.660377,
+        1.0
+      ],
+      "macro_recall_median": 0.869565,
+      "micro_precision": 0.164418,
+      "micro_recall": 0.714711,
+      "proximity_pairs": 3965503,
+      "section15_reference": {
+        "precision_median": 0.151079,
+        "recall_median": 0.833333
+      },
+      "section15_reference_note": "Diagnostic only: the preceding Section 15 reader bound column8 (score) as biosample. This run correctly binds column7 as biosample.",
+      "supported_pairs": 652002
+    },
+    "5": {
+      "difference_from_section15": {
+        "precision_median": -0.03667,
+        "recall_median": 0.018818
+      },
+      "genes_with_proximity": 17809,
+      "genes_with_re2g_at_threshold": 17539,
+      "macro_precision_iqr": [
+        0.114286,
+        0.416667
+      ],
+      "macro_precision_median": 0.233918,
+      "macro_recall_iqr": [
+        0.565217,
+        0.950362
+      ],
+      "macro_recall_median": 0.772152,
+      "micro_precision": 0.296235,
+      "micro_recall": 0.624274,
+      "proximity_pairs": 3965503,
+      "section15_reference": {
+        "precision_median": 0.270588,
+        "recall_median": 0.753334
+      },
+      "section15_reference_note": "Diagnostic only: the preceding Section 15 reader bound column8 (score) as biosample. This run correctly binds column7 as biosample.",
+      "supported_pairs": 1174721
+    }
+  }
+}

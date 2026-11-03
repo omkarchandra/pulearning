@@ -1,0 +1,23 @@
+	Command being timed: "/home/mes7956/projects/pulearning/envs/20261005_quest_cre_phase3_v5/bin/python scripts/validate_feature_store_v1_cre_view.py /home/mes7956/projects/pulearning/datasets/processed/cre/phase3_bundles/20261005_quest_cre_phase3_v4 --scratch-dir /scratch/mes7956/pulearning/sampled-v5 --memory-limit 8GB --threads 4 --replay-mode sampled --replay-seed 20261004 --replay-sample-fraction 0.01 --replay-chromosome chr22"
+	User time (seconds): 4224.17
+	System time (seconds): 191.08
+	Percent of CPU this job got: 117%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:02:46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10455256
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 31484640
+	Voluntary context switches: 758476
+	Involuntary context switches: 28932
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,16 @@
+{
+  "checked_on": "2026-10-11",
+  "official_release_acquired": false,
+  "observed_official_version": "26.3",
+  "observed_release_date": "2026-09-22",
+  "release_metadata_url": "https://www.disgenet.com/docs?version=latest",
+  "authentication_observation": "The official website exposes a Login link; no authenticated DISGENET session is available in the checked browser.",
+  "academic_access_application_url": "https://www.disgenet.com/academic-apply",
+  "official_download_guidance_url": "https://support.disgenet.com/support/solutions/articles/202000089413-can-i-download-the-disgenet-database-",
+  "official_download_guidance_quote": "Academic users cannot download the full DISGENET database. However, you can download your search results in various formats, such as TSV and Excel, via the web interface or the API.",
+  "free_academic_scope_quote": "Free Academic Plan: Provides access to curated data only.",
+  "legacy_download_route_observation": "https://www.disgenet.com/downloads returned 404; the homepage and official documentation were accessible.",
+  "remaining_acquisition_input": "An authenticated academic account/API export or an official versioned file supplied by the user, with release metadata and complete declared acquisition scope.",
+  "official_column_contract_or_allowlist_frozen": false,
+  "scientific_scoring": "held"
+}

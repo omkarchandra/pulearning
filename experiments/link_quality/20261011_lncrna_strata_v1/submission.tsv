@@ -1,0 +1,4 @@
+role	job_id	status
+build	9471069	completed_0_0
+superseded_verifier	9471074	cancelled_before_receipt
+authoritative_verifier	9471232	completed_0_0

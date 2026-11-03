@@ -1,0 +1,1285 @@
+{
+  "bound_completed_evidence": {
+    "experiments/20261011_eval_hardened_v5/native_tests.xml": {
+      "bytes": 9683,
+      "sha256": "39a002d2d4dc2f9302d04ccb1a7779f18582dd79df6e27938b9926ef39783511"
+    },
+    "experiments/20261011_eval_hardened_v5/v2_process_isolation_confirmation.json": {
+      "bytes": 13801,
+      "sha256": "5b2262a155bb0cc5c300305cacc2ce8517bf8b4893e61a60744a5d7a58739bd6"
+    },
+    "experiments/20261011_eval_repair_v2/selector_comparison.json": {
+      "bytes": 228695,
+      "sha256": "b9f861c3a53973b88947224aea50fed295ef547ba262aeb3aac65c57b7eb83f5"
+    },
+    "experiments/fingerprint/20261011_final_sidecar/v4_fingerprint_sidecar.json": {
+      "bytes": 6178,
+      "sha256": "5409c19204fbe1c41a74a4fd7d353c118a070548de3be35bc7d02b261e4bf21d"
+    },
+    "experiments/verification/20261011_eval_repair_v2/verdict.json": {
+      "bytes": 23193,
+      "sha256": "de36fcf30de2a99a579643c37309b865098ba137b191ef4bbdeb474a7538e1b5"
+    }
+  },
+  "comparison_processes": "twenty standalone Python processes, one per completed array task",
+  "cre_sorted_fingerprints": {
+    "aggregation_qc": {
+      "artifact_sha256": "c0e9ffed4e76794523cec06714be6109b63ddb925ac8454a19f0108cfa9d8392",
+      "file_order_logical_sha256": "9c83d25cddf807fd469a449fecc8aa761f5c1181b431f5843fafe2a6f7d3ddb1",
+      "rows": 549600,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "weighted_sum",
+          "double",
+          true
+        ],
+        [
+          "observed_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "observed_weight_fraction",
+          "double",
+          true
+        ],
+        [
+          "candidate_link_count",
+          "int64",
+          false
+        ],
+        [
+          "candidate_weight_sum",
+          "double",
+          false
+        ],
+        [
+          "retained_link_count",
+          "int64",
+          false
+        ],
+        [
+          "observed_link_count",
+          "int64",
+          false
+        ],
+        [
+          "aggregation_reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "5b9f4f7fdd88dc7d9fa81fb1151059c08b9d4fc589013290d6c13f0df098786c",
+      "sorted_key_columns": [
+        "gene_id",
+        "feature_id"
+      ]
+    },
+    "dependencies": {
+      "artifact_sha256": "8a35ff2aef4645934deb3ae6ddacbc01093570348aa341f566958f3168315c1f",
+      "file_order_logical_sha256": "ecaccf7aa2b98bf5da66996bae7f0ed93d9d717ff9dc7a83e6e10123159c2e48",
+      "rows": 225784420,
+      "schema": [
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "entity_type",
+          "string",
+          false
+        ],
+        [
+          "entity_id",
+          "string",
+          false
+        ],
+        [
+          "source_element_id",
+          "string",
+          false
+        ],
+        [
+          "chrom",
+          "string",
+          true
+        ],
+        [
+          "start",
+          "int64",
+          true
+        ],
+        [
+          "end",
+          "int64",
+          true
+        ],
+        [
+          "source_record_id",
+          "string",
+          true
+        ],
+        [
+          "dependency_type",
+          "string",
+          false
+        ],
+        [
+          "selection_role",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "9cff3122dd69ce86eb75e5e790c39ed50d12526a89ddcf359d93090dce2447a4",
+      "sorted_key_columns": [
+        "feature_id",
+        "entity_type",
+        "entity_id",
+        "selection_role",
+        "source_element_id",
+        "dependency_type"
+      ]
+    },
+    "view": {
+      "artifact_sha256": "5120bca04eff7998180377050e51c7c09ba2b0062a526f82cae976061c36a0fb",
+      "file_order_logical_sha256": "b5bd715b401a904c0259297bff06eba7fe31a5e0e7a85a15a5eb91befc41b0eb",
+      "rows": 549600,
+      "schema": [
+        [
+          "gene_id",
+          "string",
+          false
+        ],
+        [
+          "feature_id",
+          "string",
+          false
+        ],
+        [
+          "value",
+          "double",
+          true
+        ],
+        [
+          "observed",
+          "bool",
+          false
+        ],
+        [
+          "reason",
+          "string",
+          false
+        ]
+      ],
+      "sorted_content_sha256": "564fd5badf321c8f64e55f9b0efe3ad0ab2ed1543e3e86618b06b303c22d56d6",
+      "sorted_key_columns": [
+        "gene_id",
+        "feature_id"
+      ]
+    }
+  },
+  "final_native_tests": {
+    "failed": 0,
+    "job_id": 9464776,
+    "passed": 68,
+    "skipped": 1
+  },
+  "numbers_reread_from_completed_artifacts": true,
+  "receipt_code_sha256": "48728002dbbfde23070014598844a74d1978e270334184ad4414658158974ff0",
+  "receipt_job_id": "9466206",
+  "retained_failed_followup_job_id": 9464657,
+  "review_before_dependency_completion": {
+    "decision": "\u00a734 comparison confirmed; only full dependency fingerprint remained",
+    "last_read_message": 36,
+    "url": "https://claude.ai/chat/9216c204-4aba-4266-8b4f-c5cedb3913dd"
+  },
+  "scientific_inputs_needed": [
+    "official versioned curated disease-only DisGeNET data/panels",
+    "primary task choice",
+    "exact referenced BMC paper"
+  ],
+  "scientific_scoring": "held",
+  "selector_comparison": {
+    "evaluation_n": 54710,
+    "evaluation_positives": 4686,
+    "scope": "one-disease shuffled-label references",
+    "selectors": {
+      "biotype_stratified": {
+        "descriptive_offset": -0.020477352322780154,
+        "mean_auprc": 0.0653504,
+        "run_auprcs": [
+          0.066322,
+          0.064455,
+          0.064341,
+          0.066026,
+          0.065608
+        ]
+      },
+      "centroid": {
+        "descriptive_offset": -0.03703615232278015,
+        "mean_auprc": 0.048791600000000004,
+        "run_auprcs": [
+          0.048842,
+          0.048413,
+          0.048451,
+          0.049452,
+          0.0488
+        ]
+      },
+      "confounder_matched": {
+        "descriptive_offset": 0.06492684767721986,
+        "mean_auprc": 0.15075460000000002,
+        "run_auprcs": [
+          0.136475,
+          0.149025,
+          0.162322,
+          0.144522,
+          0.161429
+        ]
+      },
+      "uniform_random": {
+        "descriptive_offset": 0.05649684767721984,
+        "mean_auprc": 0.1423246,
+        "run_auprcs": [
+          0.166478,
+          0.082488,
+          0.12443,
+          0.185313,
+          0.152914
+        ]
+      }
+    },
+    "snapshot_checksum": "0aac9e946ba831a2c4b91de7c307b7b06c4618ae7120ff419d59e4a7de69394b"
+  },
+  "slurm_job_records": [
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:02:10",
+      "ExitCode": "0:0",
+      "JobID": "9462517",
+      "JobIDRaw": "9462517",
+      "JobName": "pu_eval_repair",
+      "MaxRSS": "",
+      "NodeList": "qnode1023",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:02:10",
+      "ExitCode": "0:0",
+      "JobID": "9462517.batch",
+      "JobIDRaw": "9462517.batch",
+      "JobName": "batch",
+      "MaxRSS": "2853680K",
+      "NodeList": "qnode1023",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:02:10",
+      "ExitCode": "0:0",
+      "JobID": "9462517.extern",
+      "JobIDRaw": "9462517.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode1023",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "01:05:44",
+      "ExitCode": "0:0",
+      "JobID": "9462630",
+      "JobIDRaw": "9462630",
+      "JobName": "pu_v4_fingerprint",
+      "MaxRSS": "",
+      "NodeList": "qnode0168",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "01:05:44",
+      "ExitCode": "0:0",
+      "JobID": "9462630.batch",
+      "JobIDRaw": "9462630.batch",
+      "JobName": "batch",
+      "MaxRSS": "16337192K",
+      "NodeList": "qnode0168",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "01:05:44",
+      "ExitCode": "0:0",
+      "JobID": "9462630.extern",
+      "JobIDRaw": "9462630.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0168",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:01:41",
+      "ExitCode": "0:0",
+      "JobID": "9462989",
+      "JobIDRaw": "9462989",
+      "JobName": "pu_eval_repair",
+      "MaxRSS": "",
+      "NodeList": "qnode3112",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:01:41",
+      "ExitCode": "0:0",
+      "JobID": "9462989.batch",
+      "JobIDRaw": "9462989.batch",
+      "JobName": "batch",
+      "MaxRSS": "2646916K",
+      "NodeList": "qnode3112",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:01:41",
+      "ExitCode": "0:0",
+      "JobID": "9462989.extern",
+      "JobIDRaw": "9462989.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode3112",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:40",
+      "ExitCode": "0:0",
+      "JobID": "9463331_0",
+      "JobIDRaw": "9463332",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:40",
+      "ExitCode": "0:0",
+      "JobID": "9463331_0.batch",
+      "JobIDRaw": "9463332.batch",
+      "JobName": "batch",
+      "MaxRSS": "357920K",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:41",
+      "ExitCode": "0:0",
+      "JobID": "9463331_0.extern",
+      "JobIDRaw": "9463332.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_1",
+      "JobIDRaw": "9463333",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0125",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_1.batch",
+      "JobIDRaw": "9463333.batch",
+      "JobName": "batch",
+      "MaxRSS": "315036K",
+      "NodeList": "qnode0125",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_1.extern",
+      "JobIDRaw": "9463333.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0125",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_2",
+      "JobIDRaw": "9463334",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0125",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_2.batch",
+      "JobIDRaw": "9463334.batch",
+      "JobName": "batch",
+      "MaxRSS": "344356K",
+      "NodeList": "qnode0125",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_2.extern",
+      "JobIDRaw": "9463334.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0125",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:40",
+      "ExitCode": "0:0",
+      "JobID": "9463331_3",
+      "JobIDRaw": "9463335",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0161",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:40",
+      "ExitCode": "0:0",
+      "JobID": "9463331_3.batch",
+      "JobIDRaw": "9463335.batch",
+      "JobName": "batch",
+      "MaxRSS": "357036K",
+      "NodeList": "qnode0161",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:43",
+      "ExitCode": "0:0",
+      "JobID": "9463331_3.extern",
+      "JobIDRaw": "9463335.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0161",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:27",
+      "ExitCode": "0:0",
+      "JobID": "9463331_4",
+      "JobIDRaw": "9463593",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:27",
+      "ExitCode": "0:0",
+      "JobID": "9463331_4.batch",
+      "JobIDRaw": "9463593.batch",
+      "JobName": "batch",
+      "MaxRSS": "362264K",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:27",
+      "ExitCode": "0:0",
+      "JobID": "9463331_4.extern",
+      "JobIDRaw": "9463593.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:14",
+      "ExitCode": "0:0",
+      "JobID": "9463331_5",
+      "JobIDRaw": "9463594",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:14",
+      "ExitCode": "0:0",
+      "JobID": "9463331_5.batch",
+      "JobIDRaw": "9463594.batch",
+      "JobName": "batch",
+      "MaxRSS": "347000K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:14",
+      "ExitCode": "0:0",
+      "JobID": "9463331_5.extern",
+      "JobIDRaw": "9463594.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:11",
+      "ExitCode": "0:0",
+      "JobID": "9463331_6",
+      "JobIDRaw": "9463597",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:11",
+      "ExitCode": "0:0",
+      "JobID": "9463331_6.batch",
+      "JobIDRaw": "9463597.batch",
+      "JobName": "batch",
+      "MaxRSS": "304808K",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:11",
+      "ExitCode": "0:0",
+      "JobID": "9463331_6.extern",
+      "JobIDRaw": "9463597.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:11",
+      "ExitCode": "0:0",
+      "JobID": "9463331_7",
+      "JobIDRaw": "9463598",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:11",
+      "ExitCode": "0:0",
+      "JobID": "9463331_7.batch",
+      "JobIDRaw": "9463598.batch",
+      "JobName": "batch",
+      "MaxRSS": "317028K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:11",
+      "ExitCode": "0:0",
+      "JobID": "9463331_7.extern",
+      "JobIDRaw": "9463598.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:09",
+      "ExitCode": "0:0",
+      "JobID": "9463331_8",
+      "JobIDRaw": "9463599",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:09",
+      "ExitCode": "0:0",
+      "JobID": "9463331_8.batch",
+      "JobIDRaw": "9463599.batch",
+      "JobName": "batch",
+      "MaxRSS": "309320K",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:09",
+      "ExitCode": "0:0",
+      "JobID": "9463331_8.extern",
+      "JobIDRaw": "9463599.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:12",
+      "ExitCode": "0:0",
+      "JobID": "9463331_9",
+      "JobIDRaw": "9463600",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:12",
+      "ExitCode": "0:0",
+      "JobID": "9463331_9.batch",
+      "JobIDRaw": "9463600.batch",
+      "JobName": "batch",
+      "MaxRSS": "308740K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:12",
+      "ExitCode": "0:0",
+      "JobID": "9463331_9.extern",
+      "JobIDRaw": "9463600.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:09:07",
+      "ExitCode": "0:0",
+      "JobID": "9463331_10",
+      "JobIDRaw": "9463601",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:09:07",
+      "ExitCode": "0:0",
+      "JobID": "9463331_10.batch",
+      "JobIDRaw": "9463601.batch",
+      "JobName": "batch",
+      "MaxRSS": "302200K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:09:07",
+      "ExitCode": "0:0",
+      "JobID": "9463331_10.extern",
+      "JobIDRaw": "9463601.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:07:56",
+      "ExitCode": "0:0",
+      "JobID": "9463331_11",
+      "JobIDRaw": "9463603",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:07:56",
+      "ExitCode": "0:0",
+      "JobID": "9463331_11.batch",
+      "JobIDRaw": "9463603.batch",
+      "JobName": "batch",
+      "MaxRSS": "302148K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:07:56",
+      "ExitCode": "0:0",
+      "JobID": "9463331_11.extern",
+      "JobIDRaw": "9463603.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:07:39",
+      "ExitCode": "0:0",
+      "JobID": "9463331_12",
+      "JobIDRaw": "9463605",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:07:39",
+      "ExitCode": "0:0",
+      "JobID": "9463331_12.batch",
+      "JobIDRaw": "9463605.batch",
+      "JobName": "batch",
+      "MaxRSS": "302600K",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:07:39",
+      "ExitCode": "0:0",
+      "JobID": "9463331_12.extern",
+      "JobIDRaw": "9463605.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0154",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:06:55",
+      "ExitCode": "0:0",
+      "JobID": "9463331_13",
+      "JobIDRaw": "9463606",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:06:55",
+      "ExitCode": "0:0",
+      "JobID": "9463331_13.batch",
+      "JobIDRaw": "9463606.batch",
+      "JobName": "batch",
+      "MaxRSS": "308316K",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:06:55",
+      "ExitCode": "0:0",
+      "JobID": "9463331_13.extern",
+      "JobIDRaw": "9463606.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:06:56",
+      "ExitCode": "0:0",
+      "JobID": "9463331_14",
+      "JobIDRaw": "9464000",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:06:56",
+      "ExitCode": "0:0",
+      "JobID": "9463331_14.batch",
+      "JobIDRaw": "9464000.batch",
+      "JobName": "batch",
+      "MaxRSS": "301992K",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:06:56",
+      "ExitCode": "0:0",
+      "JobID": "9463331_14.extern",
+      "JobIDRaw": "9464000.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:48",
+      "ExitCode": "0:0",
+      "JobID": "9463331_15",
+      "JobIDRaw": "9464083",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:48",
+      "ExitCode": "0:0",
+      "JobID": "9463331_15.batch",
+      "JobIDRaw": "9464083.batch",
+      "JobName": "batch",
+      "MaxRSS": "355760K",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:48",
+      "ExitCode": "0:0",
+      "JobID": "9463331_15.extern",
+      "JobIDRaw": "9464083.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:33",
+      "ExitCode": "0:0",
+      "JobID": "9463331_16",
+      "JobIDRaw": "9464084",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:33",
+      "ExitCode": "0:0",
+      "JobID": "9463331_16.batch",
+      "JobIDRaw": "9464084.batch",
+      "JobName": "batch",
+      "MaxRSS": "312432K",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:33",
+      "ExitCode": "0:0",
+      "JobID": "9463331_16.extern",
+      "JobIDRaw": "9464084.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:35",
+      "ExitCode": "0:0",
+      "JobID": "9463331_17",
+      "JobIDRaw": "9464242",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:35",
+      "ExitCode": "0:0",
+      "JobID": "9463331_17.batch",
+      "JobIDRaw": "9464242.batch",
+      "JobName": "batch",
+      "MaxRSS": "304152K",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:37",
+      "ExitCode": "0:0",
+      "JobID": "9463331_17.extern",
+      "JobIDRaw": "9464242.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:32",
+      "ExitCode": "0:0",
+      "JobID": "9463331_18",
+      "JobIDRaw": "9464243",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:32",
+      "ExitCode": "0:0",
+      "JobID": "9463331_18.batch",
+      "JobIDRaw": "9464243.batch",
+      "JobName": "batch",
+      "MaxRSS": "315108K",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:32",
+      "ExitCode": "0:0",
+      "JobID": "9463331_18.extern",
+      "JobIDRaw": "9464243.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0147",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:44",
+      "ExitCode": "0:0",
+      "JobID": "9463331_19",
+      "JobIDRaw": "9463331",
+      "JobName": "pu_selector_probe",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:44",
+      "ExitCode": "0:0",
+      "JobID": "9463331_19.batch",
+      "JobIDRaw": "9463331.batch",
+      "JobName": "batch",
+      "MaxRSS": "326204K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:44",
+      "ExitCode": "0:0",
+      "JobID": "9463331_19.extern",
+      "JobIDRaw": "9463331.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:28",
+      "ExitCode": "0:0",
+      "JobID": "9463604",
+      "JobIDRaw": "9463604",
+      "JobName": "pu_eval_guard",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:28",
+      "ExitCode": "0:0",
+      "JobID": "9463604.batch",
+      "JobIDRaw": "9463604.batch",
+      "JobName": "batch",
+      "MaxRSS": "152876K",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:28",
+      "ExitCode": "0:0",
+      "JobID": "9463604.extern",
+      "JobIDRaw": "9463604.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0108",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:01:34",
+      "ExitCode": "0:0",
+      "JobID": "9463944",
+      "JobIDRaw": "9463944",
+      "JobName": "pu_selector_review",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:01:34",
+      "ExitCode": "0:0",
+      "JobID": "9463944.batch",
+      "JobIDRaw": "9463944.batch",
+      "JobName": "batch",
+      "MaxRSS": "289528K",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:01:34",
+      "ExitCode": "0:0",
+      "JobID": "9463944.extern",
+      "JobIDRaw": "9463944.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "1",
+      "Elapsed": "00:01:00",
+      "ExitCode": "0:0",
+      "JobID": "9463950",
+      "JobIDRaw": "9463950",
+      "JobName": "pu_independent_review",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "1",
+      "Elapsed": "00:01:00",
+      "ExitCode": "0:0",
+      "JobID": "9463950.batch",
+      "JobIDRaw": "9463950.batch",
+      "JobName": "batch",
+      "MaxRSS": "253304K",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "1",
+      "Elapsed": "00:01:01",
+      "ExitCode": "0:0",
+      "JobID": "9463950.extern",
+      "JobIDRaw": "9463950.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0157",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:02:22",
+      "ExitCode": "0:0",
+      "JobID": "9464148",
+      "JobIDRaw": "9464148",
+      "JobName": "pu_fingerprint_golden",
+      "MaxRSS": "",
+      "NodeList": "qnode3113",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:02:22",
+      "ExitCode": "0:0",
+      "JobID": "9464148.batch",
+      "JobIDRaw": "9464148.batch",
+      "JobName": "batch",
+      "MaxRSS": "2188616K",
+      "NodeList": "qnode3113",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:02:22",
+      "ExitCode": "0:0",
+      "JobID": "9464148.extern",
+      "JobIDRaw": "9464148.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode3113",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:23",
+      "ExitCode": "1:0",
+      "JobID": "9464657",
+      "JobIDRaw": "9464657",
+      "JobName": "pu_final_native",
+      "MaxRSS": "",
+      "NodeList": "qnode3117",
+      "State": "FAILED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:23",
+      "ExitCode": "1:0",
+      "JobID": "9464657.batch",
+      "JobIDRaw": "9464657.batch",
+      "JobName": "batch",
+      "MaxRSS": "420240K",
+      "NodeList": "qnode3117",
+      "State": "FAILED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:23",
+      "ExitCode": "0:0",
+      "JobID": "9464657.extern",
+      "JobIDRaw": "9464657.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode3117",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:31",
+      "ExitCode": "0:0",
+      "JobID": "9464776",
+      "JobIDRaw": "9464776",
+      "JobName": "pu_final_native",
+      "MaxRSS": "",
+      "NodeList": "qnode3110",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:31",
+      "ExitCode": "0:0",
+      "JobID": "9464776.batch",
+      "JobIDRaw": "9464776.batch",
+      "JobName": "batch",
+      "MaxRSS": "427484K",
+      "NodeList": "qnode3110",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "4",
+      "Elapsed": "00:00:33",
+      "ExitCode": "0:0",
+      "JobID": "9464776.extern",
+      "JobIDRaw": "9464776.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode3110",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "1",
+      "Elapsed": "00:00:07",
+      "ExitCode": "0:0",
+      "JobID": "9464781",
+      "JobIDRaw": "9464781",
+      "JobName": "pu_final_fingerprint",
+      "MaxRSS": "",
+      "NodeList": "qnode0141",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "1",
+      "Elapsed": "00:00:07",
+      "ExitCode": "0:0",
+      "JobID": "9464781.batch",
+      "JobIDRaw": "9464781.batch",
+      "JobName": "batch",
+      "MaxRSS": "24688K",
+      "NodeList": "qnode0141",
+      "State": "COMPLETED"
+    },
+    {
+      "AllocCPUS": "1",
+      "Elapsed": "00:00:07",
+      "ExitCode": "0:0",
+      "JobID": "9464781.extern",
+      "JobIDRaw": "9464781.extern",
+      "JobName": "extern",
+      "MaxRSS": "",
+      "NodeList": "qnode0141",
+      "State": "COMPLETED"
+    }
+  ],
+  "source_snapshots": {
+    "20261011_eval_hardened_v4": {
+      "files_verified": 175,
+      "source_manifest_sha256": "ce7400b82cbbbf5db6e1bdc6bd5423e43aa24f3e4bad4a5444bd8a8aff60e640"
+    },
+    "20261011_eval_hardened_v5": {
+      "files_verified": 175,
+      "source_manifest_sha256": "ecfe0944c44a5b2c70c450c1f8a56eb677ea7a3a6266316531125c191b69c615"
+    },
+    "20261011_eval_repair_v1": {
+      "files_verified": 172,
+      "source_manifest_sha256": "7b2a0e9abfccbd3271b47bdddca277e8da4bb1c8cf5b4552d96b12b36644ae10"
+    },
+    "20261011_eval_repair_v2": {
+      "files_verified": 173,
+      "source_manifest_sha256": "0aac9e946ba831a2c4b91de7c307b7b06c4618ae7120ff419d59e4a7de69394b"
+    },
+    "20261011_fingerprint_v3": {
+      "files_verified": 175,
+      "source_manifest_sha256": "d314ab74fbf465042b7afe798e6549ac38860a8fb64e1108296aa030678a9aac"
+    }
+  },
+  "status": "mechanical_phase_verified"
+}

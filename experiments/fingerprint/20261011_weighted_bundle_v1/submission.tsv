@@ -1,0 +1,7 @@
+role	job_id	status
+superseded_build_4h	9471068	cancelled_before_publication
+superseded_fingerprint_dependency	9471073	cancelled
+superseded_verifier_dependency	9471077	cancelled
+authoritative_build_6h	9471688	submitted
+authoritative_sorted_fingerprints	9471719	afterok_9471688
+authoritative_verifier	9471720	afterok_9471719
